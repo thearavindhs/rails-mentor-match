@@ -1,0 +1,83 @@
+// Hero
+
+.main-banner {
+  background-image: radial-gradient(rgba(163,255,255,0.4),rgba(115,183,255,0.8),rgba(111,126,216,1)), url("coffee-banner.jpg");
+  background-size: cover;
+  background-position: right;
+  padding: 250px;
+  position: relative;
+  left: 0px;
+  top: 0px;
+  z-index: 1;
+}
+
+.main-banner h1, p {
+  color: $white;
+}
+
+.main-banner btn {
+  color: $black;
+}
+
+// Our Mission
+.mission-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+}
+
+.banner-titles h2 {
+  font-size: 20px;
+  color: $dark-blue;
+}
+
+.banner-titles h3 {
+  font-size: 28px;
+}
+
+.mission-section {
+  background: radial-gradient(56.96% 445.68% at 100% 100%, #7081DA 0%, #73ACF7 100%);
+  box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.25);
+  border-radius: 15px;
+  padding: 20px;
+  margin: 30px;
+}
+
+.mission-section p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// How it Works
+.background-2 {
+  background-color: #F6F5F5;
+  padding: 250px;
+}
+
+.works-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.cards {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.img 1 {
+
+}
+
+.img 2 {
+
+}
+
+.img 3 {
+
+}

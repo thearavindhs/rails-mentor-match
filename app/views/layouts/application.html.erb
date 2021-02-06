@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RailsMentorMatch</title>
+    <title>Mentor Match</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -11,10 +11,66 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
   </head>
 
-  <body>
-    <%= render 'shared/navbar' %>
-    <%= render 'shared/flashes' %>
 
-    <%= yield %>
+  <body>
+
+ <!-- Nav bar -->
+  <div class="navbar">
+    <a class="navbar-brand" href="/">
+      <%= image_tag "logo-text-black.png", class: "logo" %>
+    </a>
+    <a href="#how-it-works">How It Works</a>
+    <a href="#stories">Our Stories</a>
+    <a href="#companies">Companies</a>
+
+    <div class="signup-btn">
+      <% if !user_signed_in? %>
+      <%= link_to "LOGIN", new_user_session_url, class: "margin-right-navbar" %>
+      <%= link_to "GET STARTED", new_user_registration_url, class: "btn btn-primary border-radius font-weight-bold" %>
+      <% end %>
+
+      <% if user_signed_in? %>
+      <%= link_to "LOGOUT", destroy_user_session_url, method: :delete, class: "margin-right-navbar"  %>
+      <%= link_to "Logged In As", bundles_offers_url, class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+  <%= yield %>
+
+
+          <!-- code a footer -->
+      <div class="footer">
+        <div class="about-us">
+          <h3>ABOUT US</h3>
+          <p>MentorMatch aims to give everyone an <strong>equal opportunity to pursue a career they love early on</strong>by connecting students with mentors that can help them get there</p>
+        </div>
+        <div class="site">
+           <div class="links">
+          <a href="#">Team</a>
+          <a href="#">About</a>
+          <a href="#">Support</a>
+          <a href="#">Private Policy</a>
+           <a href="#">Careers</a>
+        </div>
+        <div class="connect">
+          <p>Stay in the loop by following us on your social media of choice or write to us directly!</p>
+          <div class="links">
+          <a href="#">
+            <i class="fab fa-facebook"></i>
+          </a>
+          <a href="#">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="#">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="#">
+            <i class="fab fa-instagram"></i>
+          </a>
+        </div>
+        <p>support@mentormatch.com</p>
+        </div>
+      </div>
   </body>
 </html>
+
