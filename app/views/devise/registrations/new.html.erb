@@ -1,25 +1,118 @@
-<h2>Sign up</h2>
+<h2 class= <%= @user_type %> >Sign up as a <%= @user_type %></h2>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :email,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "email" }%>
-    <%= f.input :password,
-                required: true,
-                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
-                required: true,
-                input_html: { autocomplete: "new-password" } %>
-  </div>
+<!-- Step 2 -->
+<!-- Here, we will have email, password and password confirmation inputs. -->
 
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
+<div class="create-an-account-form">
+  <%= f.input :email,
+              required: true,
+              placeholder: 'user@domain.com',
+              input_html: { autocomplete: "email" } %>
+  <%= f.input :password,
+              required: true,
+              hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+              input_html: { autocomplete: "new-password" } %>
+
+  <%= f.input :password_confirmation,
+              required: true,
+              input_html: { autocomplete: "new-password" } %>
+  <button class="continue-btn">Continue</button>
+</div>
+
+
+<div class="personal-info-form">
+  <!-- Personal Information Form for Mentee -->
+  <div class="mentee-personal-form">
+    <%= f.input :first_name,
+                required: true,
+                placeholder: 'John' %>
+
+    <%= f.input :last_name,
+                required: true,
+                placeholder: 'Doe' %>
+
+    <%= f.input :language,
+                required: true,
+                as: :radio_buttons,
+                collection: @languages %>
+
+    <%= f.input :country,
+                required: true,
+                collection: @countries,
+                selected: "United States"%>
+
+    <%= f.input :city,
+                collection: @cities,
+                required: true,
+                selected: "City 1"%>
+
+    <%= f.input :gender,
+                selected: "Non Binary",
+                collection: @genders%>
   </div>
+  <!-- Personal Information Form for Mentors -->
+  <div class="mentor-personal-form">
+    <%= f.input :first_name,
+                required: true,
+                placeholder: 'John' %>
+
+    <%= f.input :last_name,
+                required: true,
+                placeholder: 'Doe' %>
+
+    <%= f.input :language,
+                required: true,
+                as: :radio_buttons,
+                collection: @languages %>
+
+    <%= f.input :country,
+                required: true,
+                collection: @countries,
+                selected: "United States"%>
+
+    <%= f.input :city,
+                collection: @cities,
+                required: true,
+                selected: "City 1"%>
+
+    <%= f.input :gender,
+                selected: "Non Binary",
+                collection: @genders%>
+
+    <%= f.input :role,
+                required: true,
+                placeholder: 'Director of AI' %>
+
+    <%= f.input :industry,
+                required: true,
+                placeholder: 'Software Development' %>
+
+    <%= f.input :experience,
+                required: true,
+                hint: "Years of Experience",
+                collection: 0..50,
+                selected: 0 %>
+
+    <%= f.input :maximum_mentee,
+                required: true,
+                label: 'Maximum number of Mentees',
+                hint: "How many mentees would you like to have?",
+                as: :radio_buttons,
+                collection: 1..3 %>
+  </div>
+    <div class="form-actions">
+    <%= f.button :submit, "Sign up" %>
+    <%= render "devise/shared/links" %>
+  </div>
+</div>
+
+
+
+
 <% end %>
 
-<%= render "devise/shared/links" %>
+
+<%= javascript_pack_tag 'sign_up' %>
