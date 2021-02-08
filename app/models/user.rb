@@ -7,4 +7,7 @@ class User < ApplicationRecord
   has_many :mentees, through: :connection_mentees
   has_one :connection_mentor, class_name: "Connection", foreign_key: "mentee_id"
   has_one :mentor, through: :connection_mentor
+  has_many :personal_skills
+  has_many :skills, through: :personal_skills
+  has_one_attached :photo
 end
