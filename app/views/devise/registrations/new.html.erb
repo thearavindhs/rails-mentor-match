@@ -25,8 +25,7 @@
 
 <div class="personal-info-form">
   <button class="back-btn">Back</button>
-  <!-- Personal Information Form for Mentee -->
-  <div class="mentee-personal-form">
+    <!-- Personal Information Form for Mentee -->
     <%= f.input :first_name,
                 required: true,
                 placeholder: 'John' %>
@@ -53,36 +52,9 @@
     <%= f.input :gender,
                 selected: "Non Binary",
                 collection: @genders%>
-  </div>
+
   <!-- Personal Information Form for Mentors -->
   <div class="mentor-personal-form">
-    <%= f.input :first_name,
-                required: true,
-                placeholder: 'John' %>
-
-    <%= f.input :last_name,
-                required: true,
-                placeholder: 'Doe' %>
-
-    <%= f.input :language,
-                required: true,
-                as: :radio_buttons,
-                collection: @languages %>
-
-    <%= f.input :country,
-                required: true,
-                collection: @countries,
-                selected: "United States"%>
-
-    <%= f.input :city,
-                collection: @cities,
-                required: true,
-                selected: "City 1"%>
-
-    <%= f.input :gender,
-                selected: "Non Binary",
-                collection: @genders%>
-
     <%= f.input :role,
                 required: true,
                 placeholder: 'Director of AI' %>

@@ -25,11 +25,9 @@ function secondPartShown(userType){
   document.querySelector(".personal-info-form").hidden = false;
   if (userType == "mentor") {
     console.log("Mentor part shown.");
-    document.querySelector(".mentee-personal-form").hidden = true;
     document.querySelector(".mentor-personal-form").hidden = false;
   } else {
     console.log("Mentee part shown.");
-    document.querySelector(".mentee-personal-form").hidden = false;
     document.querySelector(".mentor-personal-form").hidden = true;
   }
 }
