@@ -17,7 +17,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # POST /resource
 
   def create
-    raise
     @user = User.new(user_params)
     if @user.save
       redirect_to profile_url

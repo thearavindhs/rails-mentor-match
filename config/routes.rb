@@ -9,5 +9,10 @@ Rails.application.routes.draw do
   devise_scope :user do
     get 'sign_up', to: 'pages#user_type'
   end
+
+  require "sidekiq/web"
+  authenticate :user, ->(user) { user.admin? } do
+    mount Sidekiq::Web => '/sidekiq'
+  end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
