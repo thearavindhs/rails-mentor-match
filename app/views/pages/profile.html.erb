@@ -1,7 +1,60 @@
-<h1> This is my profile page! </h1>
-
-<br><br><br>
-<h3>For Frontend guys:</h3>
-
-<p>You can access the current user with "@user" : )</p>
-
+<div class="container">
+  <h3>
+    <%= "Hello," %>
+    <%= current_user.first_name %>
+  </h3>
+</div>
+<div class="container">
+  <% if current_user.user_type == "mentee" %>
+    <div class="container">
+      <h4>
+        <%= "Congratulations!" %>
+      </h4>
+      <h4>
+        <%= "Your mentor is" %>
+      </h4>
+      <h4>
+        <%= current_user.mentor.first_name %>
+      </h4>
+      <h4>
+        <%= current_user.mentor.title %>
+      </h4>
+      <%= "Get to know them via her Linkedin Profile here" %>
+    </div>
+    <div class="container">
+      <h4>
+        <%= "What Now?" %>
+      </h4>
+      <h4>
+        <%= "Reach out to them and introduce yourself!" %>
+      </h4>
+    </div>
+  <% end %>
+</div>
+<div class="container">
+  <% if current_user.user_type == "mentor" %>
+    <div class="container">
+      <h4>
+        <%= "Congratulations!" %>
+      </h4>
+      <h4>
+        <%= "Your mentee is" %>
+      </h4>
+      <h4>
+        <%= current_user.mentees.first.first_name %>
+      </h4>
+      <h4>
+        <%= current_user.mentees.first.title %>
+      </h4>
+      <%= "Get to know them via her Linkedin Profile here" %>
+    </div>
+    <div class="container">
+      <h4>
+        <%= "What Now?" %>
+      </h4>
+      <h4>
+        <%= "Wait for them to reach out to you!" %>
+      </h4>
+    </div>
+  <% end %>
+</div>

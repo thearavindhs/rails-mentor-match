@@ -1,6 +1,191 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+ <!-- Hero Banner -->
+ <div class="main-banner">
+  <div class="container">
+    <div class="row">
+      <div class="col-6 col-s-4">
+        <h1>A Foot in the Door Without a Connection</h1>
+        <p>Get the insider knowledge from a mentor to help you land your dream job.</p>
+        <%= link_to "GET STARTED", new_user_registration_url, class: "btn btn-primary border-radius font-weight-bold" %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Our Mission Section -->
+<br>
+<div class="mission-banner background-1">
+<div class="container">
+  <div class="row justify-content-center">
+      <div class="col-12 col-s-6">
+        <div class="banner-titles">
+          <h2>OUR MISSION</h2>
+        <h3>What we're all about</h3>
+          </div>
+        <div class= "row justify-content-center">
+          <div class="col-8 col-s-4 mission-section">
+            <p>MentorMatch aims to give everyone an equal opportunity to pursue a career they love early on by connecting students with mentors that can help them get there</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- How It Works Section -->
+<br>
+<div class="works-banner background-2">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 col-s-6">
+        <div class="banner-titles">
+          <h2>HOW IT WORKS</h2>
+          <h3>Connect with a mentor in three easy steps</h3>
+          <div class="row">
+            <div class="cards">
+
+              <div class="section">
+                  <%= image_tag "1-bubble.png", class: "1-bubble" %>
+                <div class="card">
+                 <%= image_tag "sign-up.png", class: "works-icon" %>
+               </div>
+               <h3>CREATE A PROFILE</h3>
+               <p>Sign up and tell us a little bit about what you are looking for in your mentor</p>
+             </div>
 
 
+             <div class="section arrow-1">
+             <%= image_tag "arrow-1.png" %>
+           </div>
 
-<%= link_to "My Profile", profile_url  %>
+             <div class="section">
+              <%= image_tag "2-bubble.png", class: "2-bubble" %>
+              <div class="card">
+               <%= image_tag "match.png", class: "works-icon" %>
+             </div>
+             <h3>WAIT FOR OUR MATCH</h3>
+             <p>We'll find you a mentor based on your preferences and pass along their contact details</p>
+           </div>
+
+           <div class="section arrow-2">
+           <%= image_tag "arrow-2.png" %>
+         </div>
+
+
+           <div class="section">
+            <%= image_tag "3-bubble.png", class: "3-bubble" %>
+            <div class="card">
+             <%= image_tag "chat.png", class: "works-icon" %>
+           </div>
+           <h3>MEET UP & EXCHANGE</h3>
+           <p>Arrange a time and place meet your mentor and gain all their valuable career insights!</p>
+         </div>
+       </div>
+
+     </div>
+   </div>
+ </div>
+</div>
+</div>
+</div>
+
+<!-- Stories -->
+<br>
+
+<div class="background-1">
+  <div class="stories-banner">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-12 col-s-6">
+          <div class="banner-titles">
+            <h2>MENTORMATCH STORIES</h2>
+            <h3>Learn how MentorMatch has redefined networking</h3>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="cards-quotes">
+
+          <div class="col-12 col-s-6">
+            <div class="stories-card-1">
+              <%= image_tag "mentor-michael.jpg", class: "avatar-large-1" %>
+              <div class="stories-card-footer-1">
+                <p>Michael Ng</p>
+                <small>Director of AI Solutions of Microsoft</small>
+              </div>
+            </div>
+            </div>
+
+            <div class="col-12 col-s-6">
+            <div class="stories-card-2">
+             <%= image_tag "mentee-sasha.jpg", class: "avatar-large-2" %>
+             <div class="stories-card-footer-2">
+              <p>Sasha Go</p>
+              <small>Student at UPenn</small>
+            </div>
+          </div>
+        </div>
+
+    <div class="col-12 col-s-6">
+      <div class="quote-section">
+      <p><strong>"</strong> MentorMatch helped me connect with Michael, who gave me so many valuable insights on where I needed to skill up and what to put on my resume to enter the field of AI as a developer. After meeting with him, I started landing interviews, including at Google! <strong>"</strong> </p>
+      <p> - Sasha Go </p>
+      <%= link_to "SEE MORE STORIES", new_user_registration_url, class: "btn btn-primary border-radius font-weight-bold" %>
+      <!-- Link will have to be replaced -->
+    </div>
+
+</div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+
+<!-- Companies -->
+<br>
+<div class="companies-header-banner background-2">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 col-s-6">
+        <div class="banner-titles">
+          <h2>COMPANIES</h2>
+        <h3>Our mentors come from companies like...</h3>
+      </div>
+    </div>
+    </div>
+
+    <br>
+
+  <div class="row justify-content-center">
+    <div class="icons">
+      <%= image_tag "google.png", class: "success-logo" %>
+      <%= image_tag "reddit.png", class: "success-logo" %>
+      <%= image_tag "nasa.png", class: "success-logo" %>
+      <%= image_tag "amazon.png", class: "success-logo" %>
+      <%= image_tag "disney.png", class: "success-logo" %>
+    </div>
+  </div>
+
+  <div class="row justify-content-center">
+    <div class="stories-banner">
+        <h3>...and so many more!</h3>
+      </div>
+    </div>
+  </div>
+  </div>
+
+
+<!-- Match Now -->
+<div class="end-banner">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 col-s-6">
+        <h1>Match with your connection now! </h1>
+        <p>A foot in the door without a connection</p>
+        <%= link_to "GET STARTED", new_user_registration_url, class: "btn btn-primary border-radius font-weight-bold" %>
+      </div>
+    </div>
+  </div>
+</div>
+

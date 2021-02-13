@@ -1,0 +1,294 @@
+// Beginning Hero
+
+.main-banner {
+  background-image: radial-gradient(rgba(163,255,255,0.4),rgba(115,183,255,0.8),rgba(111,126,216,1)), url("coffee-banner.jpg");
+  background-size: cover;
+  background-position: right;
+  padding: 250px;
+  position: relative;
+  left: 0px;
+  top: 0px;
+  z-index: 1;
+}
+
+.main-banner h1 {
+  color: $white;
+  font-weight: $font-weight-bold;
+}
+
+.main-banner p {
+  color: $white;
+}
+
+.main-banner btn {
+  color: $black;
+}
+
+// Our Mission
+.background-1 {
+  background-color: $white;
+  padding: 50px;
+}
+
+.mission-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.banner-titles h2 {
+  font-size: 20px;
+  color: $dark-blue;
+}
+
+.banner-titles h3 {
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+
+.mission-section {
+  background: radial-gradient(56.96% 445.68% at 100% 100%, #7081DA 0%, #73ACF7 100%);
+  box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.25);
+  border-radius: 15px;
+  padding: 20px;
+  margin: 30px;
+}
+
+.mission-section p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// How it Works
+.background-2 {
+  background-color: #F6F5F5;
+}
+
+.works-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 50px;
+}
+
+.section {
+  width: 23%;
+}
+
+.cards {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 40px;
+}
+
+.section .card {
+  background-color: $white;
+  width: auto;
+  height: 200px;
+  margin: 20px;
+  box-shadow: 0px 0px 34.6497px 8.66242px rgba(0, 0, 0, 0.05);
+  border-radius: 8.66242px;
+  border: $white 3px solid;
+  justify-content: center;
+  align-items: center;
+}
+
+.cards p {
+  color: black;
+}
+
+.works-icon {
+  width: 150px;
+}
+
+.section h3 {
+  font-size: 20px;
+  font-weight: $font-weight-bold;
+}
+
+.section .1-bubble {
+  display: flex;
+  position: absolute;
+  top: 50px;
+  left: 100px;
+}
+
+.arrow-1 {
+  display: flex;
+  align-items: center;
+}
+
+.arrow-2 {
+  display: flex;
+  align-items: center;
+}
+
+.section h3 {
+  color: $orange-yellow;
+}
+
+
+// Stories
+
+.stories-banner  {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: -70px;
+}
+
+.stories-card-1 {
+  background: radial-gradient(96.96% 96.96% at 95.24% 3.04%, #707FD9 0%, #73B4FD 100%);
+  box-shadow: 0 6px 50px rgba(0,0,0,0.25);
+  display: flex;
+  align-items: flex-end;
+  font-size: 22px;
+  color: $black;
+  font-weight: bolder;
+  border-radius: 25px;
+  height: 300px;
+  width: 300px;
+}
+
+.stories-card-2 {
+  background: radial-gradient(96.96% 96.96% at 95.24% 3.04%, #FF8F3E 0%, #FFB800 100%);
+  box-shadow: 0 6px 50px rgba(0,0,0,0.25);
+  display: flex;
+  align-items: flex-end;
+  font-size: 22px;
+  color: $black;
+  font-weight: bolder;
+  border-radius: 25px;
+  height: 300px;
+  width: 300px;
+  position: absolute;
+  top: -225px;
+  left: 275px;
+}
+
+.stories-card-footer-1 {
+  background: white;
+  box-shadow: 0px 6px 50px rgba(0, 0, 0, 0.25);
+  border-radius: 25px;
+  padding: 10px;
+  padding-top: 40px;
+  width: 100%;
+  color: $black;
+}
+
+.stories-card-footer-1 p, small {
+  color: black;
+}
+
+.stories-card-footer-2 {
+  background: white;
+  box-shadow: 0px 6px 50px rgba(0, 0, 0, 0.25);
+  border-radius: 25px;
+  padding: 10px;
+  padding-top: 115px;
+  width: 100%;
+  color: $black;
+}
+
+.stories-card-footer-2 p {
+  color: black;
+  position: relative;
+  top: -60px;
+}
+
+.stories-card-footer-2 small {
+  position: absolute;
+  top: 230px;
+  left: 70px;
+}
+
+.avatar-large-1 {
+  width: 100px;
+  border-radius: 50%;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  border: $white 3px solid;
+  position: absolute;
+  top: 70px;
+  left: 115px;
+}
+
+.avatar-large-2 {
+  width: 100px;
+  border-radius: 50%;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  border: $white 3px solid;
+  position: absolute;
+  top: 70px;
+  left: 105px;
+}
+
+.quote-section {
+  position: relative;
+  left: 650px;
+  top: -200px;
+}
+
+.quote-section p {
+  color: black;
+  width: 400px;
+  height: auto;
+}
+
+.quote-section strong {
+  color: $dark-blue;
+  font-size: 20px;
+}
+
+.quote-section .name {
+   color: $dark-blue;
+   font-size: 15px;
+}
+
+// Companies
+.companies-header-banner  {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 50px;
+  padding-bottom: 100px;
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.success-logo {
+  height: 75px;
+  width: auto;
+}
+
+.stories-banner h3 {
+  margin-top: 20px;
+  font-size: 25px;
+}
+
+
+// End Hero
+.end-banner {
+  background-image: radial-gradient(rgba(163,255,255,0.4),rgba(115,183,255,0.8),rgba(111,126,216,1)), url("coffee-banner.jpg");
+  background-size: cover;
+  background-position: right;
+  padding: 200px;
+  position: relative;
+  left: 0px;
+  top: 0px;
+  z-index: 1;
+}
+
+.end-banner h1, p {
+  color: $white;
+}
