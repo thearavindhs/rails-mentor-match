@@ -5,7 +5,7 @@
   </h3>
 </div>
 <div class="container">
-  <% if current_user.user_type == "mentee" %>
+  <% if current_user.user_type == "mentee" && current_user.respond_to?(:mentor) %>
     <div class="container">
       <h4>
         <%= "Congratulations!" %>
@@ -32,7 +32,7 @@
   <% end %>
 </div>
 <div class="container">
-  <% if current_user.user_type == "mentor" %>
+  <% if current_user.user_type == "mentor" && current_user.respond_to?(:mentees)%>
     <div class="container">
       <h4>
         <%= "Congratulations!" %>
