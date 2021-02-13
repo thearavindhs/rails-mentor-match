@@ -13,7 +13,6 @@
 
 
   <body>
-
  <!-- Nav bar -->
   <div class="navbar">
     <a class="navbar-brand" href="/">
@@ -26,7 +25,7 @@
     <div class="signup-btn">
       <% if !user_signed_in? %>
       <%= link_to "LOGIN", new_user_session_url, class: "margin-right-navbar" %>
-      <%= link_to "GET STARTED", new_user_registration_url, class: "btn btn-primary border-radius font-weight-bold" %>
+      <%= link_to "GET STARTED", sign_up_url, class: "btn btn-primary border-radius font-weight-bold" %>
       <% end %>
 
       <% if user_signed_in? %>

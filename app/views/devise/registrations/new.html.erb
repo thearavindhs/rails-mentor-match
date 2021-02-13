@@ -20,30 +20,160 @@
      <%= image_tag "2-step.png" %>
    </div>
 
-
  </div>
 
- <h2>Create an Account</h2>
 
-  <div class="form">
+<h2 class= <%= @user_type %> >Create a <%= @user_type %> Account</h2>
+    
+    
+<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= f.error_notification %>
 
+<!-- Step 2 -->
+<!-- Here, we will have email, password and password confirmation inputs. -->
 
- <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
- <%= f.error_notification %>
+<div class="create-an-account-form form">
 
- <div class="form-inputs">
   <%= f.input :email,
-  required: true,
-  autofocus: true,
-  input_html: { autocomplete: "email" }%>
+              required: true,
+              placeholder: 'user@domain.com',
+              input_html: { autocomplete: "email" } %>
   <%= f.input :password,
-  required: true,
-  hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-  input_html: { autocomplete: "new-password" }, hint_html: {class: "hint"} %>
+              required: true,
+              hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+              input_html: { autocomplete: "new-password" } %>
+
   <%= f.input :password_confirmation,
-  required: true,
-  input_html: { autocomplete: "new-password" } %>
+              required: true,
+              input_html: { autocomplete: "new-password" } %>
+  <button class="continue-btn btn btn-primary">CONTINUE</button>
 </div>
+    
+   <br>
+
+<p> Already have an account? <%= render "devise/shared/links" %> </p>
+
+
+<div class="personal-info-form">
+   <a class="back-arrow" href="/">
+      <%= image_tag "back-arrow.png", class: "small-icon" %>
+    </a>
+
+    <a class="close" href="/">
+      <%= image_tag "close.png", class: "small-icon" %>
+    </a>
+  
+    <!-- Personal Information Form for Mentee -->
+    <%= f.input :first_name,
+                required: true,
+                placeholder: 'John' %>
+
+    <%= f.input :last_name,
+                required: true,
+                placeholder: 'Doe' %>
+
+    <%= f.input :language,
+                required: true,
+                as: :radio_buttons,
+                collection: @languages %>
+
+    <%= f.input :country,
+                required: true,
+                collection: @countries,
+                selected: "United States"%>
+
+    <%= f.input :city,
+                collection: @cities,
+                required: true,
+                selected: "City 1"%>
+
+    <%= f.input :gender,
+                selected: "Non Binary",
+                collection: @genders%>
+
+  <!-- Personal Information Form for Mentors -->
+  <div class="mentor-personal-form">
+    <%= f.input :role,
+                required: true,
+                placeholder: 'Director of AI' %>
+
+    <%= f.input :industry,
+                required: true,
+                placeholder: 'Software Development' %>
+
+    <%= f.input :experience,
+                required: true,
+                hint: "Years of Experience",
+                collection: 0..50,
+                selected: 0 %>
+
+    <%= f.input :maximum_mentee,
+                required: true,
+                label: 'Maximum number of Mentees',
+                hint: "How many mentees would you like to have?",
+                as: :radio_buttons,
+                collection: 1..3 %>
+  </div>
+
+  <button class="continue-btn btn btn-primary">CONTINUE</button>
+</div>
+
+
+<div class="preferences-form">
+   <a class="back-arrow" href="/">
+      <%= image_tag "back-arrow.png", class: "small-icon" %>
+    </a>
+
+    <a class="close" href="/">
+      <%= image_tag "close.png", class: "small-icon" %>
+    </a>
+  
+  <h4>Select your preferences</h4>
+
+  <% if @user_type == "mentor" %>
+    <h5>I want my mentee to be...</h5>
+  <% else %>
+    <h5>I want my mentor to be...</h5>
+  <% end %>
+
+  <%= f.input :city_preference,
+              collection: @cities,
+              required: true,
+              selected: "City 1"%>
+
+  <%= f.input :country_preference,
+              required: true,
+              collection: @countries,
+              selected: "United States"%>
+
+  <%= f.input :language_preference,
+              required: true,
+              as: :radio_buttons,
+              collection: @languages %>
+
+  <!-- This div is for users creating a mentee account. -->
+  <div class="mentee-preferences">
+    <%= f.input :gender_preference,
+                selected: "Non Binary",
+                collection: @genders%>
+
+    <%= f.input :role_preference,
+                required: true,
+                label: "Role preference",
+                placeholder: 'Director of AI' %>
+
+    <%= f.input :industry_preference,
+                required: true,
+                label: "Industry preference",
+                placeholder: 'Software Development' %>
+
+    <%= f.input :experience_preference,
+                required: true,
+                label: "Years of experience preference",
+                hint: "Years of Experience",
+                collection: 0..50,
+                selected: 0 %>
+  </div>
 
 <div class="form-actions btn btn-primary">
   <%= f.button :submit, "SIGN UP"%>
@@ -53,5 +183,9 @@
 
 <p> Already have an account? <%= render "devise/shared/links" %> </p>
 </div>
-</div>
-</div>
+
+
+<br>
+
+<%= javascript_pack_tag 'sign_up' %>
+
