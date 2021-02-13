@@ -14,4 +14,10 @@ class PagesController < ApplicationController
   def user_type
   end
 
+  def match_me
+    user = current_user
+    redirect_to success_url(matching: true)
+    user.matchMe if user.valid?
+  end
+
 end

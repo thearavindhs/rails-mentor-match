@@ -7,7 +7,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # GET /resource/sign_up
   def new
     @user_type = params[:user_type]
-    @number = 100
     @countries = ["Canada", "United States", "Mexico"]
     @cities = ["City 1", "City 2", "City 3", "City 4", "City 5"]
     @genders = ["Male", "Female", "Non Binary"]
@@ -18,6 +17,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def create
     @user = User.new(user_params)
+    if !@user.industry.empty? && !@user.experience.zero?
+      @user.user_type = "mentor"
+    else
+      @user.user_type = "mentee"
+    end
+
     if @user.save
       redirect_to profile_url
     else
@@ -30,7 +35,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def user_params
     params.require(:user).permit(:first_name, :last_name, :language, :country,
                                  :city, :gender, :role, :industry, :experience,
-                                 :maximum_mentee, :email, :password, :password_confirmation)
+                                 :maximum_mentee, :email, :password, :password_confirmation,
+                                 :city_preference, :country_preference, :gender_preference,
+                                 :language_preference, :role_preference, :experience_preference,
+                                 :industry_preference)
   end
 
   # GET /resource/edit

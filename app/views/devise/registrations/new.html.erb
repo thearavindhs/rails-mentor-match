@@ -76,13 +76,65 @@
                 as: :radio_buttons,
                 collection: 1..3 %>
   </div>
-    <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
-    <%= render "devise/shared/links" %>
-  </div>
+
+  <button class="continue-btn">Continue</button>
 </div>
 
 
+<div class="preferences-form">
+  <button class="back-btn">Back</button>
+  <h4>Select your preferences</h4>
+
+  <% if @user_type == "mentor" %>
+    <h5>I want my mentee to be...</h5>
+  <% else %>
+    <h5>I want my mentor to be...</h5>
+  <% end %>
+
+  <%= f.input :city_preference,
+              collection: @cities,
+              required: true,
+              selected: "City 1"%>
+
+  <%= f.input :country_preference,
+              required: true,
+              collection: @countries,
+              selected: "United States"%>
+
+  <%= f.input :language_preference,
+              required: true,
+              as: :radio_buttons,
+              collection: @languages %>
+
+  <!-- This div is for users creating a mentee account. -->
+  <div class="mentee-preferences">
+    <%= f.input :gender_preference,
+                selected: "Non Binary",
+                collection: @genders%>
+
+    <%= f.input :role_preference,
+                required: true,
+                label: "Role preference",
+                placeholder: 'Director of AI' %>
+
+    <%= f.input :industry_preference,
+                required: true,
+                label: "Industry preference",
+                placeholder: 'Software Development' %>
+
+    <%= f.input :experience_preference,
+                required: true,
+                label: "Years of experience preference",
+                hint: "Years of Experience",
+                collection: 0..50,
+                selected: 0 %>
+  </div>
+
+</div>
+  <div class="form-actions">
+  <%= f.button :submit, "Sign up" %>
+  <%= render "devise/shared/links" %>
+</div>
 
 
 <% end %>
