@@ -1,16 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title></title>
-</head>
-<body>
-
-
  <!-- Hero Banner -->
  <div class="main-banner">
   <div class="container">
     <div class="row">
-      <div class="col-4">
+      <div class="col-6 col-s-4">
         <h1>A Foot in the Door Without a Connection</h1>
         <p>Get the insider knowledge from a mentor to help you land your dream job.</p>
         <%= link_to "GET STARTED", new_user_registration_url, class: "btn btn-primary border-radius font-weight-bold" %>
@@ -21,16 +13,18 @@
 
 <!-- Our Mission Section -->
 <br>
+<div class="mission-banner background-1">
 <div class="container">
   <div class="row justify-content-center">
-    <div class="mission-banner">
-      <div class="col-8">
+      <div class="col-12 col-s-6">
         <div class="banner-titles">
-        <h2>OUR MISSION</h2>
-          </div>
+          <h2>OUR MISSION</h2>
         <h3>What we're all about</h3>
-        <div class="mission-section">
-          <p>MentorMatch aims to give everyone an equal opportunity to pursue a career they love early on by connecting students with mentors that can help them get there</p>
+          </div>
+        <div class= "row justify-content-center">
+          <div class="col-8 col-s-4 mission-section">
+            <p>MentorMatch aims to give everyone an equal opportunity to pursue a career they love early on by connecting students with mentors that can help them get there</p>
+          </div>
         </div>
       </div>
     </div>
@@ -39,43 +33,134 @@
 
 <!-- How It Works Section -->
 <br>
-<div class="container background-2">
-  <div class="row justify-content-center">
-    <div class="works-banner">
-      <div class="col-8">
+<div class="works-banner background-2">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 col-s-6">
         <div class="banner-titles">
           <h2>HOW IT WORKS</h2>
-        <h3>Connect with a mentor in three easy steps</h3>
+          <h3>Connect with a mentor in three easy steps</h3>
+          <div class="row">
+            <div class="cards">
 
-  <div class="row">
-    <div class="cards">
-      <div class="card img1 col-md-4 m-2">
-        <h3>SIGN UP & SELECT YOUR PREFERENCES</h3>
-        <p>Create your free profile today and tell us a little bit about waht you are looking for in your mentor</p>
-      </div>
-      <div class="card img2 col-md-4 m-2">
-        <h3>WAIT FOR OUR MATCH</h3>
-        <p>We'll find you a mentor based on your preferences and pass along their contact details</p>
-      </div>
-      <div class="card img3 col-md-4 m-2">
-        <h3>MEET UP & EXCHANGE</h3>
-        <p>Arrange a time and place to learn more about your mentor and get all their valuable career insights!</p>
-      </div>
-    </div>
-  </div>
+              <div class="section">
+                <div class="card">
+                 <%= image_tag "sign-up.png", class: "works-icon" %>
+               </div>
+               <h3>CREATE A PROFILE</h3>
+               <p>Sign up and tell us a little bit about what you are looking for in your mentor</p>
+             </div>
+
+             <div class="section">
+              <div class="card">
+               <%= image_tag "sign-up.png", class: "works-icon" %>
+             </div>
+             <h3>WAIT FOR OUR MATCH</h3>
+             <p>We'll find you a mentor based on your preferences and pass along their contact details</p>
+           </div>
+
+           <div class="section">
+            <div class="card">
+             <%= image_tag "chat.png", class: "works-icon" %>
+           </div>
+           <h3>MEET UP & EXCHANGE</h3>
+           <p>Arrange a time and place meet your mentor and gain all their valuable career insights!</p>
+         </div>
+       </div>
+
+     </div>
+   </div>
+ </div>
+</div>
+</div>
 </div>
 
+<!-- Stories -->
+<br>
+
+<div class="background-1">
+<div class="stories-banner">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 col-s-6">
+        <div class="banner-titles">
+          <h2>MENTORMATCH STORIES</h2>
+        <h3>Learn how MentorMatch has redefined networking</h3>
+         </div>
+      </div>
+
+      <div class="row">
+        <div class="stories-banner">
+          <div class="col-12 col-s-6">
+            <div class="stories-card-1">
+              <%= image_tag "mentor-michael.jpg", class: "avatar-large-1" %>
+              <div class="stories-card-footer">
+                <p>Michael Ng</p>
+                <small>Director of AI Solutions of Microsoft</small>
+              </div>
+            </div>
+
+            <div class="stories-card-2">
+          <!--     <%= image_tag "mentee-sasha.jpg", class: "avatar-large-2" %> -->
+              <div class="stories-card-footer">
+                <p>Sasha Go</p>
+                <small>Student at University of Canada</small>
+              </div>
+            </div>
+
+          </div>
         </div>
       </div>
     </div>
   </div>
 </div>
-
 </div>
 
-<!-- Stories -->
+
+<!-- Companies -->
+<br>
+<div class="companies-header-banner background-2">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 col-s-6">
+        <div class="banner-titles">
+          <h2>COMPANIES</h2>
+        <h3>Our mentors come from companies like...</h3>
+      </div>
+    </div>
+    </div>
+
+    <br>
+
+  <div class="row justify-content-center">
+    <div class="icons">
+      <%= image_tag "google.png", class: "success-logo" %>
+      <%= image_tag "reddit.png", class: "success-logo" %>
+      <%= image_tag "nasa.png", class: "success-logo" %>
+      <%= image_tag "amazon.png", class: "success-logo" %>
+      <%= image_tag "disney.png", class: "success-logo" %>
+    </div>
+  </div>
+
+  <div class="row justify-content-center">
+    <div class="stories-banner">
+        <h3>...and so many more!</h3>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
 
 <!-- Match Now -->
+<div class="end-banner">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 col-s-6">
+        <h1>Match with your connection now! </h1>
+        <p>A foot in the door without a connection</p>
+        <%= link_to "GET STARTED", new_user_registration_url, class: "btn btn-primary border-radius font-weight-bold" %>
+      </div>
+    </div>
+  </div>
+</div>
 
-</body>
-</html>

@@ -1,4 +1,4 @@
-// Hero
+// Beginning Hero
 
 .main-banner {
   background-image: radial-gradient(rgba(163,255,255,0.4),rgba(115,183,255,0.8),rgba(111,126,216,1)), url("coffee-banner.jpg");
@@ -11,7 +11,12 @@
   z-index: 1;
 }
 
-.main-banner h1, p {
+.main-banner h1 {
+  color: $white;
+  font-weight: $font-weight-bold;
+}
+
+.main-banner p {
   color: $white;
 }
 
@@ -20,12 +25,16 @@
 }
 
 // Our Mission
+.background-1 {
+  background-color: $white;
+  padding: 50px;
+}
+
 .mission-banner {
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-
 }
 
 .banner-titles h2 {
@@ -34,7 +43,8 @@
 }
 
 .banner-titles h3 {
-  font-size: 28px;
+  font-size: 25px;
+  margin-bottom: 20px;
 }
 
 .mission-section {
@@ -54,7 +64,7 @@
 // How it Works
 .background-2 {
   background-color: #F6F5F5;
-  padding: 250px;
+  padding: 50px;
 }
 
 .works-banner {
@@ -64,20 +74,151 @@
   text-align: center;
 }
 
+.section {
+  width: 23%;
+}
+
 .cards {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   margin-bottom: 40px;
 }
 
-.img 1 {
-
+.section .card {
+  background-color: $white;
+  width: auto;
+  height: 200px;
+  margin: 20px;
+  box-shadow: 0px 0px 34.6497px 8.66242px rgba(0, 0, 0, 0.05);
+  border-radius: 8.66242px;
+  border: $white 3px solid;
+  justify-content: center;
+  align-items: center;
 }
 
-.img 2 {
-
+.cards p {
+  color: black;
 }
 
-.img 3 {
+.works-icon {
+  width: 150px;
+}
 
+.section h3 {
+  font-size: 20px;
+  font-weight: $font-weight-bold;
+}
+
+// Stories
+.stories-banner  {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.stories-card-1 {
+  background: radial-gradient(96.96% 96.96% at 95.24% 3.04%, #707FD9 0%, #73B4FD 100%);
+  box-shadow: 0 6px 50px rgba(0,0,0,0.25);
+  display: flex;
+  align-items: flex-end;
+  font-size: 22px;
+  color: $black;
+  font-weight: bolder;
+  border-radius: 25px;
+  height: 300px;
+  width: 300px;
+  // position: absolute;
+  // left: 107px;
+  // top: 2556px;
+}
+
+.stories-card-2 {
+  background: radial-gradient(96.96% 96.96% at 95.24% 3.04%, #FF8F3E 0%, #FFB800 100%);
+  box-shadow: 0 6px 50px rgba(0,0,0,0.25);
+  display: flex;
+  align-items: flex-end;
+  font-size: 22px;
+  color: $black;
+  font-weight: bolder;
+  border-radius: 25px;
+  height: 300px;
+  width: 300px;
+}
+
+.stories-card-footer {
+  background: white;
+  box-shadow: 0px 6px 50px rgba(0, 0, 0, 0.25);
+  border-radius: 25px;
+  padding: 10px;
+  padding-top: 40px;
+  width: 100%;
+  color: $black;
+}
+
+.stories-card-footer p, small {
+  color: black;
+  }
+
+.avatar-large-1 {
+  width: 100px;
+  border-radius: 50%;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  border: $white 3px solid;
+  position: absolute;
+  top: 70px;
+  left: 115px;
+}
+
+.avatar-large-2 {
+  width: 100px;
+  border-radius: 50%;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  border: $white 3px solid;
+  position: absolute;
+  top: 70px;
+  left: 115px;
+}
+
+// Companies
+.companies-header-banner  {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.success-logo {
+  height: 75px;
+  width: auto;
+}
+
+.stories-banner h3 {
+  margin-top: 20px;
+  font-size: 25px;
+}
+
+
+// End Hero
+.end-banner {
+  background-image: radial-gradient(rgba(163,255,255,0.4),rgba(115,183,255,0.8),rgba(111,126,216,1)), url("coffee-banner.jpg");
+  background-size: cover;
+  background-position: right;
+  padding: 200px;
+  position: relative;
+  left: 0px;
+  top: 0px;
+  z-index: 1;
+}
+
+.end-banner h1, p {
+  color: $white;
 }
