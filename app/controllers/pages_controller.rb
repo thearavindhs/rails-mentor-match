@@ -9,15 +9,21 @@ class PagesController < ApplicationController
   end
 
   def success
+    if params[:matching].nil?
+      @matching = false
+    else
+      @matching = true
+    end
   end
 
   def user_type
   end
 
   def match_me
-    user = current_user
-    redirect_to success_url(matching: true)
-    user.matchMe if user.valid?
+    # user = current_user
+    # user.match_me if user.valid?
+    # puts "match me now"
+    # redirect_to success_url(matching: true)
   end
 
 end

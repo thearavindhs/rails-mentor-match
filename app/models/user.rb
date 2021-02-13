@@ -6,7 +6,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :connections
 
-  def matchMe
+  def match_me
     MatchAlgorithmJob.perform_later(self)
   end
 

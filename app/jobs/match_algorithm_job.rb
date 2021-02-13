@@ -31,7 +31,7 @@ class MatchAlgorithmJob < ApplicationJob
 
       result = (similarity_value * 100) / perfectValue
 
-      if result > 70
+      if result > 10
         puts "we have a winner"
         raise
       end
