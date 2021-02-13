@@ -10,4 +10,8 @@ class User < ApplicationRecord
   has_many :personal_skills
   has_many :skills, through: :personal_skills
   has_one_attached :photo
+  validates :first_name, presence: true
+  validates :last_name, presence: true
+  validates :city, presence: true
+  validates :country, presence: true
 end
