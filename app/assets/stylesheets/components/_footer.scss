@@ -1,4 +1,21 @@
 .footer {
   background-color: #1A1A1A;
-  // box-shadow: inset 0px 10px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: inset 0px 10px 4px rgba(0, 0, 0, 0.25);
+  padding: 50px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.site {
+  padding-left: 150px;
+}
+
+.site ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer h3 {
+  color: white;
 }

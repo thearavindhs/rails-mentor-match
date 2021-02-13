@@ -44,6 +44,7 @@
             <div class="cards">
 
               <div class="section">
+                  <%= image_tag "1-bubble.png", class: "1-bubble" %>
                 <div class="card">
                  <%= image_tag "sign-up.png", class: "works-icon" %>
                </div>
@@ -51,15 +52,27 @@
                <p>Sign up and tell us a little bit about what you are looking for in your mentor</p>
              </div>
 
+
+             <div class="section arrow-1">
+             <%= image_tag "arrow-1.png" %>
+           </div>
+
              <div class="section">
+              <%= image_tag "2-bubble.png", class: "2-bubble" %>
               <div class="card">
-               <%= image_tag "sign-up.png", class: "works-icon" %>
+               <%= image_tag "match.png", class: "works-icon" %>
              </div>
              <h3>WAIT FOR OUR MATCH</h3>
              <p>We'll find you a mentor based on your preferences and pass along their contact details</p>
            </div>
 
+           <div class="section arrow-2">
+           <%= image_tag "arrow-2.png" %>
+         </div>
+
+
            <div class="section">
+            <%= image_tag "3-bubble.png", class: "3-bubble" %>
             <div class="card">
              <%= image_tag "chat.png", class: "works-icon" %>
            </div>
@@ -79,40 +92,52 @@
 <br>
 
 <div class="background-1">
-<div class="stories-banner">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-12 col-s-6">
-        <div class="banner-titles">
-          <h2>MENTORMATCH STORIES</h2>
-        <h3>Learn how MentorMatch has redefined networking</h3>
-         </div>
+  <div class="stories-banner">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-12 col-s-6">
+          <div class="banner-titles">
+            <h2>MENTORMATCH STORIES</h2>
+            <h3>Learn how MentorMatch has redefined networking</h3>
+          </div>
+        </div>
       </div>
 
       <div class="row">
-        <div class="stories-banner">
+        <div class="cards-quotes">
+
           <div class="col-12 col-s-6">
             <div class="stories-card-1">
               <%= image_tag "mentor-michael.jpg", class: "avatar-large-1" %>
-              <div class="stories-card-footer">
+              <div class="stories-card-footer-1">
                 <p>Michael Ng</p>
                 <small>Director of AI Solutions of Microsoft</small>
               </div>
             </div>
-
-            <div class="stories-card-2">
-          <!--     <%= image_tag "mentee-sasha.jpg", class: "avatar-large-2" %> -->
-              <div class="stories-card-footer">
-                <p>Sasha Go</p>
-                <small>Student at University of Canada</small>
-              </div>
             </div>
 
+            <div class="col-12 col-s-6">
+            <div class="stories-card-2">
+             <%= image_tag "mentee-sasha.jpg", class: "avatar-large-2" %>
+             <div class="stories-card-footer-2">
+              <p>Sasha Go</p>
+              <small>Student at UPenn</small>
+            </div>
           </div>
         </div>
-      </div>
+
+    <div class="col-12 col-s-6">
+      <div class="quote-section">
+      <p><strong>"</strong> MentorMatch helped me connect with Michael, who gave me so many valuable insights on where I needed to skill up and what to put on my resume to enter the field of AI as a developer. After meeting with him, I started landing interviews, including at Google! <strong>"</strong> </p>
+      <p> - Sasha Go </p>
+      <%= link_to "SEE MORE STORIES", new_user_registration_url, class: "btn btn-primary border-radius font-weight-bold" %>
+      <!-- Link will have to be replaced -->
+    </div>
+
+</div>
     </div>
   </div>
+</div>
 </div>
 </div>
 
@@ -149,7 +174,7 @@
     </div>
   </div>
   </div>
-</div>
+
 
 <!-- Match Now -->
 <div class="end-banner">

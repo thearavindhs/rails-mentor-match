@@ -64,7 +64,6 @@
 // How it Works
 .background-2 {
   background-color: #F6F5F5;
-  padding: 50px;
 }
 
 .works-banner {
@@ -72,6 +71,7 @@
   align-items: center;
   justify-content: center;
   text-align: center;
+  padding: 50px;
 }
 
 .section {
@@ -109,13 +109,37 @@
   font-weight: $font-weight-bold;
 }
 
+.section .1-bubble {
+  display: flex;
+  position: absolute;
+  top: 50px;
+  left: 100px;
+}
+
+.arrow-1 {
+  display: flex;
+  align-items: center;
+}
+
+.arrow-2 {
+  display: flex;
+  align-items: center;
+}
+
+.section h3 {
+  color: $orange-yellow;
+}
+
+
 // Stories
+
 .stories-banner  {
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   margin-top: 10px;
+  margin-bottom: -70px;
 }
 
 .stories-card-1 {
@@ -129,9 +153,6 @@
   border-radius: 25px;
   height: 300px;
   width: 300px;
-  // position: absolute;
-  // left: 107px;
-  // top: 2556px;
 }
 
 .stories-card-2 {
@@ -145,9 +166,12 @@
   border-radius: 25px;
   height: 300px;
   width: 300px;
+  position: absolute;
+  top: -225px;
+  left: 275px;
 }
 
-.stories-card-footer {
+.stories-card-footer-1 {
   background: white;
   box-shadow: 0px 6px 50px rgba(0, 0, 0, 0.25);
   border-radius: 25px;
@@ -157,9 +181,31 @@
   color: $black;
 }
 
-.stories-card-footer p, small {
+.stories-card-footer-1 p, small {
   color: black;
-  }
+}
+
+.stories-card-footer-2 {
+  background: white;
+  box-shadow: 0px 6px 50px rgba(0, 0, 0, 0.25);
+  border-radius: 25px;
+  padding: 10px;
+  padding-top: 115px;
+  width: 100%;
+  color: $black;
+}
+
+.stories-card-footer-2 p {
+  color: black;
+  position: relative;
+  top: -60px;
+}
+
+.stories-card-footer-2 small {
+  position: absolute;
+  top: 230px;
+  left: 70px;
+}
 
 .avatar-large-1 {
   width: 100px;
@@ -178,7 +224,29 @@
   border: $white 3px solid;
   position: absolute;
   top: 70px;
-  left: 115px;
+  left: 105px;
+}
+
+.quote-section {
+  position: relative;
+  left: 650px;
+  top: -200px;
+}
+
+.quote-section p {
+  color: black;
+  width: 400px;
+  height: auto;
+}
+
+.quote-section strong {
+  color: $dark-blue;
+  font-size: 20px;
+}
+
+.quote-section .name {
+   color: $dark-blue;
+   font-size: 15px;
 }
 
 // Companies
@@ -187,6 +255,8 @@
   align-items: center;
   justify-content: center;
   text-align: center;
+  padding: 50px;
+  padding-bottom: 100px;
 }
 
 .icons {
