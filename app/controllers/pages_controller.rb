@@ -25,5 +25,4 @@ class PagesController < ApplicationController
     # puts "match me now"
     # redirect_to success_url(matching: true)
   end
-
 end
