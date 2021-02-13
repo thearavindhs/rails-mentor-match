@@ -1,12 +1,39 @@
-<h2 class= <%= @user_type %> >Sign up as a <%= @user_type %></h2>
+ <div class="main-banner">
 
+  <div class="createaccount-section">
+
+    <div class="top-sign">
+
+     <a class="back-arrow" href="/">
+      <%= image_tag "back-arrow.png", class: "small-icon" %>
+    </a>
+
+    <a class="close" href="/">
+      <%= image_tag "close.png", class: "small-icon" %>
+    </a>
+
+    <div class="steps-logo">
+     <%= image_tag "logo-text-white.png", class: "logo" %>
+   </div>
+
+   <div class="steps-bar">
+     <%= image_tag "2-step.png" %>
+   </div>
+
+ </div>
+
+
+<h2 class= <%= @user_type %> >Create a <%= @user_type %> Account</h2>
+    
+    
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
 
 <!-- Step 2 -->
 <!-- Here, we will have email, password and password confirmation inputs. -->
 
-<div class="create-an-account-form">
+<div class="create-an-account-form form">
+
   <%= f.input :email,
               required: true,
               placeholder: 'user@domain.com',
@@ -19,12 +46,23 @@
   <%= f.input :password_confirmation,
               required: true,
               input_html: { autocomplete: "new-password" } %>
-  <button class="continue-btn">Continue</button>
+  <button class="continue-btn btn btn-primary">CONTINUE</button>
 </div>
+    
+   <br>
+
+<p> Already have an account? <%= render "devise/shared/links" %> </p>
 
 
 <div class="personal-info-form">
-  <button class="back-btn">Back</button>
+   <a class="back-arrow" href="/">
+      <%= image_tag "back-arrow.png", class: "small-icon" %>
+    </a>
+
+    <a class="close" href="/">
+      <%= image_tag "close.png", class: "small-icon" %>
+    </a>
+  
     <!-- Personal Information Form for Mentee -->
     <%= f.input :first_name,
                 required: true,
@@ -77,12 +115,19 @@
                 collection: 1..3 %>
   </div>
 
-  <button class="continue-btn">Continue</button>
+  <button class="continue-btn btn btn-primary">CONTINUE</button>
 </div>
 
 
 <div class="preferences-form">
-  <button class="back-btn">Back</button>
+   <a class="back-arrow" href="/">
+      <%= image_tag "back-arrow.png", class: "small-icon" %>
+    </a>
+
+    <a class="close" href="/">
+      <%= image_tag "close.png", class: "small-icon" %>
+    </a>
+  
   <h4>Select your preferences</h4>
 
   <% if @user_type == "mentor" %>
@@ -130,14 +175,17 @@
                 selected: 0 %>
   </div>
 
+<div class="form-actions btn btn-primary">
+  <%= f.button :submit, "SIGN UP"%>
 </div>
-  <div class="form-actions">
-  <%= f.button :submit, "Sign up" %>
-  <%= render "devise/shared/links" %>
-</div>
-
-
 <% end %>
+<br>
 
+<p> Already have an account? <%= render "devise/shared/links" %> </p>
+</div>
+
+
+<br>
 
 <%= javascript_pack_tag 'sign_up' %>
+
