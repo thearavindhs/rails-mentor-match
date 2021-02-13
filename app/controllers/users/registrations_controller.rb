@@ -24,7 +24,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     end
 
     if @user.save
-      redirect_to profile_url
+      redirect_to success_url
     else
       render :new
     end

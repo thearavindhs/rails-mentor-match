@@ -20,9 +20,13 @@ class PagesController < ApplicationController
   end
 
   def match_me
-    # user = current_user
-    # user.match_me if user.valid?
-    # puts "match me now"
-    # redirect_to success_url(matching: true)
+    user = current_user
+    if user.valid? && user.user_type == "mentee" && (user.mentor.nil? || user.mentor.count.zero?)
+      user.matchMe
+      redirect_to success_url(matching: true)
+    else
+      raise
+      redirect_to root_url
+    end
   end
 end

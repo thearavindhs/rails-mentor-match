@@ -5,7 +5,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   def matchMe
-    MatchAlgorithmJob.perform_later(self)
+    MatchAlgorithmJob.perform_now(self)
   end
 
   has_many :connection_mentees, class_name: "Connection", foreign_key: "mentor_id"
