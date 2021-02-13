@@ -1,7 +1,6 @@
 class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :home, :user_type ]
 
-
   def home
   end
 
@@ -10,6 +9,11 @@ class PagesController < ApplicationController
   end
 
   def success
+    if params[:matching].nil?
+      @matching = false
+    else
+      @matching = true
+    end
   end
 
   def user_type
@@ -17,8 +21,12 @@ class PagesController < ApplicationController
 
   def match_me
     user = current_user
-    redirect_to success_url(matching: true)
-    user.matchMe if user.valid?
+    if user.valid? && user.user_type == "mentee" && (user.mentor.nil? || user.mentor.count.zero?)
+      user.matchMe
+      redirect_to success_url(matching: true)
+    else
+      raise
+      redirect_to root_url
+    end
   end
-
 end
