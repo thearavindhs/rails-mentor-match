@@ -1,3 +1,4 @@
+<div class="title">
 
 <div class="container">
   <h3>
@@ -5,6 +6,7 @@
     <%= current_user.first_name %>
   </h3>
 </div>
+
 <div class="container">
   <% if current_user.user_type == "mentee" && current_user.respond_to?(:mentor) %>
     <div class="container">
@@ -58,4 +60,5 @@
       </h4>
     </div>
   <% end %>
+</div>
 </div>
