@@ -4,10 +4,10 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-
-  def match_me
+  def matchMe
     MatchAlgorithmJob.perform_later(self)
   end
+
   has_many :connection_mentees, class_name: "Connection", foreign_key: "mentor_id"
   has_many :mentees, through: :connection_mentees
   has_one :connection_mentor, class_name: "Connection", foreign_key: "mentee_id"
@@ -15,4 +15,8 @@ class User < ApplicationRecord
   has_many :personal_skills
   has_many :skills, through: :personal_skills
   has_one_attached :photo
+  validates :first_name, presence: true
+  validates :last_name, presence: true
+  validates :city, presence: true
+  validates :country, presence: true
 end
