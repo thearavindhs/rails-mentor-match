@@ -1,3 +1,5 @@
+@import "select2";
+
 // Graphical variables
 @import "config/fonts";
 @import "config/colors";
@@ -11,3 +13,7 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+@import "components/banner";
+@import "components/navbar";
+@import "components/footer";
+

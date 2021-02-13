@@ -1,0 +1,15 @@
+<h1>Mentor or Mentee Page</h1>
+
+
+
+<div class="mentor_or_mentee_form">
+  <div class="mentorCard">
+    <h3>Mentor</h3>
+    <%= link_to 'Continue as a mentor', new_user_registration_url(user_type: "mentor")%>
+  </div>
+  <br>
+  <div class="menteeCard">
+    <h3>Mentee</h3>
+    <%= link_to 'Continue as a mentee', new_user_registration_url(user_type: "mentee")%>
+  </div>
+</div>
