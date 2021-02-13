@@ -1,25 +1,57 @@
-<h2>Sign up</h2>
+ <div class="main-banner">
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
+  <div class="createaccount-section">
 
-  <div class="form-inputs">
-    <%= f.input :email,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "email" }%>
-    <%= f.input :password,
-                required: true,
-                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
-                required: true,
-                input_html: { autocomplete: "new-password" } %>
-  </div>
+    <div class="top-sign">
 
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
-  </div>
+     <a class="back-arrow" href="/">
+      <%= image_tag "back-arrow.png", class: "small-icon" %>
+    </a>
+
+    <a class="close" href="/">
+      <%= image_tag "close.png", class: "small-icon" %>
+    </a>
+
+    <div class="steps-logo">
+     <%= image_tag "logo-text-white.png", class: "logo" %>
+   </div>
+
+   <div class="steps-bar">
+     <%= image_tag "2-step.png" %>
+   </div>
+
+
+ </div>
+
+ <h2>Create an Account</h2>
+
+  <div class="form">
+
+
+ <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+ <%= f.error_notification %>
+
+ <div class="form-inputs">
+  <%= f.input :email,
+  required: true,
+  autofocus: true,
+  input_html: { autocomplete: "email" }%>
+  <%= f.input :password,
+  required: true,
+  hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+  input_html: { autocomplete: "new-password" }, hint_html: {class: "hint"} %>
+  <%= f.input :password_confirmation,
+  required: true,
+  input_html: { autocomplete: "new-password" } %>
+</div>
+
+<div class="form-actions btn btn-primary">
+  <%= f.button :submit, "SIGN UP"%>
+</div>
 <% end %>
+<br>
 
-<%= render "devise/shared/links" %>
+<p> Already have an account? <%= render "devise/shared/links" %> </p>
+</div>
+</div>
+</div>
