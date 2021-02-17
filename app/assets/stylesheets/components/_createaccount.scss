@@ -1,3 +1,12 @@
+.signup-banner {
+  background-image: radial-gradient(rgba(163,255,255,0.4),rgba(115,183,255,0.8),rgba(111,126,216,1)), url("coffee-banner.jpg");
+  background-size: cover;
+  background-position: right;
+  padding: 80px;
+  padding-bottom: 200px;
+}
+
+
 .steps-logo {
   display: flex;
   justify-content: center;
@@ -21,12 +30,6 @@
   justify-content: center;
 }
 
-.form-actions {
-  display: flex;
-  justify-content: center;
-  align-content: center;
-}
-
 .login-text {
   display: flex;
   justify-content: center;
@@ -47,6 +50,15 @@
   justify-content: center;
 }
 
+.align-btn {
+  display: flex;
+  justify-content: center;
+}
+
+.align-form {
+  display: flex;
+  justify-content: center;
+}
 
 
 // .form {
