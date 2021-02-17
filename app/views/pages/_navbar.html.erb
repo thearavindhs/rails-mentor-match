@@ -1,0 +1,18 @@
+  
+<div class="navbar">
+  <a class="navbar-brand" href="/">
+    <%= image_tag "logo-text-black.png", class: "logo" %>
+  </a>
+  <a href="#how-it-works">How It Works</a>
+  <a href="#stories">Our Stories</a>
+  <a href="#companies">Companies</a>
+  <div class="signup-btn">
+    <% if !user_signed_in? %>
+      <%= link_to "LOGIN", new_user_session_url, class: "margin-right-navbar" %>
+      <%= link_to "GET STARTED", sign_up_url, class: "btn btn-primary border-radius font-weight-bold" %>
+    <% end %>
+    <% if user_signed_in? %>
+      <%= link_to "LOGOUT", destroy_user_session_url, method: :delete, class: "margin-right-navbar"  %>
+    <% end %>
+  </div>
+</div>
