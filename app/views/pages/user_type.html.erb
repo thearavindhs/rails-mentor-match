@@ -1,26 +1,53 @@
 <div class="main-content main-banner">
+  <h3 class="fc-white my-3">STEP 1 OF 3</h3>
   <h2 class="fc-white">I want to be a...</h2>
 
   <div class="mentor_or_mentee_form">
 
-    <div class="cardM">
+    <div class="cardMentee">
       <div class="background-card blue-card">
-        <%= link_to 'MENTEE', new_user_registration_url(user_type: "mentee"), class: 'select-btn'%>
-        <div class="white-box">
-          <%= image_tag "mentor-image.png", class: 'card-image'%>
-          <%= image_tag "question-mark-icon.png"%>
+        <h3 class="select-btn">MENTEE</h3>
+        <!-- I should ask Kailene which version she likes the most. :)  -->
+        <%= link_to new_user_registration_url(user_type: "mentee") do %>
+        <div class="white-box white-box-mentee">
+          <div class="text-info-mentee text-info">
+            <ul>
+              <li>I am willing and able to provide guidance and advice on most subjects related to my field of work.</li>
+              <li>I am currently a working professional with at least two years of experience in my industry.</li>
+            </ul>
+          </div>
+          <div class="images-mentee">
+            <%= image_tag "mentee-image.png", class: 'card-image'%>
+            <%= image_tag "question-mark-icon.png", class: "user-icon"%>
+          </div>
         </div>
+        <% end %>
+
       </div>
     </div>
 
-    <div class="cardM">
+    <div class="cardMentor">
       <div class="background-card orange-card">
         <%= link_to 'MENTOR', new_user_registration_url(user_type: "mentor"), class: 'select-btn'%>
-        <div class="white-box">
-          <%= image_tag "mentee-image.png", class: 'card-image'%>
-          <%= image_tag "question-mark-icon.png"%>
+        <%= link_to new_user_registration_url(user_type: "mentee") do %>
+        <div class="white-box white-box-mentor">
+          <div class="text-info-mentor text-info">
+            <ul>
+              <li>I am willing and able to provide guidance and advice on most subjects related to my field of work.</li>
+              <li>I am currently a working professional with at least two years of experience in my industry.</li>
+            </ul>
+          </div>
+          <div class="images-mentor">
+            <%= image_tag "mentor-image.png", class: 'card-image'%>
+            <%= image_tag "question-mark-icon.png", class: "user-icon"%>
+          </div>
         </div>
+        <% end %>
+
+
       </div>
     </div>
   </div>
 </div>
+
+<%= javascript_pack_tag 'user_selection' %>

@@ -24,8 +24,8 @@
 
 
 <h2 class= <%= @user_type %> >Create a <%= @user_type %> Account</h2>
-    
-    
+
+
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
 
@@ -48,7 +48,7 @@
               input_html: { autocomplete: "new-password" } %>
   <button class="continue-btn btn btn-primary">CONTINUE</button>
 </div>
-    
+
    <br>
 
 <p> Already have an account? <%= render "devise/shared/links" %> </p>
@@ -62,7 +62,7 @@
     <a class="close" href="/">
       <%= image_tag "close.png", class: "small-icon" %>
     </a>
-  
+
     <!-- Personal Information Form for Mentee -->
     <%= f.input :first_name,
                 required: true,
@@ -127,7 +127,7 @@
     <a class="close" href="/">
       <%= image_tag "close.png", class: "small-icon" %>
     </a>
-  
+
   <h4>Select your preferences</h4>
 
   <% if @user_type == "mentor" %>
