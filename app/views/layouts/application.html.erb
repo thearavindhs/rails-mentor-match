@@ -4,84 +4,18 @@
     <title>MentorMatch</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
   </head>
-
-
   <body>
- <!-- Nav bar -->
-  <div class="navbar">
-    <a class="navbar-brand" href="/">
-      <%= image_tag "logo-text-black.png", class: "logo" %>
-    </a>
-    <a href="#how-it-works">How It Works</a>
-    <a href="#stories">Our Stories</a>
-    <a href="#companies">Companies</a>
-
-    <div class="signup-btn">
-      <% if !user_signed_in? %>
-      <%= link_to "LOGIN", new_user_session_url, class: "margin-right-navbar" %>
-      <%= link_to "GET STARTED", sign_up_url, class: "btn btn-primary border-radius font-weight-bold" %>
-      <% end %>
-
-      <% if user_signed_in? %>
-      <%= link_to "LOGOUT", destroy_user_session_url, method: :delete, class: "margin-right-navbar"  %>
-      <% end %>
-    </div>
-  </div>
-  <%= yield %>
-
-
-          <!-- code a footer -->
-      <div class="footer">
-        <div class="row">
-        <div class="col-4 about-us">
-          <h3>ABOUT US</h3>
-          <p>MentorMatch aims to give everyone an <strong>equal opportunity to pursue a career they love early on</strong>by connecting students with mentors that can help them get there</p>
-        </div>
-
-        <div class="col-4 site">
-          <h3>SITE</h3>
-           <div class="links">
-            <ul>
-          <li><a href="#">Team</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Support</a></li>
-          <li><a href="#">Private Policy</a></li>
-           <a href="#">Careers</a>
-         </ul>
-           </div>
-        </div>
-
-        <div class="col-4 connect">
-          <h3>CONNECT</h3>
-          <p>Stay in the loop by following us on your social media of choice or write to us directly!</p>
-          <div class="links">
-          <a href="#">
-            <i class="fab fa-facebook"></i>
-          </a>
-          <a href="#">
-            <i class="fab fa-github"></i>
-          </a>
-          <a href="#">
-            <i class="fab fa-twitter"></i>
-          </a>
-          <a href="#">
-            <i class="fab fa-instagram"></i>
-
-              <p>support@mentormatch.com</p>
-          </a>
-        </div>
-         </div>
-
-
-    </div>
-  </div>
-
+    <% if action_name == "home" || action_name == "profile" %>
+      <%= render partial: '/pages/navbar' %>
+    <% end %>
+    <%= yield %>
+    <% if action_name == "home" || action_name == "profile" %>
+      <%= render partial: '/pages/footer' %>
+    <% end %>
   </body>
 </html>
-
