@@ -1,11 +1,31 @@
-<div class="container">
-  <h3>
-    <%= "Hello," %>
-    <%= current_user.first_name %>
-  </h3>
-</div>
+<div class="profile-background">
 
-<div class="container">
+  <div class="container">
+    <div class="row">
+       <div class="col-2 account-links">
+        <div class="links">
+          <ul>
+            <li><a href="#">Matches</a></li>
+            <li><a href="#">Account</a></li>
+            <li><a href="#">Resources</a></li>
+            <li><a href="#">Help</li>
+            </ul>
+        </div>
+      </div>
+
+
+      <div class="col-10">
+        <h3>
+          <%= "Hello," %>
+          <%= current_user.first_name %>
+        </h3>
+      </div>
+
+
+    </div>
+  </div>
+
+
   <% if current_user.user_type == "mentee" && current_user.respond_to?(:mentor) && !current_user.mentor.nil? %>
     <div class="container">
       <h4>
@@ -31,7 +51,9 @@
       </h4>
     </div>
   <% end %>
-</div>
+
+
+
 <div class="container">
   <% if current_user.user_type == "mentor" && current_user.respond_to?(:mentees) && !current_user.mentees.nil? %>
     <div class="container">
@@ -58,4 +80,5 @@
       </h4>
     </div>
   <% end %>
+</div>
 </div>
