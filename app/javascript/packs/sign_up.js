@@ -46,6 +46,7 @@ function secondPartShown(userType){
 }
 
 function thirdPartShown(userType){
+  document.querySelector(".header").hidden = true;
   document.querySelector(".create-an-account-form").hidden = true;
   document.querySelector(".personal-info-form").hidden = true;
   document.querySelector(".preferences-form").hidden = false;
