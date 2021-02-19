@@ -71,13 +71,13 @@
                 <div class="row d-flex justify-content-space-between">
                   <div class="col-6">
                     <%= f.input :first_name,
-              required: true,
-              placeholder: 'John' %>
+              # required: true,
+              placeholder: 'Juan' %>
                   </div>
                   <div class="col-6">
                     <%= f.input :last_name,
-              required: true,
-              placeholder: 'Doe' %>
+              # required: true,
+              placeholder: 'Martin' %>
                   </div>
                 </div>
               </div>
@@ -85,14 +85,14 @@
                 <div class="row d-flex justify-content-space-between">
                   <div class="col-6">
                     <%= f.input :city,
-              required: true,
-              placeholder: 'Boston'%>
+              # required: true,
+              placeholder: 'Guadalajara'%>
                   </div>
                   <div class="col-6">
                     <%= f.input :country,
-              required: true,
+              # required: true,
               collection: @countries,
-              selected: "United States"%>
+              selected: "Mexico"%>
                   </div>
                 </div>
               </div>
@@ -105,9 +105,9 @@
                   </div>
                   <div class="col-6">
                     <%= f.input :language,
-              required: true,
+              # required: true,
               collection: @languages,
-              selected: "English" %>
+              selected: "Spanish" %>
                   </div>
                 </div>
               </div>
@@ -117,21 +117,22 @@
                   <div class="row d-flex justify-content-space-between">
                     <div class="col-12">
                       <%= f.input :role,
-                required: true,
+                # required: true,
                 placeholder: 'Director of AI' %>
                       <%= f.input :industry,
-                required: true,
+                # required: true,
                 collection: @industries,
                 selected: 'Information Technology and Services' %>
                       <%= f.input :experience,
-                required: true,
-                hint: "Years of Experience",
+                # required: true,
+                # hint: "Years of Experience",
+                label: "Years of Experience",
                 collection: @experiences,
                 selected: '9-11' %>
                       <%= f.input :maximum_mentee,
-                required: true,
+                # required: true,
                 label: 'Maximum number of Mentees',
-                hint: "How many mentees would you like to have?",
+                # hint: "How many mentees would you like to have?",
                 as: :radio_buttons,
                 collection: 1..3 %>
                     </div>
@@ -174,17 +175,17 @@
                 <%= f.input :city_preference,
       label: "City",
       required: true,
-      placeholder: 'Boston'%>
+      placeholder: 'Guadalajara'%>
                 <%= f.input :country_preference,
       label: "Country",
       required: true,
       collection: @countries,
-      selected: "United States"%>
+      selected: "Mexico"%>
                 <%= f.input :language_preference,
       label: "Language",
       required: true,
       collection: @languages,
-      selected: "English" %>
+      selected: "Spanish" %>
                 <!-- This div is for users creating a mentee account. -->
                 <div class="mentee-preferences">
                   <%= f.input :gender_preference,
