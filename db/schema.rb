@@ -9,6 +9,7 @@
 # migrations use external dependencies or application code.
 #
 # It's strongly recommended that you check this file into your version control system.
+# Provided tge details
 
 ActiveRecord::Schema.define(version: 2021_02_13_190511) do
 
