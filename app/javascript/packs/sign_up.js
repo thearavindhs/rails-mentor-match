@@ -28,13 +28,37 @@ function continueBtn(userType){
   });
 }
 
+// function continueBtn(userType){
+//   let step = 1;
+// document.querySelectorAll(".continue-btn").forEach((button) => {
+//     button.addEventListener("click", (event) => {
+//       event.preventDefault();
+//       if (step === 1) {
+//         step = 2;
+//         secondPartShown(userType);
+//       } else if(step === 2){
+//         step = 3;
+//         thirdPartShown(userType);
+//       }
+//     });
+//   });
+// }
+
+// Email screen
 function firstPartShown(){
+  document.querySelector(".step-1-top").hidden = false;
+  document.querySelector(".step-1-top-1").hidden = true;
+  document.querySelector(".step-2-top").hidden = true;
   document.querySelector(".create-an-account-form").hidden = false;
   document.querySelector(".personal-info-form").hidden = true;
   document.querySelector(".preferences-form").hidden = true;
 }
 
+// Personal Details
 function secondPartShown(userType){
+  document.querySelector(".step-1-top").hidden = true;
+  document.querySelector(".step-1-top-1").hidden = false;
+  document.querySelector(".step-2-top").hidden = true;
   document.querySelector(".create-an-account-form").hidden = true;
   document.querySelector(".personal-info-form").hidden = false;
   document.querySelector(".preferences-form").hidden = true;
@@ -45,7 +69,12 @@ function secondPartShown(userType){
   }
 }
 
+// Preferencees
 function thirdPartShown(userType){
+  document.querySelector(".step-1-top").hidden = true;
+  document.querySelector(".step-1-top-1").hidden = true;
+  document.querySelector(".step-2-top").hidden = false;
+  document.querySelector(".header").hidden = true;
   document.querySelector(".create-an-account-form").hidden = true;
   document.querySelector(".personal-info-form").hidden = true;
   document.querySelector(".preferences-form").hidden = false;

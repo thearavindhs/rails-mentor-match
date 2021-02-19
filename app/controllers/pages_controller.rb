@@ -25,7 +25,6 @@ class PagesController < ApplicationController
       user.matchMe
       redirect_to success_url(matching: true)
     else
-      raise
       redirect_to root_url
     end
   end
