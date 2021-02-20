@@ -27,12 +27,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     if @user.save
       sign_in @user
 
-      if @user.user_type == "mentee"
         redirect_to success_url
-      else
-        redirect_to profile_url
-      end
-
     else
       redirect_to sign_up_url(error: true)
     end

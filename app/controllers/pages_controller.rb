@@ -9,9 +9,9 @@ class PagesController < ApplicationController
   end
 
   def success
-    if current_user.user_type == "mentor" && (user.mentor.nil? || user.mentor.count.zero?)
-      redirect_to root_url
-    end
+    # if current_user.user_type == "mentor" && (user.mentor.nil? || user.mentor.count.zero?)
+    #   redirect_to root_url
+    # end
     if params[:matching].nil?
       @matching = false
     else
