@@ -13,6 +13,7 @@ class PagesController < ApplicationController
       @matching = false
     else
       @matching = true
+      redirect_to profile_url
     end
   end
 
