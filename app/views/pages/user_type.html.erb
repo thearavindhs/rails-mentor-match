@@ -1,6 +1,27 @@
-<div class="main-content main-banner">
-  <h3 class="fc-white my-3">STEP 1 OF 3</h3>
-  <h2 class="fc-white">I want to be a...</h2>
+<div class="signup-banner">
+    <div class="step-1-top">
+
+     <a class="back-arrow" href="/sign_up">
+      <%= image_tag "back-arrow.png", class: "small-icon" %>
+    </a>
+
+    <a class="close" href="/">
+      <%= image_tag "close.png", class: "small-icon" %>
+    </a>
+
+    <div class="steps-logo">
+     <%= image_tag "logo-text-white.png", class: "logo" %>
+   </div>
+
+   <div class="steps-bar">
+     <%= image_tag "step1.png" %>
+   </div>
+
+ </div>
+
+
+
+  <h2 class="fc-white ta-center">I want to be a...</h2>
 
   <div class="mentor_or_mentee_form">
 
@@ -29,7 +50,7 @@
     <div class="cardMentor">
       <div class="background-card orange-card">
         <%= link_to 'MENTOR', new_user_registration_url(user_type: "mentor"), class: 'select-btn'%>
-        <%= link_to new_user_registration_url(user_type: "mentee") do %>
+        <%= link_to new_user_registration_url(user_type: "mentor") do %>
         <div class="white-box white-box-mentor">
           <div class="text-info-mentor text-info">
             <ul>
@@ -38,7 +59,7 @@
             </ul>
           </div>
           <div class="images-mentor">
-            <%= image_tag "mentor-image.png", class: 'card-image'%>
+            <%= image_tag "mentor-image.png", class: 'mentor-card-image'%>
             <%= image_tag "question-mark-icon.png", class: "user-icon"%>
           </div>
         </div>
