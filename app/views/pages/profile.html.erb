@@ -73,9 +73,6 @@
   <% end %>
 
 
-
-
-
 <div class="main-container">
     <% if current_user.user_type == "mentor" && current_user.respond_to?(:mentees) && !current_user.mentees.nil? %>
 
@@ -96,6 +93,7 @@
       <div class="header-image">
 
       <%= image_tag "welcome-2.png", class: "welcome-img" %>
+
     </div>
 
 </div>
