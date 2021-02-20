@@ -1,0 +1,80 @@
+.ta-center {
+  text-align: center;
+}
+.fc-white {
+  color: white;
+}
+.select-btn{
+  color: black;
+  font-weight: bold;
+  font-size: 1.75rem;
+  padding: 1rem;
+  text-align: center;
+}
+.mentor_or_mentee_form {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+.cardMentor{
+  margin: 0 56px 0 56px;
+  text-decoration: none;
+}
+.cardMentee{
+  margin: 0 56px 0 56px;
+  text-decoration: none;
+}
+.main-banner .text-info li{
+  text-align: initial;
+  color: black;
+  text-decoration: none;
+}
+.main-banner .text-info ul li{
+  text-decoration: none;
+}
+
+.background-card{
+  box-shadow: 0px 0px 34.6497px 8.66242px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 300px;
+
+  border-radius: 25px;
+  padding-top: 25px;
+}
+
+.blue-card{
+  background: radial-gradient(96.96% 96.96% at 95.24% 3.04%, #707FD9 0%, #73B4FD 100%);
+}
+
+.orange-card{
+  background: radial-gradient(96.96% 96.96% at 95.24% 3.04%, #FF8F3E 0%, #FFB800 100%);
+}
+
+.white-box {
+  padding-top: 30px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  background-color: white;
+  height: 280px;
+  width: 100%;
+  border-radius: 25px;
+  text-decoration: none;
+}
+.card-image{
+  margin-bottom: 32px;
+}
+.mentor-card-image{
+  margin: -21px 0px 30px 0;
+}
+
+.images-mentee{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.images-mentor{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

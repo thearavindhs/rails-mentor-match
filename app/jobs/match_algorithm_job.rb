@@ -2,12 +2,17 @@ class MatchAlgorithmJob < ApplicationJob
   queue_as :default
 
   def perform(user)
+
     # User must be in the DB saved in order for this to work.
     # Experience preference is a string mb. Use .to_i pls
 
-    mentors = User.where("user_type = 'mentor' AND maximum_mentee <= maximum_mentee + 1")
+    mentors = []
+    m = User.where("user_type = 'mentor'")
+    m.each do |mentor|
+      mentors << mentor if mentor.mentees.count + 1 <= mentor.maximum_mentee
+    end
 
-
+    return 0 if mentors.count == 0
     # # Weights
     industryWeight = 8
     roleWeight = 2
