@@ -28,13 +28,12 @@
     <div class="cardMentee">
       <div class="background-card blue-card">
         <h3 class="select-btn">MENTEE</h3>
-        <!-- I should ask Kailene which version she likes the most. :)  -->
         <%= link_to new_user_registration_url(user_type: "mentee") do %>
         <div class="white-box white-box-mentee">
           <div class="text-info-mentee text-info">
             <ul>
-              <li>I am willing and able to provide guidance and advice on most subjects related to my field of work.</li>
-              <li>I am currently a working professional with at least two years of experience in my industry.</li>
+              <li class="py-3">I am currently a student or a recent college/university graduate.</li>
+              <li class="py-3">I am looking for guidance and advice on my professional goals, ideas and strategies. </li>
             </ul>
           </div>
           <div class="images-mentee">
@@ -49,13 +48,13 @@
 
     <div class="cardMentor">
       <div class="background-card orange-card">
-        <%= link_to 'MENTOR', new_user_registration_url(user_type: "mentor"), class: 'select-btn'%>
+        <h3 class="select-btn">MENTOR</h3>
         <%= link_to new_user_registration_url(user_type: "mentor") do %>
         <div class="white-box white-box-mentor">
           <div class="text-info-mentor text-info">
             <ul>
               <li>I am willing and able to provide guidance and advice on most subjects related to my field of work.</li>
-              <li>I am currently a working professional with at least two years of experience in my industry.</li>
+              <li class="py-3">I am currently a working professional with at least two years of experience in my industry.</li>
             </ul>
           </div>
           <div class="images-mentor">
