@@ -34,6 +34,27 @@
   margin-right: 10px;
 }
 
-// .navbar .navbar-brand img {
-//   width: 40px;
-// }
+// sidenav
+.sidenav {
+  height: 100%;
+  width: 200px;
+  position: relative;
+  top: 0;
+  left: -140px;
+  padding-top: 20px;
+}
+
+.sidenav ul {
+  list-style-type: none;
+}
+
+.sidenav a:hover {
+  color: white;
+  text-decoration: none;
+}
+
+
+/* Page content */
+.main {
+  margin-left: 200px; /* Same as the width of the sidenav */
+}
