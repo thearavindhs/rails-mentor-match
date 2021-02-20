@@ -7,17 +7,18 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # GET /resource/sign_up
   def new
     @user_type = params[:user_type]
-    @countries = ["Canada", "United States", "Mexico"]
-    @cities = ["City 1", "City 2", "City 3", "City 4", "City 5"]
+    @countries = ["Mexico", "Canada", "USA"]
     @genders = ["Male", "Female", "Non Binary"]
-    @languages = ["English", "Spanish", "French"]
+    @languages = ["Spanish", "English", "French"]
+    @experiences = ["0-2", "3-5", "6-8", "9-11", "12-15", "16-18", "18-21"]
+    @industries = ["Information Technology and Services", "Hospital & Health Care", "Construction", "Education Management", "Retail", "Financial Services", "Accounting", "Computer Software", "Automotive", "Higher Education"]
     super
   end
   # POST /resource
 
   def create
     @user = User.new(user_params)
-    if !@user.industry.empty? && !@user.experience.zero?
+    if !@user.role.empty?
       @user.user_type = "mentor"
     else
       @user.user_type = "mentee"
