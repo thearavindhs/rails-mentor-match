@@ -36,7 +36,7 @@ gem 'simple_form'
 gem "select2-rails"
 gem 'sidekiq'
 gem 'sidekiq-failures', '~> 1.0'
-# gem 'dotenv-rails', groups: [:development, :test]
+gem 'dotenv-rails', groups: [:development, :test]
 
 group :development, :test do  gem 'pry-byebug'
   gem 'pry-rails'
