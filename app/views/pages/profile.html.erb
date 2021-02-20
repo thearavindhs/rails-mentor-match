@@ -55,7 +55,7 @@
 
 
 <div class="container">
-  <% if current_user.user_type == "mentor" && current_user.respond_to?(:mentees) && !current_user.mentees.nil? %>
+  <% if current_user.user_type == "mentor" && current_user.respond_to?(:mentees) && !current_user.mentees.count.zero? %>
     <div class="container">
       <h4>
         <%= "Congratulations!" %>
