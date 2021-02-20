@@ -1,15 +1,73 @@
-<h1>Mentor or Mentee Page</h1>
+<div class="signup-banner">
+    <div class="step-1-top">
+
+     <a class="back-arrow" href="/sign_up">
+      <%= image_tag "back-arrow.png", class: "small-icon" %>
+    </a>
+
+    <a class="close" href="/">
+      <%= image_tag "close.png", class: "small-icon" %>
+    </a>
+
+    <div class="steps-logo">
+     <%= image_tag "logo-text-white.png", class: "logo" %>
+   </div>
+
+   <div class="steps-bar">
+     <%= image_tag "step1.png" %>
+   </div>
+
+ </div>
 
 
 
-<div class="mentor_or_mentee_form">
-  <div class="mentorCard">
-    <h3>Mentor</h3>
-    <%= link_to 'Continue as a mentor', new_user_registration_url(user_type: "mentor")%>
-  </div>
-  <br>
-  <div class="menteeCard">
-    <h3>Mentee</h3>
-    <%= link_to 'Continue as a mentee', new_user_registration_url(user_type: "mentee")%>
+  <h2 class="fc-white ta-center">I want to be a...</h2>
+
+  <div class="mentor_or_mentee_form">
+
+    <div class="cardMentee">
+      <div class="background-card blue-card">
+        <h3 class="select-btn">MENTEE</h3>
+        <%= link_to new_user_registration_url(user_type: "mentee") do %>
+        <div class="white-box white-box-mentee">
+          <div class="text-info-mentee text-info">
+            <ul>
+              <li class="py-3">I am currently a student or a recent college/university graduate.</li>
+              <li class="py-3">I am looking for guidance and advice on my professional goals, ideas and strategies. </li>
+            </ul>
+          </div>
+          <div class="images-mentee">
+            <%= image_tag "mentee-image.png", class: 'card-image'%>
+            <%= image_tag "question-mark-icon.png", class: "user-icon"%>
+          </div>
+        </div>
+        <% end %>
+
+      </div>
+    </div>
+
+    <div class="cardMentor">
+      <div class="background-card orange-card">
+        <h3 class="select-btn">MENTOR</h3>
+        <%= link_to new_user_registration_url(user_type: "mentor") do %>
+        <div class="white-box white-box-mentor">
+          <div class="text-info-mentor text-info">
+            <ul>
+              <li>I am willing and able to provide guidance and advice on most subjects related to my field of work.</li>
+              <li class="py-3">I am currently a working professional with at least two years of experience in my industry.</li>
+            </ul>
+          </div>
+          <div class="images-mentor">
+            <%= image_tag "mentor-image.png", class: 'mentor-card-image'%>
+            <%= image_tag "question-mark-icon.png", class: "user-icon"%>
+          </div>
+        </div>
+        <% end %>
+
+
+      </div>
+    </div>
   </div>
 </div>
+
+<%= javascript_pack_tag 'user_selection' %>
