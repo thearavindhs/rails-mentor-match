@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   get '/profile', to: 'pages#profile'
   get '/success', to: 'pages#success'
 
+  get '/tips', to: 'pages#tips'
+
   post '/match_me', to: 'pages#match_me'
 
   devise_scope :user do
