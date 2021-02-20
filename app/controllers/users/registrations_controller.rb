@@ -28,6 +28,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
       sign_in @user
 
         redirect_to success_url
+
     else
       redirect_to sign_up_url(error: true)
     end
