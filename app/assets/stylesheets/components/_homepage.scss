@@ -53,12 +53,23 @@
   border-radius: 15px;
   padding: 20px;
   margin: 30px;
+  position: relative;
+  left: 0px;
+  top: 0px;
+  z-index: 2;
 }
 
 .mission-section p {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.mission-union {
+  position: relative;
+  left: 300px;
+  top: 0px;
+  z-index: 1;
 }
 
 // How it Works
