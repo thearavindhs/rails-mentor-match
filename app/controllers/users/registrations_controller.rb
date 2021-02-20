@@ -25,7 +25,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
     if @user.save
       sign_in @user
-
+      UserMailer.with(user: @user).matching_email.deliver_now
       if @user.user_type == "mentee"
         redirect_to success_url
       else
