@@ -28,6 +28,7 @@
 .background-1 {
   background-color: $white;
   padding: 50px;
+  padding-bottom: 15px;
 }
 
 .mission-banner {
@@ -55,7 +56,7 @@
   margin: 30px;
   position: relative;
   left: 0px;
-  top: 0px;
+  top: -150px;
   z-index: 2;
 }
 
@@ -63,18 +64,21 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 20px;
 }
 
 .mission-union {
   position: relative;
-  left: 300px;
-  top: 0px;
+  left: 350px;
+  top: 70px;
   z-index: 1;
 }
 
 // How it Works
 .background-2 {
   background-color: #F6F5F5;
+  padding: 50px;
+  padding-top: 70px;
 }
 
 .works-banner {
@@ -105,6 +109,7 @@
   border: $white 3px solid;
   justify-content: center;
   align-items: center;
+  z-index: 2;
 }
 
 .cards p {
@@ -120,11 +125,13 @@
   font-weight: $font-weight-bold;
 }
 
-.section .1-bubble {
+.1-bubble {
   display: flex;
-  position: absolute;
-  top: 50px;
-  left: 100px;
+  width: 200px;
+  height: 100px;
+  // position: absolute;
+  // top: 50px;
+  // left: 100px;
 }
 
 .arrow-1 {
@@ -192,6 +199,7 @@
   color: $black;
 }
 
+
 .stories-card-footer-1 p, small {
   color: black;
 }
@@ -216,6 +224,12 @@
   position: absolute;
   top: 230px;
   left: 70px;
+}
+
+.stories-union {
+  position: absolute;
+  top: 2350px;
+  left: 200px;
 }
 
 .avatar-large-1 {
