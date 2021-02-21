@@ -42,7 +42,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
                                  :maximum_mentee, :email, :password, :password_confirmation,
                                  :city_preference, :country_preference, :gender_preference,
                                  :language_preference, :role_preference, :experience_preference,
-                                 :industry_preference, :company, :linkedin_url, :university)
+                                 :industry_preference, :company, :linkedin_url, :university, :photo)
   end
 
   # GET /resource/edit

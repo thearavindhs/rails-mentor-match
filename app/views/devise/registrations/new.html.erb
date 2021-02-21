@@ -121,6 +121,13 @@
                     </div>
                   </div>
                 </div>
+                <div class="container">
+                  <div class="row d-flex justify-content-space-between">
+                    <div class="col-12">
+                      <%= f.input :photo, as: :file %>
+                    </div>
+                  </div>
+                </div>
               </div>
               <!-- Personal Information Form for Mentors -->
               <div class="mentor-personal-form">
@@ -153,6 +160,7 @@
                 # hint: "How many mentees would you like to have?",
                 as: :radio_buttons,
                 collection: 1..3 %>
+                      <%= f.input :photo, as: :file %>
                     </div>
                   </div>
                 </div>
