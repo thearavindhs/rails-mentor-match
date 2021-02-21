@@ -7,9 +7,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # GET /resource/sign_up
   def new
     @user_type = params[:user_type]
-    @countries = ["Mexico", "Canada", "USA"]
+    @countries = ["USA", "Canada", "Mexico"]
     @genders = ["Male", "Female", "Non Binary"]
-    @languages = ["Spanish", "English", "French"]
+    @languages = ["English", "Spanish", "French"]
     @experiences = ["0-2", "3-5", "6-8", "9-11", "12-15", "16-18", "18-21"]
     @industries = ["Information Technology and Services", "Hospital & Health Care", "Construction", "Education Management", "Retail", "Financial Services", "Accounting", "Computer Software", "Automotive", "Higher Education"]
     super
@@ -42,7 +42,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
                                  :maximum_mentee, :email, :password, :password_confirmation,
                                  :city_preference, :country_preference, :gender_preference,
                                  :language_preference, :role_preference, :experience_preference,
-                                 :industry_preference)
+                                 :industry_preference, :company, :linkedin_url, :university, :photo)
   end
 
   # GET /resource/edit

@@ -67,6 +67,11 @@ function secondPartShown(userType){
   } else {
     document.querySelector(".mentor-personal-form").hidden = true;
   }
+  if (userType == "mentee") {
+    document.querySelector(".mentee-personal-form").hidden = false;
+  } else {
+    document.querySelector(".mentee-personal-form").hidden = true;
+  }
 }
 
 // Preferencees

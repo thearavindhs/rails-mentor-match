@@ -1,132 +1,102 @@
 <div class="profile-background">
-
   <div id="mySidenav" class="sidenav">
     <ul>
-      <li><a href="#">Matches</a></li><br>
-      <li><a href="#">Account</a></li><br>
-      <li><a href="#">Resources</a></li><br>
-      <li><a href="#">Help</a></li><br>
+      <li><a href="#">Matches</a></li>
+      <br>
+      <li><a href="#">Account</a></li>
+      <br>
+      <li><a href="#">Resources</a></li>
+      <br>
+      <li><a href="#">Help</a></li>
+      <br>
     </ul>
   </div>
-
   <div id="main">
     <% if current_user.user_type == "mentee" && current_user.respond_to?(:mentor) && !current_user.mentor.nil? %>
-
-    <div class="welcome-card">
-
-      <div class="header-text">
-        <h3>
-          <%= "Welcome back," %>
-          <%= current_user.first_name %>
-        </h3>
-        <h4><%= current_user.city %>, <%= current_user.country %> </h4>
-        <p>Making the most out of your connections takes work. Read our blog to become a better mentee </p>
-        <%= link_to "GET TIPS", sign_up_url, class: "btn btn-primary border-radius font-weight-bold" %>
-        <!-- link will need to be updated -->
-      </div>
-
-
-
-      <div class="header-image">
-
-        <%= image_tag "welcome.png", class: "welcome-img" %>
-      </div>
-
-
-    </div>
-
-
-    <div class="mentee-profile-container">
-
-      <%= image_tag "mentee-photo-container.png", class: "mentee-photo-container" %>
-
-      <div classs="mentee-sub-container">
-
-        <div class="header-text">
-
-          <h3>
-            <%= "You Have a Match!" %>
-          </h3>
-          <br>
-          <h4>
-            <%= "Your mentor is" %>
-          </h4>
-
-          <h2>
-            <%= current_user.mentor.first_name%> <%= current_user.mentor.last_name%>
-          </h2>
-          <p>
-            <%= current_user.mentor.title %>
-          </p>
-          <div class="small-text">
-            <%= "Reach out and introduce yourself! They're expecting you to do so within 10 days." %>
-            <br>
-            <br>
-          </div>
-          <%= link_to "CONNECT WITH MY MENTOR", sign_up_url, class: "btn btn-primary border-radius font-weight-bold" %>
-
-        </div class="small-text">
-      </div>
-
-    </div>
-
-    <% end %>
-
-
-    <div class="main-container">
-      <% if current_user.user_type == "mentor" && current_user.respond_to?(:mentees) && !current_user.mentees.nil? %>
-
       <div class="welcome-card">
-
         <div class="header-text">
           <h3>
             <%= "Welcome back," %>
             <%= current_user.first_name %>
           </h3>
           <h4><%= current_user.city %>, <%= current_user.country %> </h4>
-          <p>A great relationship with your mentee is beneficial to you too. You may want to hire them someday! Learn how to be a great mentor. </p>
+          <p>Making the most out of your connections takes work. Read our blog to become a better mentee </p>
           <%= link_to "GET TIPS", sign_up_url, class: "btn btn-primary border-radius font-weight-bold" %>
           <!-- link will need to be updated -->
         </div>
-
-
         <div class="header-image">
-
-          <%= image_tag "welcome-2.png", class: "welcome-img" %>
+          <%= image_tag "welcome.png", class: "welcome-img" %>
         </div>
-
       </div>
-
-
-      <div class="mentor-profile-container">
-
-        <div class="header-text">
-          <h3>
-            <%= "You Have a Match!" %>
-          </h3>
-          <h4>
-            <%= "Your mentor is" %>
-          </h4>
-          <h2>
-            <%= current_user.mentees.first.first_name %> <%= current_user.mentees.first.last_name%>
-          </h2>
-          <p>
-            <%= current_user.mentees.first.title %>
-          </p>
-          <div class="small-text">
-            <%= "We've asked your mentee to contact you via e-mail within 10 days. All you have to do is wait! " %>
+      <div class="mentee-profile-container">
+        <%= image_tag "mentee-photo-container.png", class: "mentee-photo-container" %>
+        <div classs="mentee-sub-container">
+          <div class="header-text">
+            <h3>
+              <%= "You Have a Match!" %>
+            </h3>
+            <br>
+            <h4>
+              <%= "Your mentor is" %>
+            </h4>
+            <h2>
+              <%= current_user.mentor.first_name%> <%= current_user.mentor.last_name%>
+            </h2>
+            <p>
+              <%= current_user.mentor.role %>  <%= current_user.mentor.company %>
+            </p>
+            <div class="small-text">
+              <%= "Reach out and introduce yourself! They're expecting you to do so within 10 days." %>
+              <br>
+              <br>
+            </div>
+            <%= link_to "CONNECT WITH MY MENTOR", sign_up_url, class: "btn btn-primary border-radius font-weight-bold" %>
+          </div class="small-text">
+        </div>
+      </div>
+    <% end %>
+    <div class="main-container">
+      <% if current_user.user_type == "mentor" && current_user.respond_to?(:mentees) && !current_user.mentees.nil? %>
+        <div class="welcome-card">
+          <div class="header-text">
+            <h3>
+              <%= "Welcome back," %>
+              <%= current_user.first_name %>
+            </h3>
+            <h4><%= current_user.city %>, <%= current_user.country %> </h4>
+            <p>A great relationship with your mentee is beneficial to you too. You may want to hire them someday! Learn how to be a great mentor. </p>
+            <%= link_to "GET TIPS", sign_up_url, class: "btn btn-primary border-radius font-weight-bold" %>
+            <!-- link will need to be updated -->
+          </div>
+          <div class="header-image">
+            <%= image_tag "welcome-2.png", class: "welcome-img" %>
+          </div>
+        </div>
+        <div class="mentor-profile-container">
+          <div class="header-text">
+            <h3>
+              <%= "You Have a Match!" %>
+            </h3>
+            <h4>
+              <%= "Your mentee is" %>
+            </h4>
+            <h2>
+              <%= current_user.mentees.first.first_name %> <%= current_user.mentees.first.last_name%>
+            </h2>
+            <p>
+              <%= current_user.mentees.first.university %>
+            </p>
+            <div class="small-text">
+              <%= "We've asked your mentee to contact you via e-mail within 10 days. All you have to do is wait! " %>
+            </div>
+            <br>
+            <small><em>Still haven't heard back from your mentee? <u>Contact us</u></em></small>
           </div>
           <br>
-          <small><em>Still haven't heard back from your mentee? <u>Contact us</u></em></small>
-        </div>
-        <br>
-        <br>
-        <%= image_tag "mentor-photo-container.png", class: "mentor-photo-container" %>
-
-
+          <br>
+          <%= image_tag "mentor-photo-container.png", class: "mentor-photo-container" %>
         <% end %>
       </div>
-
     </div>
   </div>
 </div>
