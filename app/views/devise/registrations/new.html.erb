@@ -124,7 +124,7 @@
                 <div class="container">
                   <div class="row d-flex justify-content-space-between">
                     <div class="col-12">
-                      <%= f.input :photo, as: :file %>
+                      <%= f.input :photo, as: :file, input_html: {id: "mentee_user_photo"} %>
                     </div>
                   </div>
                 </div>
@@ -160,7 +160,7 @@
                 # hint: "How many mentees would you like to have?",
                 as: :radio_buttons,
                 collection: 1..3 %>
-                      <%= f.input :photo, as: :file %>
+                      <%= f.input :photo, as: :file, input_html: {id: "mentor_user_photo"} %>
                     </div>
                   </div>
                 </div>
