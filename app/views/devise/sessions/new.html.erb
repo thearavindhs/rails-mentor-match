@@ -1,4 +1,17 @@
+<div class="login-banner">
+
+  <div class="container">
+  <div class="row align-form">
+    <div class="col-6">
+
+
+ <div class="steps-logo">
+     <%= image_tag "logo-text-white.png", class: "logo" %>
+   </div>
+
+<div class="text-align">
 <h2>Log in</h2>
+</div>
 
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="form-inputs">
@@ -13,8 +26,17 @@
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Log in" %>
+
+    <div class="align-btn btn btn-primary ">
+    <%= f.button :submit, "LOG IN" %>
+  </div>
   </div>
 <% end %>
 
+<br>
+
 <%= render "devise/shared/links" %>
+</div>
+</div>
+</div>
+</div>

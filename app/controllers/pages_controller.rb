@@ -12,6 +12,7 @@ class PagesController < ApplicationController
   end
 
   def success
+
     if params[:matching].nil?
       @matching = false
     else
