@@ -8,8 +8,10 @@ Rails.application.routes.draw do
 
 
   # Master 2
-
+  get '/complete_profile', to: 'pages#complete_profile'
+  get '/roles', to: 'pages#roles'
   get '/confirmation', to: 'pages#confirmation'
+
 
   get '/tips', to: 'pages#tips'
 
