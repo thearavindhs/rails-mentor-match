@@ -9,6 +9,7 @@
 
   def profile
     @user = current_user
+    # UserMailer.with(user: @user).matching_email.deliver_now
   end
 
   def success

@@ -26,9 +26,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
     if @user.save
       sign_in @user
-
-        redirect_to success_url
-
+      UserMailer.with(user: @user).matching_email.deliver_now
+      redirect_to success_url
     else
       redirect_to sign_up_url(error: true)
     end

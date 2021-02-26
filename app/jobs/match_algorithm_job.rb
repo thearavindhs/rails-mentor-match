@@ -46,6 +46,7 @@ class MatchAlgorithmJob < ApplicationJob
     end
     user.mentor = selected_mentor
     user.save
+    return 1
   end
 
   private
