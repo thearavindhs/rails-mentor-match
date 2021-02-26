@@ -1,19 +1,23 @@
-<div class="background layout alignment">
-  <div class="container">
-    <div class="row">
-      <div class="justify-content-center align-content-center Col-12 col-s-6">
-        <%= image_tag "happymentee1", class: "happy mentee jumping" %>
-        <h1 class="main">You Have Successfully Created an Account!</h1> <br>
-        <h2 class="button">Match Me Now!</h2><br>
-        <h3>Not ready?<u>Update your profile and preferences</u></h3><bR>
-        <h4 class= "fourth"> <u>Back to Home</u></h4>
-      </div>
+
+
+<div class="signup-banner success-info">
+  <div class="success-container">
+
+    <h1 class="main-success-header">You Have Successfully Created an Account!</h1>
+    <%= image_tag "happymentee1", class: "happy-mentee" %>
+    <%= link_to "Match me now!", match_me_url, method: :post, class: "button"  %>
+
+    <div class="container-not-ready">
+      <h3 class="text-not-ready">Not ready? </h3>
+      <%= link_to "Update your profile and preferences", profile_url, class: "update-btn" %>
     </div>
+
+    <%= link_to "Back to Home", root_url, class: "fourth"  %>
   </div>
 </div>
 
 
-<button>Open Modal</button>
+
 <div class="modal" id="modal">
     </div class="modal-header">
     <div class="modal-body">

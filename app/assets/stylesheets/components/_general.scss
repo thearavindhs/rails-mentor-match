@@ -1,29 +1,39 @@
-.alignment {
-    padding: 250px;
-}
-.alignment h1 {
-    font-size: 40px;
-    font-weight: bold;
-    color: white;
-}
-
-.alignment h2 {
-    font-size: 19px;
-    font-weight: bold;
-    color: black;
+.success-container{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.alignment h3 { 
-    font-size: 15px;
-    line-height: 18px;
-    text-align: center;
+.main-success-header {
+  font-size: 40px;
+  font-weight: bold;
+  color: white;
+  margin: 50px 0 50px 0;
+  padding: 0 325px;
 }
-.alignment h4 {
-    color: #FFB800;
-    font-size: 25px;
-    line-height: 29px;
-    text-align: center;
+
+.container-not-ready{
+  margin: 20px 0;
+  display: flex;
 }
+.text-not-ready {
+  color: black;
+  font-size: 15px;
+}
+.update-btn {
+  padding-left: 8px;
+  color: black;
+  font-size: 15px;
+  text-decoration: underline;
+}
+.happy-mentee {
+  width: 300px;
+  height: 250px;
+  margin-bottom: 20px;
+}
+
 .checkout {
     font-family: Roboto;
     font-style: normal;
@@ -38,9 +48,9 @@
     background-size: cover;
     background-position: center;
   }
-  
+
   .button {
-    background-color: #FFB800; 
+    background-color: #FFB800;
     border: none;
     color:black;
     font-family: Roboto;
@@ -58,7 +68,7 @@
   }
 
   .buttontwo {
-    background-color: #FFB800; 
+    background-color: #FFB800;
     border: none;
     color:black;
     font-family: Roboto;
