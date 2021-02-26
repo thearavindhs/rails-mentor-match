@@ -6,6 +6,11 @@ Rails.application.routes.draw do
   get '/profile', to: 'pages#profile'
   get '/success', to: 'pages#success'
 
+
+  # Master 2
+
+  get '/confirmation', to: 'pages#confirmation'
+
   get '/tips', to: 'pages#tips'
 
   post '/match_me', to: 'pages#match_me'

@@ -28,7 +28,7 @@
 
 .small-text {
  color: gray;
-  font-size: 15px;
+  font-size: 13px;
 }
 
 .header-text h4 {
@@ -68,6 +68,10 @@
   color: black;
 }
 
+.photo-container {
+  position: relative;
+}
+
 
 .mentee-photo-container {
   display: flex;
@@ -99,4 +103,8 @@
   left: 100px;
   height: 300px;
   width: auto;
+}
+
+.header-text small {
+  color: $orange-yellow;
 }
