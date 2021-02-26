@@ -18,16 +18,17 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def create
     @user = User.new(user_params)
-    if !@user.role.empty?
-      @user.user_type = "mentor"
-    else
-      @user.user_type = "mentee"
-    end
+
 
     if @user.save
       sign_in @user
       UserMailer.with(user: @user).matching_email.deliver_now
       redirect_to success_url
+      if !@user.role.empty?
+        @user.user_type = "mentor"
+      else
+        @user.user_type = "mentee"
+      end
     else
       redirect_to sign_up_url(error: true)
     end
