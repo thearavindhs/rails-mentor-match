@@ -54,10 +54,6 @@
   border-radius: 15px;
   padding: 20px;
   margin: 30px;
-  position: relative;
-  left: 0px;
-  top: -150px;
-  z-index: 2;
 }
 
 .mission-section p {
@@ -68,7 +64,7 @@
 }
 
 .mission-union {
-  position: relative;
+  position: absolute;
   left: 350px;
   top: 70px;
   z-index: 1;
@@ -224,12 +220,6 @@
   position: absolute;
   top: 230px;
   left: 70px;
-}
-
-.stories-union {
-  position: absolute;
-  top: 2350px;
-  left: 200px;
 }
 
 .avatar-large-1 {
