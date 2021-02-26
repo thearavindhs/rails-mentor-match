@@ -7,6 +7,18 @@
   def tips
   end
 
+  def complete_profile
+    @user = current_user
+    @countries = ["Hola"]
+  end
+
+  def roles
+    @user = current_user
+  end
+
+  def confirmation
+  end
+
   def profile
     @user = current_user
     # UserMailer.with(user: @user).matching_email.deliver_now

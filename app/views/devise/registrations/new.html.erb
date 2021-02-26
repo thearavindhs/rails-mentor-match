@@ -1,72 +1,53 @@
 <div class="signup-banner">
   <div class="createaccount-section">
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-      <%= f.error_notification %>
-      <!-- Step 2 -->
-      <!-- Here, we will have email, password and password confirmation inputs. -->
-      <div class="step-1-top">
-        <a class="back-arrow" href="/sign_up">
-          <%= image_tag "back-arrow.png", class: "small-icon" %>
-        </a>
-        <a class="close" href="/">
-          <%= image_tag "close.png", class: "small-icon" %>
-        </a>
-        <div class="steps-logo">
-          <%= image_tag "logo-text-white.png", class: "logo" %>
-        </div>
-        <div class="steps-bar">
-          <%= image_tag "2-step.png" %>
-        </div>
+    <%= f.error_notification %>
+    <!-- Step 2 -->
+    <!-- Here, we will have email, password and password confirmation inputs. -->
+    <div class="step-1-top">
+      <a class="back-arrow" href="/sign_up">
+        <%= image_tag "back-arrow.png", class: "small-icon" %>
+      </a>
+      <a class="close" href="/">
+        <%= image_tag "close.png", class: "small-icon" %>
+      </a>
+      <div class="steps-logo">
+        <%= image_tag "logo-text-white.png", class: "logo" %>
       </div>
-      <div class="step-1-top-1">
-        <a class="back-arrow" href= <%="/users/sign_up?user_type=#{@user_type}" %> >
-          <%= image_tag "back-arrow.png", class: "small-icon" %>
-        </a>
-        <a class="close" href="/">
-          <%= image_tag "close.png", class: "small-icon" %>
-        </a>
-        <div class="steps-logo">
-          <%= image_tag "logo-text-white.png", class: "logo" %>
-        </div>
-        <div class="steps-bar">
-          <%= image_tag "2-step.png" %>
-        </div>
+      <div class="steps-bar">
+        <%= image_tag "2-step.png" %>
       </div>
-      <div class="header">
-        <h2 class= <%= @user_type %> >Create a <%= @user_type.capitalize %> Account </h2>
-      </div>
-      <div class="create-an-account-form form">
-        <div class="container">
-          <div class="row align-form">
-            <div class="col-6">
-              <%= f.input :email,
-      required: true,
-      placeholder: 'user@domain.com',
-      input_html: { autocomplete: "email" } %>
-              <%= f.input :password,
-      required: true,
-      hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-      input_html: { autocomplete: "new-password" } %>
-              <%= f.input :password_confirmation,
-      required: true,
-      input_html: { autocomplete: "new-password" } %>
-              <br>
-              <div class="align-btn">
-                <button class="continue-btn btn btn-primary">CONTINUE</button>
-              </div>
-              <div class="existing-account">
-                <p> Already have an account?  <%= render "devise/shared/links" %> </p>
-              </div>
+    </div>
+    <div class="header">
+      <h2 class= <%= @user_type %> >Create a <%= @user_type.capitalize %> Account </h2>
+    </div>
+    <div class="create-an-account-form form">
+      <div class="container">
+        <div class="row align-form">
+          <div class="col-6">
+            <%= f.input :email,
+            required: true,
+            placeholder: 'user@domain.com',
+            input_html: { autocomplete: "email" } %>
+            <%= f.input :password,
+            required: true,
+            hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+            input_html: { autocomplete: "new-password" } %>
+            <%= f.input :password_confirmation,
+            required: true,
+            input_html: { autocomplete: "new-password" } %>
+            <br>
+            <div class="align-btn">
+              <button class="continue-btn btn btn-primary">Sign Up</button>
+            </div>
+            <div class="existing-account">
+              <p> Already have an account?  <%= render "devise/shared/links" %> </p>
             </div>
           </div>
         </div>
       </div>
-      <!-- Personal Information Form for Mentee -->
- </div>
-</div>
-</div>
-      <br>
-      <%= javascript_pack_tag 'sign_up' %>
     </div>
+    <% end %>
   </div>
-
+</div>
+<%= javascript_pack_tag 'sign_up' %>
