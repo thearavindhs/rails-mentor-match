@@ -23,7 +23,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     if @user.save
       sign_in @user
       UserMailer.with(user: @user).matching_email.deliver_now
-      redirect_to success_url
+      redirect_to confirmation_url
       if !@user.role.empty?
         @user.user_type = "mentor"
       else
