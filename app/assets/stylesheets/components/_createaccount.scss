@@ -3,6 +3,14 @@
   background-size: cover;
   background-position: right;
   padding: 80px;
+  padding-bottom: 120px;
+}
+
+.choice-banner {
+  background-image: radial-gradient(rgba(163,255,255,0.4),rgba(115,183,255,0.8),rgba(111,126,216,1)), url("coffee-banner.jpg");
+  background-size: cover;
+  background-position: right;
+  padding: 80px;
   padding-bottom: 200px;
 }
 
@@ -10,6 +18,13 @@
 .steps-logo {
   display: flex;
   justify-content: center;
+}
+
+.header h2 {
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  color: white;
 }
 
 .steps-bar {
@@ -61,3 +76,32 @@
   justify-content: center;
 }
 
+.or-text h3 {
+  color: white;
+}
+
+.social-signin-btn {
+  background-color: white;
+  padding: 14px;
+  width: 280px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.social-signin-text {
+  color: #656565;
+}
+
+.social-signin-text a:hover {
+  color: #656565;
+  text-decoration: none;
+}
+
+.linkedin-logo {
+  width: 25px;
+  height: auto;
+}

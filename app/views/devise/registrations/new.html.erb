@@ -14,10 +14,9 @@
       <div class="steps-logo">
         <%= image_tag "logo-text-white.png", class: "logo" %>
       </div>
-      <div class="steps-bar">
-        <%= image_tag "2-step.png" %>
-      </div>
+      <br>
     </div>
+
     <div class="header">
       <h2 class= <%= @user_type %> >Create a <%= @user_type.capitalize %> Account </h2>
     </div>
@@ -43,6 +42,27 @@
             <div class="existing-account">
               <p> Already have an account?  <%= render "devise/shared/links" %> </p>
             </div>
+
+            <div class="container">
+              <div class="row d-flex justify-content-center or-text">
+                <h3>or</h3><br>
+              </div>
+            </div>
+
+
+
+            <div class="container">
+              <div class="row d-flex justify-content-center">
+                <div class="social-signin-btn">
+                <%= image_tag "linkedin.png", class: "linkedin-logo" %>
+                <%- if devise_mapping.omniauthable? %>
+                <%- resource_class.omniauth_providers.each do |provider| %>
+                <%= link_to "Sign up with #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider), class: "social-signin-text" %><br/>
+                <% end %>
+                <% end %>
+              </div>
+            </div>
+          </div>
           </div>
         </div>
       </div>
