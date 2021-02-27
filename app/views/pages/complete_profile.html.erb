@@ -1,5 +1,5 @@
 
-<div class="signup-banner">
+<div class="choice-banner">
   <div class="completeprofile-section">
     <div class="step-1-top">
       <!-- <a class="back-arrow" href="/sign_up">
@@ -14,40 +14,21 @@
       <br>
     </div>
 
-<div class="header">
-<h2>Complete Your Profile</h2>
-</div>
-<br>
-
-
-
-<div class="personal-info-form">
-  <div class="container">
-
-    <div class="step-1-top">
-      <a class="back-arrow" href="/confirmation">
-        <%= image_tag "back-arrow.png", class: "small-icon" %>
-      </a>
-      <a class="close" href="/">
-        <%= image_tag "close.png", class: "small-icon" %>
-      </a>
-      <div class="steps-logo">
-        <%= image_tag "logo-text-white.png", class: "logo" %>
-      </div>
-      <div class="steps-bar">
-        <%= image_tag "2-step.png" %>
-      </div>
+    <div class="header">
+      <h2>Complete Your Profile</h2>
     </div>
+    <br>
 
-    <%= simple_form_for(@user, url: user_registration_url, method: :patch) do |f| %>
-    <%= f.error_notification %>
 
-    <div class="row align-form">
-      <div class="col-6">
-        <div class="container">
-          <div class="row d-flex justify-content-space-between">
-            <div class="col-6">
-              <%= f.input :first_name,
+        <%= simple_form_for(@user, url: user_registration_url, method: :patch) do |f| %>
+        <%= f.error_notification %>
+
+        <div class="row align-form">
+          <div class="col-6">
+            <div class="container">
+              <div class="row d-flex justify-content-space-between">
+                <div class="col-6">
+                  <%= f.input :first_name,
                 # required: true,
                 placeholder: 'John' %>
               </div>
@@ -148,23 +129,23 @@
   <br>
 
 
-<div class="picture-form">
-  <div class="container">
+  <div class="picture-form">
+    <div class="container">
 
-    <div class="step-1-top">
-      <a class="back-arrow" href="/complete_profile">
-        <%= image_tag "back-arrow.png", class: "small-icon" %>
-      </a>
-      <a class="close" href="/">
-        <%= image_tag "close.png", class: "small-icon" %>
-      </a>
-      <div class="steps-logo">
-        <%= image_tag "logo-text-white.png", class: "logo" %>
+      <div class="step-1-top">
+        <a class="back-arrow" href="/complete_profile">
+          <%= image_tag "back-arrow.png", class: "small-icon" %>
+        </a>
+        <a class="close" href="/">
+          <%= image_tag "close.png", class: "small-icon" %>
+        </a>
+        <div class="steps-logo">
+          <%= image_tag "logo-text-white.png", class: "logo" %>
+        </div>
+        <div class="steps-bar">
+          <%= image_tag "2-step.png" %>
+        </div>
       </div>
-      <div class="steps-bar">
-        <%= image_tag "2-step.png" %>
-      </div>
-    </div>
 
       <h3>Don't Forget to Add a Photo!</h3>
       <%= f.input :photo, as: :file, input_html: {id: "mentor_user_photo"} %>
@@ -172,17 +153,16 @@
       <div class="align-btn">
         <button class="next-page-btn btn btn-primary">CONTINUE</button>
       </div>
-    <% end %>
       <% end %>
 
-</div>
     </div>
   </div>
 </div>
 </div>
+</div>
 
 
-  </div> <!-- Container closing tag -->
+</div> <!-- Container closing tag -->
 </div> <!-- Picture form closing tag -->
 
 <%= javascript_pack_tag 'complete_profile' %>
