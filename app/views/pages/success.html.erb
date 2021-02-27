@@ -1,32 +1,24 @@
 
 
-<div class="signup-banner success-info">
-  <div class="success-container">
+<div class="success-background success-info">
+  <div class="container">
+    <div class="row d-flex justify-content-center">
 
-    <h1 class="main-success-header">You Have Successfully Created an Account!</h1>
-    <%= image_tag "happymentee1", class: "happy-mentee" %>
-    <%= link_to "Match me now!", match_me_url, method: :post, class: "button"  %>
-
-    <div class="container-not-ready">
-      <h3 class="text-not-ready">Not ready? </h3>
-      <%= link_to "Update your profile and preferences", profile_url, class: "update-btn" %>
+  <h1 class="main-success-header">We are working on finding you the best match!</h1>
+        <%= image_tag "world", class: "world" %>
     </div>
 
-    <%= link_to "Back to Home", root_url, class: "fourth"  %>
+    <div class="row d-flex justify-content-center success-text">
+       <div class="col-8">
+        <p>Hang tight. We'll let you know when a match has been made via email in 2-3 days. Remember to check your inbox! In the meantime, check out our tips on how to create better career connections. </p>
+        </div>
+        </div>
+
+    <div class="row d-flex justify-content-center">
+
+        <%= link_to "GET CAREER TIPS", tips_url, class: "btn btn-primary border-radius font-weight-bold" %>
+        </div>
+
   </div>
 </div>
-
-
-
-<div class="modal" id="modal">
-    </div class="modal-header">
-    <div class="modal-body">
-        <%= image_tag "xbutton", class: "xbutton" %>
-        <%= image_tag "world", class: "world" %>
-        <div class="title">We are working on finding you the best match!</div><br>
-        <h5>Hang tight. You hill hear from us in 2-3 days by email. <br><br>
-            Remember to check your inbox!<br> In the meantime, check out our tips<br></h5>
-        <h2 class="buttontwo">GET TIPS</h2><br>
-    </div>
 </div>
-</div id="overlay"></div>

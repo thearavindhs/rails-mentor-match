@@ -1,32 +1,17 @@
 
 
-<div class="signup-banner success-info">
+<div class="success-background success-info">
   <div class="success-container">
 
     <h1 class="main-success-header">You Have Successfully Created an Account!</h1>
     <%= image_tag "happymentee1", class: "happy-mentee" %>
     <%= link_to "Let's get Started!", complete_profile_url, class: "button"  %>
 
-    <div class="container-not-ready">
-      <h3 class="text-not-ready">Not ready? </h3>
-      <%= link_to "Update your profile and preferences", profile_url, class: "update-btn" %>
-    </div>
+     <h3> Next, complete your profile to match with someone! </h3>
+    <%= link_to "LET'S GET STARTED", match_me_url, method: :post, class: "btn btn-primary btn-margin"  %>
 
-    <%= link_to "Back to Home", root_url, class: "fourth"  %>
+    <%= link_to "Back to Home", root_url, class: "back-home"  %>
   </div>
 </div>
 
 
-
-<div class="modal" id="modal">
-    </div class="modal-header">
-    <div class="modal-body">
-        <%= image_tag "xbutton", class: "xbutton" %>
-        <%= image_tag "world", class: "world" %>
-        <div class="title">We are working on finding you the best match!</div><br>
-        <h5>Hang tight. You hill hear from us in 2-3 days by email. <br><br>
-            Remember to check your inbox!<br> In the meantime, check out our tips<br></h5>
-        <h2 class="buttontwo">GET TIPS</h2><br>
-    </div>
-</div>
-</div id="overlay"></div>
