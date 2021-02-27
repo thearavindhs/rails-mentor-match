@@ -20,8 +20,6 @@ Rails.application.routes.draw do
 
   get '/tips', to: 'pages#tips'
 
-  post '/match_me', to: 'pages#match_me'
-
   get '/user' => "pages#profile", :as => :user_root
 
   devise_scope :user do

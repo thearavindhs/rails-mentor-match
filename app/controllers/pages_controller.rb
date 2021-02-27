@@ -20,7 +20,9 @@
 
   def profile
     @user = current_user
-    raise
+    if @user.first_name.nil?
+      redirect_to complete_profile_url
+    end
   end
 
   # ---------------------------------------------
@@ -28,6 +30,10 @@
   # --------------- GET pages ---------------
   def complete_profile
     @user = current_user
+    @countries = ["USA", "Canada", "Mexico"]
+    @genders = ["Male", "Female", "Non Binary"]
+    @languages = ["English", "Spanish", "French"]
+    @experience = ["0-5 years", "6-15 years", "16+ years"]
   end
 
   def roles
@@ -59,9 +65,10 @@
     @user = current_user
     @user.attributes = user_params
     if @user.save
-      redirect_to match_me_url, method: :post
+      # match_me
+      redirect_to profile_url
     else
-      redirect_to preferences
+      redirect_to preferences_url(error: :true)
     end
   end
 
@@ -90,7 +97,9 @@
                                  :industry_preference, :company, :linkedin_url, :university, :photo, :title)
   end
 
-
+  def valid?(user)
+    return user.valid? && user.user_type == "mentee" && !user.mentor.nil? && user.mentor.count.zero?
+  end
 
 end
 
