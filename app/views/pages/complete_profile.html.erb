@@ -1,4 +1,22 @@
-<h1>Complete profile page</h1>
+
+<div class="signup-banner">
+  <div class="completeprofile-section">
+    <div class="step-1-top">
+      <!-- <a class="back-arrow" href="/sign_up">
+        <%= image_tag "back-arrow.png", class: "small-icon" %>
+      </a> -->
+      <a class="close" href="/">
+        <%= image_tag "close.png", class: "small-icon" %>
+      </a>
+      <div class="steps-logo">
+        <%= image_tag "logo-text-white.png", class: "logo" %>
+      </div>
+      <br>
+    </div>
+
+<div class="header">
+<h2>Complete Your Profile</h2>
+</div>
 <br>
 <div class="personal-info-form">
   <div class="container">
@@ -61,9 +79,11 @@
                   # label: "Title",
                   placeholder: 'New York University' %>
                 </div>
+                <div class="col-12">
                   <%= f.input :linkedin_url,
                   label: "Linkedin url",
                   placeholder: 'https://www.linkedin.com/in/johndoe' %>
+                </div>
               </div>
             </div>
           </div>
@@ -102,9 +122,10 @@
       </div>
       <% end %>
 
-
+</div>
     </div>
   </div>
+</div>
 </div>
 
 
