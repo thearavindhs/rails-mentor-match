@@ -9,7 +9,11 @@
 
   def complete_profile
     @user = current_user
-    @countries = ["Hola"]
+    @countries = ["USA", "Canada", "Mexico"]
+    @genders = ["Male", "Female", "Non Binary"]
+    @languages = ["English", "Spanish", "French"]
+    @experiences = ["0-2", "3-5", "6-8", "9-11", "12-15", "16-18", "18-21"]
+    @industries = ["Information Technology and Services", "Hospital & Health Care", "Construction", "Education Management", "Retail", "Financial Services", "Accounting", "Computer Software", "Automotive", "Higher Education"]
   end
 
   def roles
@@ -21,6 +25,9 @@
 
   def profile
     @user = current_user
+    if @user.first_name.nil?
+      raise
+    end
     # UserMailer.with(user: @user).matching_email.deliver_now
   end
 

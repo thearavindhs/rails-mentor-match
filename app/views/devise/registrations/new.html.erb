@@ -1,6 +1,6 @@
 <div class="signup-banner">
   <div class="createaccount-section">
-    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= simple_form_for(@user, url: user_registration_url(@user, user_type: @user_type)) do |f| %>
     <%= f.error_notification %>
     <!-- Step 2 -->
     <!-- Here, we will have email, password and password confirmation inputs. -->

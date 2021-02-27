@@ -7,28 +7,19 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # GET /resource/sign_up
   def new
     @user_type = params[:user_type]
-    @countries = ["USA", "Canada", "Mexico"]
-    @genders = ["Male", "Female", "Non Binary"]
-    @languages = ["English", "Spanish", "French"]
-    @experiences = ["0-2", "3-5", "6-8", "9-11", "12-15", "16-18", "18-21"]
-    @industries = ["Information Technology and Services", "Hospital & Health Care", "Construction", "Education Management", "Retail", "Financial Services", "Accounting", "Computer Software", "Automotive", "Higher Education"]
+    @user = User.new
     super
   end
   # POST /resource
 
   def create
+    @user_type = params[:user_type]
     @user = User.new(user_params)
-
-
+    @user.user_type = @user_type
     if @user.save
       sign_in @user
       UserMailer.with(user: @user).matching_email.deliver_now
-      redirect_to success_url
-      if !@user.role.empty?
-        @user.user_type = "mentor"
-      else
-        @user.user_type = "mentee"
-      end
+      redirect_to confirmation_url
     else
       redirect_to sign_up_url(error: true)
     end
