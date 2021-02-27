@@ -7,12 +7,14 @@ Rails.application.routes.draw do
   get '/success', to: 'pages#success'
 
 
-  # Master 2
+  # New Sign Up Flow
   get '/complete_profile', to: 'pages#complete_profile'
   get '/roles', to: 'pages#roles'
   get '/confirmation', to: 'pages#confirmation'
   get '/preferences', to: 'pages#preferences', as: 'preferences'
+
   patch '/roles', to: 'pages#update_roles', as: "update_roles"
+  patch '/preferences', to: 'pages#update_preferences', as: "update_preferences"
 
 
 
