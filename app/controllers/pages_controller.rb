@@ -26,7 +26,9 @@
   def profile
     @user = current_user
     if @user.first_name.nil?
-      raise
+      redirect_to complete_profile_url(user_type: @user.user_type)
+    elsif @user.role.nil?
+      redirect_to roles_url(user_type: @user_type)
     end
     # UserMailer.with(user: @user).matching_email.deliver_now
   end
@@ -50,4 +52,35 @@
       # redirect_to success_url(matching: true)
     end
   end
+
+  def update_roles
+    @user = current_user
+    @user.attributes = user_params
+    if @user.save
+      redirect_to preferences_url
+    else
+      redirect_to roles(user_type: @user.user_type)
+    end
+  end
+
+  def preferences
+  end
+
+  private
+
+  def user_params
+    params.require(:user).permit(:first_name, :last_name, :language, :country,
+                                 :city, :gender, :role, :industry, :experience,
+                                 :maximum_mentee, :email, :password, :password_confirmation,
+                                 :city_preference, :country_preference, :gender_preference,
+                                 :language_preference, :role_preference, :experience_preference,
+                                 :industry_preference, :company, :linkedin_url, :university, :photo, :title)
+  end
+
+
+
 end
+
+
+
+
