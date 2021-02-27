@@ -18,8 +18,27 @@
 <h2>Complete Your Profile</h2>
 </div>
 <br>
+
+
+
 <div class="personal-info-form">
   <div class="container">
+
+    <div class="step-1-top">
+      <a class="back-arrow" href="/confirmation">
+        <%= image_tag "back-arrow.png", class: "small-icon" %>
+      </a>
+      <a class="close" href="/">
+        <%= image_tag "close.png", class: "small-icon" %>
+      </a>
+      <div class="steps-logo">
+        <%= image_tag "logo-text-white.png", class: "logo" %>
+      </div>
+      <div class="steps-bar">
+        <%= image_tag "2-step.png" %>
+      </div>
+    </div>
+
     <%= simple_form_for(@user, url: user_registration_url, method: :patch) do |f| %>
     <%= f.error_notification %>
 
@@ -120,6 +139,40 @@
 
         </div>
       </div>
+
+
+    </div>
+  </div>
+  <br>
+  <br>
+  <br>
+
+
+<div class="picture-form">
+  <div class="container">
+
+    <div class="step-1-top">
+      <a class="back-arrow" href="/complete_profile">
+        <%= image_tag "back-arrow.png", class: "small-icon" %>
+      </a>
+      <a class="close" href="/">
+        <%= image_tag "close.png", class: "small-icon" %>
+      </a>
+      <div class="steps-logo">
+        <%= image_tag "logo-text-white.png", class: "logo" %>
+      </div>
+      <div class="steps-bar">
+        <%= image_tag "2-step.png" %>
+      </div>
+    </div>
+
+      <h3>Don't Forget to Add a Photo!</h3>
+      <%= f.input :photo, as: :file, input_html: {id: "mentor_user_photo"} %>
+
+      <div class="align-btn">
+        <button class="next-page-btn btn btn-primary">CONTINUE</button>
+      </div>
+    <% end %>
       <% end %>
 
 </div>
@@ -129,4 +182,8 @@
 </div>
 
 
+  </div> <!-- Container closing tag -->
+</div> <!-- Picture form closing tag -->
+
+<%= javascript_pack_tag 'complete_profile' %>
 
