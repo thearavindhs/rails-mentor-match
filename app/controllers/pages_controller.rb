@@ -1,57 +1,55 @@
   class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :home, :user_type ]
 
+  # --------------- Static Pages: ---------------
+
   def home
   end
 
   def tips
   end
 
+  def confirmation
+  end
+
+  def success
+  end
+
+  def user_type
+  end
+
+  def profile
+    @user = current_user
+    if @user.first_name.nil?
+      redirect_to complete_profile_url
+    end
+  end
+
+  # ---------------------------------------------
+
+  # --------------- GET pages ---------------
   def complete_profile
     @user = current_user
     @countries = ["USA", "Canada", "Mexico"]
     @genders = ["Male", "Female", "Non Binary"]
     @languages = ["English", "Spanish", "French"]
-    @experiences = ["0-2", "3-5", "6-8", "9-11", "12-15", "16-18", "18-21"]
-    @industries = ["Information Technology and Services", "Hospital & Health Care", "Construction", "Education Management", "Retail", "Financial Services", "Accounting", "Computer Software", "Automotive", "Higher Education"]
+    @experience = ["0-5 years", "6-15 years", "16+ years"]
   end
 
   def roles
     @user = current_user
   end
 
-  def confirmation
-  end
-
-  def profile
+  def preferences
     @user = current_user
-    if @user.first_name.nil?
-      redirect_to complete_profile_url(user_type: @user.user_type)
-    elsif @user.role.nil?
-      redirect_to roles_url(user_type: @user_type)
-    end
-    # UserMailer.with(user: @user).matching_email.deliver_now
+    @countries = ["USA", "Canada", "Mexico"]
+    @genders = ["Male", "Female", "Non Binary"]
+    @languages = ["English", "Spanish", "French"]
   end
 
-  def success
-    if !params[:match].nil?
-     @matched =  params[:match]
-    end
-  end
+  # ----------------------------------------
 
-  def user_type
-  end
-
-  def match_me
-
-    user = current_user
-
-    if user.valid? && user.user_type == "mentee" && (user.mentor.nil? || user.mentor.count.zero?)
-      user.matchMe
-      redirect_to success_url(match: true)
-      # redirect_to success_url(matching: true)
-    end
-  end
+  # --------------- UPDATE pages ---------------
 
   def update_roles
     @user = current_user
@@ -59,12 +57,34 @@
     if @user.save
       redirect_to preferences_url
     else
-      redirect_to roles(user_type: @user.user_type)
+      redirect_to roles_url
     end
   end
 
-  def preferences
+  def update_preferences
+    @user = current_user
+    @user.attributes = user_params
+    if @user.save
+      # match_me
+      redirect_to profile_url
+    else
+      redirect_to preferences_url(error: :true)
+    end
   end
+
+  # -------------------- Match Me Page -----------------------
+  def match_me
+    user = current_user
+    if user.valid? && user.user_type == "mentee" && (user.mentor.nil? || user.mentor.count.zero?)
+      if user.matchMe == 0
+        raise
+      else
+        redirect_to success_url(match: true)
+      end
+      # redirect_to success_url(matching: true)
+    end
+  end
+  # ------------------------------------------------------------
 
   private
 
@@ -77,7 +97,9 @@
                                  :industry_preference, :company, :linkedin_url, :university, :photo, :title)
   end
 
-
+  def valid?(user)
+    return user.valid? && user.user_type == "mentee" && !user.mentor.nil? && user.mentor.count.zero?
+  end
 
 end
 
