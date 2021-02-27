@@ -4,7 +4,7 @@
 function continue_btn(){
   document.querySelector(".continue-btn").addEventListener("click", (event) => {
     event.preventDefault();
-    document.querySelector(".personal-info-form").hidden = true;
+    document.querySelector(".completeprofile-section").hidden = true;
     document.querySelector(".picture-form").hidden = false;
   });
 };
