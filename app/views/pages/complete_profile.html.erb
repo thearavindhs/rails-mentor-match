@@ -1,24 +1,32 @@
 
-<div class="choice-banner">
+<div class="signup-banner">
   <div class="completeprofile-section">
-    <div class="step-1-top">
-      <!-- <a class="back-arrow" href="/sign_up">
-        <%= image_tag "back-arrow.png", class: "small-icon" %>
-      </a> -->
-      <a class="close" href="/">
-        <%= image_tag "close.png", class: "small-icon" %>
-      </a>
-      <div class="steps-logo">
-        <%= image_tag "logo-text-white.png", class: "logo" %>
-      </div>
-      <br>
-    </div>
 
-    <div class="header">
+
+
+
+
+      <div class="container">
+
+
+
+        <div class="step-1-top">
+
+    <br>
+         <!--  <a class="back-arrow" href="/confirmation">
+            <%= image_tag "back-arrow.png", class: "small-icon" %>
+          </a> -->
+          <a class="close" href="/">
+            <%= image_tag "close.png", class: "small-icon" %>
+          </a>
+          <div class="steps-logo">
+            <%= image_tag "logo-text-white.png", class: "logo" %>
+          </div>
+
+          <div class="header">
       <h2>Complete Your Profile</h2>
     </div>
-    <br>
-
+        </div>
 
         <%= simple_form_for(@user, url: user_registration_url, method: :patch) do |f| %>
         <%= f.error_notification %>
@@ -140,9 +148,6 @@
         </a>
         <div class="steps-logo">
           <%= image_tag "logo-text-white.png", class: "logo" %>
-        </div>
-        <div class="steps-bar">
-          <%= image_tag "2-step.png" %>
         </div>
       </div>
 

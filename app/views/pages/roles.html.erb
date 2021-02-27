@@ -10,15 +10,18 @@
       <div class="steps-logo">
         <%= image_tag "logo-text-white.png", class: "logo" %>
       </div>
-      <div class="steps-bar">
-        <%= image_tag "3-step.png" %>
-      </div>
+
       <div class="header-change">
-        <h2>Select Your Preferences </h2>
         <% if @user_type == "mentor" %>
-        <h5>I want my mentee to be...</h5>
+        <div class="header">
+        <h2>Complete Your Profile</h2>
+      </div>
+        <h5>I am in...</h5>
         <% else %>
-        <h5>I want my mentor to be...</h5>
+        <div class="header">
+        <h2>Select Your Preferences </h2>
+      </div>
+        <h5>I want my mentor to be in...</h5>
         <% end %>
       </div>
 
@@ -29,16 +32,112 @@
       <div class="container">
         <div class="row d-flex justify-content-center">
 
-          <!-- Here you have to use the cards Kailene :-) -->
+
+<div class="cards-display">
+      <div class="role-card">
+      <div class="background-card-small orange-card">
+        <h3 class="role-name-large">ENGINEERING</h3>
+        <%= link_to new_user_registration_url(user_type: "mentee"), class: "text-update" do %>
+        <div class="white-box-small">
+            <%= image_tag "orange-role-engineer.png", class: 'card-image-small'%>
+          </div>
+        </div>
+        <% end %>
+         </div>
+
+    <div class="role-card">
+      <div class="background-card-small orange-card">
+        <h3 class="role-name-large">PRODUCT</h3>
+        <%= link_to new_user_registration_url(user_type: "mentee"), class: "text-update" do %>
+        <div class="white-box-small">
+          <div class="text-info-mentee text-info">
+            <%= image_tag "orange-role-product.png", class: 'card-image-small'%>
+          </div>
+          </div>
+        </div>
+        <% end %>
+         </div>
+
+    <div class="role-card">
+      <div class="background-card-small orange-card">
+        <h3 class="role-name-large">UI/UX DESIGN</h3>
+        <%= link_to new_user_registration_url(user_type: "mentee"), class: "text-update" do %>
+        <div class="white-box-small">
+          <div class="text-info-mentee text-info">
+            <%= image_tag "orange-role-ux.png", class: 'card-image-small'%>
+          </div>
+          </div>
+        </div>
+        <% end %>
+         </div>
+
+    <div class="role-card">
+      <div class="background-card-small orange-card">
+        <h3 class="role-name-large">MARKETING</h3>
+        <%= link_to new_user_registration_url(user_type: "mentee"), class: "text-update" do %>
+        <div class="white-box-small">
+          <div class="text-info-mentee text-info">
+            <%= image_tag "orange-role-marketing.png", class: 'card-image-small'%>
+          </div>
+          </div>
+        </div>
+        <% end %>
+         </div>
+          </div>
+
+<div class="cards-display-2">
+  <div class="role-card">
+      <div class="background-card-small orange-card">
+        <h3 class="role-name-small">BUSINESS DEVELOPMENT</h3>
+        <%= link_to new_user_registration_url(user_type: "mentee"), class: "text-update" do %>
+        <div class="white-box-small">
+          <div class="text-info-mentee text-info">
+            <%= image_tag "orange-role-businessdev.png", class: 'card-image-small'%>
+          </div>
+          </div>
+        </div>
+        <% end %>
+      </div>
+
+
+    <div class="role-card">
+      <div class="background-card-small orange-card">
+        <h3 class="role-name-large">DATA</h3>
+        <%= link_to new_user_registration_url(user_type: "mentee"), class: "text-update" do %>
+        <div class="white-box-small">
+          <div class="text-info-mentee text-info">
+            <%= image_tag "orange-role-data.png", class: 'card-image-small'%>
+          </div>
+          </div>
+        </div>
+        <% end %>
+         </div>
+
+    <div class="role-card">
+      <div class="background-card-small orange-card">
+        <h3 class="role-name-large">SALES</h3>
+        <%= link_to new_user_registration_url(user_type: "mentee"), class: "text-update" do %>
+        <div class="white-box-small">
+          <div class="text-info-mentee text-info">
+            <%= image_tag "orange-role-sales.png", class: 'card-image-small'%>
+          </div>
+          </div>
+        </div>
+        <% end %>
+         </div>
+       </div>
+
+    </div>
+ </div>
+
 
         </div>
         <div class="align-btn">
           <button class="continue-btn btn btn-primary">CONTINUE</button>
         </div>
         <% end %>
-      </div>
       <br>
-    </div>
+
     <br>
   </div>
 </div>
