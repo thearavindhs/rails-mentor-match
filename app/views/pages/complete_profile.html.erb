@@ -48,9 +48,9 @@
               </div>
               <div class="col-6">
                 <%= f.input :country,
-                # required: true,
-                collection: @countries,
-                selected: "USA"%>
+                label: "Country",
+                as: :select,
+                collection: @countries %>
               </div>
             </div>
           </div>
@@ -99,8 +99,7 @@
                   # required: true,
                   # hint: "Years of Experience",
                   label: "Years of Experience",
-                  collection: @experiences,
-                  selected: '9-11' %>
+                  collection: @experience%>
                   <%= f.input :company,
                   # required: true,
                   placeholder: 'Microsoft' %>
@@ -153,7 +152,7 @@
       <div class="align-btn">
         <button class="next-page-btn btn btn-primary">CONTINUE</button>
       </div>
-      <% end %>
+    <% end %>
 
     </div>
   </div>
