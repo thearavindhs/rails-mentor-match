@@ -20,7 +20,7 @@ Rails.application.routes.draw do
 
   get '/tips', to: 'pages#tips'
 
-  get '/user' => "pages#profile", :as => :user_root
+  get '/user' => "pages#confirmation", :as => :user_root
 
   devise_scope :user do
     get 'sign_up', to: 'pages#user_type'
