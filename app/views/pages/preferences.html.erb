@@ -1,4 +1,19 @@
-<h1>Now, select your Preferences</h1>
+<div class="signup-banner">
+<div class="step-1-top">
+        <a class="back-arrow" href="/roles">
+          <%= image_tag "back-arrow.png", class: "small-icon" %>
+        </a>
+        <a class="close" href="/">
+          <%= image_tag "close.png", class: "small-icon" %>
+        </a>
+        <div class="steps-logo">
+          <%= image_tag "logo-text-white.png", class: "logo" %>
+        </div>
+      </div>
+
+<div class="header">
+<h1>Now, Select Your Preferences</h1>
+</div>
 
 <%= simple_form_for(@user, url: update_preferences_url, method: :patch) do |f| %>
 <%= f.error_notification %>
@@ -37,6 +52,7 @@
   <div class="align-btn">
     <button class="continue-btn btn btn-primary">MATCH ME</button>
   </div>
+</div>
 
 
 <% end %> <!-- Closing tag for form -->

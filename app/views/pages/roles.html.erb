@@ -16,12 +16,110 @@
             <h2>Complete Your Profile</h2>
           </div>
           <h5>I am in...</h5>
+          </div>
+      <%= simple_form_for(@user, url: update_roles_url, method: :patch) do |f| %>
+        <%= f.error_notification %>
+        <%= f.input :role_preference, class: 'role_preference' %>
+        <div class="container">
+          <div class="row d-flex justify-content-center">
+            <div class="cards-display">
+              <div class="role-card">
+                <div class="background-card-small blue-card">
+                  <h3 class="role-name-large">ENGINEERING</h3>
+                  <%= link_to new_user_registration_url(user_type: "mentee"), class: "text-update" do %>
+                    <div class="white-box-small">
+                      <%= image_tag "blue-role-engineer.png", class: 'card-image-small'%>
+                    </div>
+                  </div>
+                <% end %>
+              </div>
+              <div class="role-card">
+                <div class="background-card-small blue-card">
+                  <h3 class="role-name-large">PRODUCT</h3>
+                  <%= link_to new_user_registration_url(user_type: "mentee"), class: "text-update" do %>
+                    <div class="white-box-small">
+                      <div class="text-info-mentee text-info">
+                        <%= image_tag "blue-role-product.png", class: 'card-image-small'%>
+                      </div>
+                    </div>
+                  </div>
+                <% end %>
+              </div>
+              <div class="role-card">
+                <div class="background-card-small blue-card">
+                  <h3 class="role-name-large">UI/UX DESIGN</h3>
+                  <%= link_to new_user_registration_url(user_type: "mentee"), class: "text-update" do %>
+                    <div class="white-box-small">
+                      <div class="text-info-mentee text-info">
+                        <%= image_tag "blue-role-ux.png", class: 'card-image-small'%>
+                      </div>
+                    </div>
+                  </div>
+                <% end %>
+              </div>
+              <div class="role-card">
+                <div class="background-card-small blue-card">
+                  <h3 class="role-name-large">MARKETING</h3>
+                  <%= link_to new_user_registration_url(user_type: "mentee"), class: "text-update" do %>
+                    <div class="white-box-small">
+                      <div class="text-info-mentee text-info">
+                        <%= image_tag "blue-role-marketing.png", class: 'card-image-small'%>
+                      </div>
+                    </div>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+            <div class="cards-display-2">
+              <div class="role-card">
+                <div class="background-card-small blue-card">
+                  <h3 class="role-name-small">BUSINESS DEVELOPMENT</h3>
+                  <%= link_to new_user_registration_url(user_type: "mentee"), class: "text-update" do %>
+                    <div class="white-box-small">
+                      <div class="text-info-mentee text-info">
+                        <%= image_tag "blue-role-businessdev.png", class: 'card-image-small'%>
+                      </div>
+                    </div>
+                  </div>
+                <% end %>
+              </div>
+              <div class="role-card">
+                <div class="background-card-small blue-card">
+                  <h3 class="role-name-large">DATA</h3>
+                  <%= link_to new_user_registration_url(user_type: "mentee"), class: "text-update" do %>
+                    <div class="white-box-small">
+                      <div class="text-info-mentee text-info">
+                        <%= image_tag "blue-role-data.png", class: 'card-image-small'%>
+                      </div>
+                    </div>
+                  </div>
+                <% end %>
+              </div>
+              <div class="role-card">
+                <div class="background-card-small blue-card">
+                  <h3 class="role-name-large">SALES</h3>
+                  <%= link_to new_user_registration_url(user_type: "mentee"), class: "text-update" do %>
+                    <div class="white-box-small">
+                      <div class="text-info-mentee text-info">
+                        <%= image_tag "blue-role-sales.png", class: 'card-image-small'%>
+                      </div>
+                    </div>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+         <% end %>
+      </div>
+      <div class="align-btn">
+        <button class="continue-btn btn btn-primary">CONTINUE</button>
+      </div>
         <% else %>
           <div class="header">
             <h2>Select Your Preferences </h2>
           </div>
           <h5>I want my mentor to be in...</h5>
-        <% end %>
       </div>
       <%= simple_form_for(@user, url: update_roles_url, method: :patch) do |f| %>
         <%= f.error_notification %>
@@ -116,6 +214,7 @@
             </div>
           </div>
         </div>
+         <% end %>
       </div>
       <div class="align-btn">
         <button class="continue-btn btn btn-primary">CONTINUE</button>
