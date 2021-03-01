@@ -1,32 +1,23 @@
-
 <div class="signup-banner">
   <div class="completeprofile-section">
 
-      <div class="container">
-
-
-
-        <div class="step-1-top">
-
-    <br>
-         <!--  <a class="back-arrow" href="/confirmation">
+    <div class="container">
+      <div class="step-1-top">
+        <br>
             <%= image_tag "back-arrow.png", class: "small-icon" %>
           </a> -->
-          <a class="close" href="/">
-            <%= image_tag "close.png", class: "small-icon" %>
-          </a>
-          <div class="steps-logo">
-            <%= image_tag "logo-text-white.png", class: "logo" %>
-          </div>
-
-          <div class="header">
-      <h2>Complete Your Profile</h2>
-    </div>
+        <a class="close" href="/">
+          <%= image_tag "close.png", class: "small-icon" %>
+        </a>
+        <div class="steps-logo">
+          <%= image_tag "logo-text-white.png", class: "logo" %>
         </div>
-
-        <%= simple_form_for(@user, url: user_registration_url, method: :patch) do |f| %>
+        <div class="header">
+          <h2>Complete Your Profile</h2>
+        </div>
+      </div>
+      <%= simple_form_for(@user, url: user_registration_url, method: :patch) do |f| %>
         <%= f.error_notification %>
-
         <div class="row align-form">
           <div class="col-6">
             <div class="container">
@@ -35,115 +26,101 @@
                   <%= f.input :first_name,
                 # required: true,
                 placeholder: 'John' %>
-              </div>
-              <div class="col-6">
-                <%= f.input :last_name,
+                </div>
+                <div class="col-6">
+                  <%= f.input :last_name,
                 # required: true,
                 placeholder: 'Doe' %>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="container">
-            <div class="row d-flex justify-content-space-between">
-              <div class="col-6">
-                <%= f.input :city,
+            <div class="container">
+              <div class="row d-flex justify-content-space-between">
+                <div class="col-6">
+                  <%= f.input :city,
                 # required: true,
                 placeholder: "New York"%>
-              </div>
-              <div class="col-6">
-                <%= f.input :country,
+                </div>
+                <div class="col-6">
+                  <%= f.input :country,
                 label: "Country",
                 as: :select,
                 collection: @countries %>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="container">
-            <div class="row d-flex justify-content-space-between">
-              <div class="col-6">
-                <%= f.input :gender,
-                collection: @genders,
-                selected: "Male"%>
-              </div>
-              <div class="col-6">
-                <%= f.input :title,
-                # required: true,
-                placeholder: "Sr. Developer" %>
-              </div>
-            </div>
-          </div>
-
-          <% if @user.user_type == "mentee" %>
-          <div class="mentee-personal-form">
             <div class="container">
               <div class="row d-flex justify-content-space-between">
-                <div class="col-12">
-                  <%= f.input :university,
+                <div class="col-6">
+                  <%= f.input :gender,
+                collection: @genders,
+                selected: "Male"%>
+                </div>
+                <div class="col-6">
+                  <%= f.input :title,
+                # required: true,
+                placeholder: "Sr. Developer" %>
+                </div>
+              </div>
+            </div>
+            <% if @user.user_type == "mentee" %>
+              <div class="mentee-personal-form">
+                <div class="container">
+                  <div class="row d-flex justify-content-space-between">
+                    <div class="col-12">
+                      <%= f.input :university,
                   # required: true,
                   # label: "Title",
                   placeholder: 'New York University' %>
-                </div>
-                <div class="col-12">
-                  <%= f.input :linkedin_url,
-                  label: "Linkedin url",
-                  placeholder: 'https://www.linkedin.com/in/johndoe' %>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
-          <br>
-
-          <!-- Mentor personal Information -->
-          <% else %>
-          <div class="mentor-personal-form">
-            <div class="container">
-              <div class="row d-flex justify-content-space-between">
-                <div class="col-12">
-                  <%= f.input :experience,
+              <br>
+              <!-- Mentor personal Information -->
+            <% else %>
+              <div class="mentor-personal-form">
+                <div class="container">
+                  <div class="row d-flex justify-content-space-between">
+                    <div class="col-12">
+                      <%= f.input :experience,
                   # required: true,
                   # hint: "Years of Experience",
                   label: "Years of Experience",
                   collection: @experience%>
-                  <%= f.input :company,
+                      <%= f.input :company,
                   # required: true,
                   placeholder: 'Microsoft' %>
-
-                  <%= f.input :linkedin_url,
+                      <%= f.input :linkedin_url,
                   label: "Linkedin url",
                   placeholder: 'https://www.linkedin.com/in/johndoe' %>
+                    </div>
+                  </div>
                 </div>
               </div>
+            <% end %>
+            <div class="align-btn">
+              <button class="continue-btn btn btn-primary">CONTINUE</button>
             </div>
           </div>
-          <% end %>
-
-          <div class="align-btn">
-            <button class="continue-btn btn btn-primary">CONTINUE</button>
-          </div>
-
         </div>
       </div>
-
-
     </div>
-  </div>
-  <br>
-  <br>
-  <br>
-
-
-  <div class="picture-form">
-    <div class="container">
-
-      <div class="step-1-top">
-        <a class="back-arrow" href="/complete_profile">
-          <%= image_tag "back-arrow.png", class: "small-icon" %>
-        </a>
-        <a class="close" href="/">
-          <%= image_tag "close.png", class: "small-icon" %>
-        </a>
-        <div class="steps-logo">
-          <%= image_tag "logo-text-white.png", class: "logo" %>
+    <br>
+    <br>
+    <br>
+    <div class="picture-form">
+      <div class="container">
+        <div class="step-1-top">
+          <a class="back-arrow" href="/complete_profile">
+            <%= image_tag "back-arrow.png", class: "small-icon" %>
+          </a>
+          <a class="close" href="/">
+            <%= image_tag "close.png", class: "small-icon" %>
+          </a>
+          <div class="steps-logo">
+            <%= image_tag "logo-text-white.png", class: "logo" %>
+          </div>
         </div>
       </div>
 
@@ -168,10 +145,8 @@
 </div>
 </div>
 </div>
-
-
-</div> <!-- Container closing tag -->
-</div> <!-- Picture form closing tag -->
-
+</div>
+<!-- Container closing tag -->
+</div>
+<!-- Picture form closing tag -->
 <%= javascript_pack_tag 'complete_profile' %>
-

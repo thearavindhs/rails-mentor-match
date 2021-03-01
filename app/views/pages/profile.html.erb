@@ -12,14 +12,43 @@
     </ul>
   </div>
   <div id="main">
-    <% if current_user.user_type == "mentee" && current_user.respond_to?(:mentor) && !current_user.mentor.nil? %>
+    <% if current_user.user_type == "mentee" && current_user.mentor.empty? %>
       <div class="welcome-card">
         <div class="header-text">
           <h3>
             <%= "Welcome back," %>
-            <%= current_user.first_name %>
+            <%= current_user.first_name.capitalize %>
           </h3>
-          <h4><%= current_user.city %>, <%= current_user.country %> </h4>
+          <h4> <%= current_user.city %> </h4>
+          <h4> <%= current_user.country %> </h4>
+          <p>Making the most out of your connections takes work. Read our blog to become a better mentee </p>
+          <%= link_to "GET TIPS", sign_up_url, class: "btn btn-primary border-radius font-weight-bold" %>
+          <!-- link will need to be updated -->
+        </div>
+        <div class="header-image">
+          <%= image_tag "welcome.png", class: "welcome-img" %>
+        </div>
+      </div>
+      <div class="mentee-profile-container">
+        <div class="mentee-sub-container">
+          <div class="header-text">
+            <h3>
+              <%= "We are working to find you a best match" %>
+            </h3>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div id="main">
+    <% if current_user.user_type == "mentee" && !current_user.mentor.empty? %>
+      <div class="welcome-card">
+        <div class="header-text">
+          <h3>
+            <%= "Welcome back," %>
+            <%= current_user.first_name.capitalize %>
+          </h3>
+          <h4> <%= current_user.city %>, <%= current_user.country %> </h4>
           <p>Making the most out of your connections takes work. Read our blog to become a better mentee </p>
           <%= link_to "GET TIPS", sign_up_url, class: "btn btn-primary border-radius font-weight-bold" %>
           <!-- link will need to be updated -->
@@ -30,9 +59,9 @@
       </div>
       <div class="mentee-profile-container">
         <div class="photo-container">
-        <%= image_tag "mentee-photo-container.png", class: "mentee-photo-container"%>
-        <div class= "photo-align"> <%= cl_image_tag current_user.photo.key, width: 400, height: 300, crop: :fill, class: "dynamic-photo-mentor" %> </div>
-      </div>
+          <%= image_tag "mentee-photo-container.png", class: "mentee-photo-container"%>
+          <%= cl_image_tag current_user.mentor.photo.key, width: 400, height: 300, crop: :fill, class: "dynamic-photo-mentor" %>
+        </div>
         <div class="mentee-sub-container">
           <div class="header-text">
             <h3>
@@ -54,55 +83,84 @@
               <br>
             </div>
             <%= link_to "CONNECT WITH MY MENTOR", sign_up_url, class: "btn btn-primary border-radius font-weight-bold" %>
-          </div class="small-text">
+          </div>
         </div>
       </div>
     <% end %>
-    <div class="main-container">
-      <% if current_user.user_type == "mentor" && current_user.respond_to?(:mentees) && !current_user.mentees.nil? %>
-        <div class="welcome-card">
-          <div class="header-text">
-            <h3>
-              <%= "Welcome back," %>
-              <%= current_user.first_name %>
-            </h3>
-            <h4><%= current_user.city %>, <%= current_user.country %> </h4>
-            <p>A great relationship with your mentee is beneficial to you too. You may want to hire them someday! Learn how to be a great mentor. </p>
-            <%= link_to "GET TIPS", sign_up_url, class: "btn btn-primary border-radius font-weight-bold" %>
-            <!-- link will need to be updated -->
-          </div>
-          <div class="header-image">
-            <%= image_tag "welcome-2.png", class: "welcome-img" %>
-          </div>
+  </div>
+  <div class="main-container">
+    <% if current_user.user_type == "mentor" && current_user.mentees.empty? %>
+      <div class="welcome-card">
+        <div class="header-text">
+          <h3>
+            <%= "Welcome back," %>
+            <%= current_user.first_name.capitalize %>
+          </h3>
+          <h4> <%= current_user.city %> </h4>
+          <h4> <%= current_user.country %> </h4>
+          <p>A great relationship with your mentee is beneficial to you too. You may want to hire them someday! Learn how to be a great mentor. </p>
+          <%= link_to "GET TIPS", sign_up_url, class: "btn btn-primary border-radius font-weight-bold" %>
+          <!-- link will need to be updated -->
         </div>
-        <div class="mentor-profile-container">
-          <div class="header-text">
-            <h3>
-              <%= "You Have a Match!" %>
-            </h3>
-            <h4>
-              <%= "Your mentee is" %>
-            </h4>
-            <h2>
-              <%= current_user.mentees.first.first_name %> <%= current_user.mentees.first.last_name%>
-            </h2>
-            <p>
-              Student at <%= current_user.mentees.first.university %>
-            </p>
-            <div class="small-text">
-              <%= "We've asked your mentee to contact you via email within 10 days. All you have to do is wait! " %>
-            </div>
-            <br>
-            <small><em>Still haven't heard back from your mentee? <u>Contact us</u></em></small>
-          </div>
-          <br>
-          <br>
-          <div class="photo-container">
-          <%= image_tag "mentor-photo-container.png", class: "mentor-photo-container" %>
-          <%= cl_image_tag current_user.photo.key, width: 400, height: 300, crop: :fill, class: "dynamic-photo-mentee" %>
+        <div class="header-image">
+          <%= image_tag "welcome-2.png", class: "welcome-img" %>
         </div>
-        <% end %>
       </div>
-    </div>
+      <div class="mentor-profile-container">
+        <div class="header-text">
+          <h3>
+            <%= "We are working to find you a best match" %>
+          </h3>
+        </div>
+      </div>
+      <br>
+      <br>
+    <% end %>
+  </div>
+  <div class="main-container">
+    <% if current_user.user_type == "mentor" && !current_user.mentees.empty? %>
+      <div class="welcome-card">
+        <div class="header-text">
+          <h3>
+            <%= "Welcome back," %>
+            <%= current_user.first_name.capitalize %>
+          </h3>
+          <h4> <%= current_user.city %>, <%= current_user.country %> </h4>
+          <p>A great relationship with your mentee is beneficial to you too. You may want to hire them someday! Learn how to be a great mentor. </p>
+          <%= link_to "GET TIPS", sign_up_url, class: "btn btn-primary border-radius font-weight-bold" %>
+          <!-- link will need to be updated -->
+        </div>
+        <div class="header-image">
+          <%= image_tag "welcome-2.png", class: "welcome-img" %>
+        </div>
+      </div>
+      <div class="mentor-profile-container">
+        <div class="photo-container">
+          <%= image_tag "mentor-photo-container.png", class: "mentor-photo-container" %>
+          <%= cl_image_tag current_user.mentees.first.photo.key, width: 400, height: 300, crop: :fill, class: "dynamic-photo-mentee" %>
+        </div>
+        <div class="header-text">
+          <h3>
+            <%= "You Have a Match!" %>
+          </h3>
+          <h4>
+            <%= "Your mentee is" %>
+          </h4>
+          <h2>
+            <%= current_user.mentees.first.first_name %> <%= current_user.mentees.first.last_name%>
+          </h2>
+          <p>
+            Student at <%= current_user.mentees.first.university %>
+          </p>
+        </div>
+        <div class="small-text">
+          <%= "We've asked your mentee to contact you via email within 10 days. All you have to do is wait! " %>
+        </div>
+        <br>
+        <small><em>Still haven't heard back from your mentee? <u>Contact us</u></em></small>
+      </div>
+      <br>
+      <br>
+    <% end %>
   </div>
 </div>
