@@ -130,7 +130,8 @@
 
     <div class="container">
       <div class="row d-flex justify-content-center">
-      <%= f.input :photo, as: :file, input_html: {id: "mentor_user_photo"} %>
+      <%= image_tag "", width: 300, class: "hidden", id: "photo-preview" %>
+      <%= f.input :photo, input_html: { class: 'hidden', id: 'photo-input'}, label_html: { class: 'upload-photo'}, label: '📷 Upload a photo' %>
     </div>
 
 
