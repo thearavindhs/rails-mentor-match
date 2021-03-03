@@ -12,7 +12,7 @@
     </ul>
   </div>
   <div id="main">
-    <% if current_user.user_type == "mentee" && current_user.mentor.empty? %>
+    <% if current_user.user_type == "mentee" && current_user.mentor.nil? %>
       <div class="welcome-card">
         <div class="header-text">
           <h3>
@@ -41,7 +41,7 @@
     <% end %>
   </div>
   <div id="main">
-    <% if current_user.user_type == "mentee" && !current_user.mentor.empty? %>
+    <% if current_user.user_type == "mentee" && !current_user.mentor.nil? %>
       <div class="welcome-card">
         <div class="header-text">
           <h3>
