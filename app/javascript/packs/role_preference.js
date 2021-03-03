@@ -10,12 +10,7 @@ cards.forEach((card) => {
     // deactivateCards();
     console.log(`Input -> ${inputForm.value}`);
     // card.childNodes[1].classList.replace("background-card-small", "background-card-small-active");
+    card.childNodes[1].childNodes[1].classList.replace("role-name-large", "role-name-large-active");
+    card.childNodes[1].childNodes[1].classList.replace("role-name-small", "role-name-small-active");
   });
 });
-
-// function deactivateCards(){
-//   // CurrentTarget is the complete card.
-//   cards.forEach((card) => {
-//     if (card.childNodes[1].classList.contains("")) {}
-//   });
-// }
