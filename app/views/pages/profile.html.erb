@@ -12,7 +12,7 @@
     </ul>
   </div>
   <div id="main">
-    <% if current_user.user_type == "mentee" && current_user.mentor.empty? %>
+    <% if current_user.user_type == "mentee" && current_user.mentor.nil? %>
       <div class="welcome-card">
         <div class="header-text">
           <h3>
@@ -23,7 +23,6 @@
           <h4> <%= current_user.country %> </h4>
           <p>Making the most out of your connections takes work. Read our blog to become a better mentee </p>
           <%= link_to "GET TIPS", tips_url, class: "btn btn-primary border-radius font-weight-bold" %>
-
         </div>
         <div class="header-image">
           <%= image_tag "welcome.png", class: "welcome-img" %>
@@ -33,8 +32,8 @@
         <div class="mentee-sub-container">
           <div class="header-text">
             <div class="header-image">
-          <%= image_tag "waiting.png", class: "welcome-img" %>
-        </div>
+              <%= image_tag "waiting.png", class: "welcome-img" %>
+            </div>
             <h3>
               <%= "We are working to find you a best match" %>
             </h3>
@@ -44,7 +43,7 @@
     <% end %>
   </div>
   <div id="main">
-    <% if current_user.user_type == "mentee" && !current_user.mentor.empty? %>
+    <% if current_user.user_type == "mentee" && !current_user.mentor.nil? %>
       <div class="welcome-card">
         <div class="header-text">
           <h3>
@@ -92,7 +91,7 @@
     <% end %>
   </div>
   <div class="main-container">
-    <% if current_user.user_type == "mentor" && current_user.mentees.empty? %>
+    <% if current_user.user_type == "mentor" && !current_user.mentees.nil? %>
       <div class="welcome-card">
         <div class="header-text">
           <h3>
@@ -103,7 +102,6 @@
           <h4> <%= current_user.country %> </h4>
           <p>A great relationship with your mentee is beneficial to you too. You may want to hire them someday! Learn how to be a great mentor. </p>
           <%= link_to "GET TIPS", tips_url, class: "btn btn-primary border-radius font-weight-bold" %>
-
         </div>
         <div class="header-image">
           <%= image_tag "welcome-2.png", class: "welcome-img" %>
@@ -121,7 +119,7 @@
     <% end %>
   </div>
   <div class="main-container">
-    <% if current_user.user_type == "mentor" && !current_user.mentees.empty? %>
+    <% if current_user.user_type == "mentor" && current_user.mentees.nil? %>
       <div class="welcome-card">
         <div class="header-text">
           <h3>
@@ -131,7 +129,6 @@
           <h4> <%= current_user.city %>, <%= current_user.country %> </h4>
           <p>A great relationship with your mentee is beneficial to you too. You may want to hire them someday! Learn how to be a great mentor. </p>
           <%= link_to "GET TIPS",tips_url, class: "btn btn-primary border-radius font-weight-bold" %>
-
         </div>
         <div class="header-image">
           <%= image_tag "welcome-2.png", class: "welcome-img" %>
