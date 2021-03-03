@@ -5,6 +5,7 @@ const previewImageOnFileSelect = () => {
     // we add a listener to know when a new picture is uploaded
     input.addEventListener('change', () => {
       // we call the displayPreview function (who retrieve the image url and display it)
+      document.getElementById("photo-details").classList.add('hidden');
       displayPreview(input);
     })
   }
