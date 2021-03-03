@@ -1,5 +1,5 @@
 document.querySelector(".user_role_preference").hidden = true;
-const inputForm = document.querySelector("#user_role_preference")
+const inputForm = document.querySelector("#user_role_preference");
 
 const cards = document.querySelectorAll(".role-card");
 

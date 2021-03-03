@@ -19,8 +19,12 @@
   <%= simple_form_for(@user, url: update_preferences_url, method: :patch) do |f| %>
   <%= f.error_notification %>
   <!-- These are hidden. Dont worry about them : ) -->
-  <%= f.input :maximum_mentee, class: 'maximum_mentee' %>
-  <%= f.input :experience_preference, class: 'experience_preference' %>
+  <% if @user.user_type == "mentor" %>
+    <%= f.input :maximum_mentee, class: 'maximum_mentee' %>
+  <% else %>
+    <%= f.input :experience_preference, class: 'experience_preference' %>
+  <% end %>
+
 
   <div class="header-change">
     <% if @user.user_type == "mentor" %>
