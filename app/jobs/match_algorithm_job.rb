@@ -13,17 +13,15 @@ class MatchAlgorithmJob < ApplicationJob
     end
 
     return 0 if mentors.count == 0
-    # # Weights
-    industryWeight = 8
-    roleWeight = 2
-
+    # Weights
+    roleWeight = 10
     cityWeight = 1
     countryWeight = 1
     languageWeight = 2
     experienceWeight = 4
     genderWeight = 2
 
-    perfectValue = cityWeight + countryWeight + languageWeight + experienceWeight + genderWeight
+    perfectValue = roleWeight + cityWeight + countryWeight + languageWeight + experienceWeight + genderWeight
     minValue = 75
     result = 0
     selected_mentor = ""
@@ -31,14 +29,14 @@ class MatchAlgorithmJob < ApplicationJob
     while result < minValue
       mentors.each do |mentor|
         selected_mentor = mentor
-        industryValue = bool_to_int( user.industry_preference.capitalize == mentor.industry.capitalize ) * industryWeight
-        roleValue = bool_to_int( user.role_preference.capitalize == mentor.role.capitalize ) * roleWeight
+        roleValue = bool_to_int( user.role_preference == mentor.role ) * roleWeight
         countryValue = bool_to_int( user.country_preference == mentor.country ) * countryWeight
         languageValue = bool_to_int( user.language_preference == mentor.language ) * languageWeight
-        experienceValue = bool_to_int( user.experience_preference.to_i == mentor.experience ) * experienceWeight
+        experienceValue = bool_to_int( user.experience_preference == mentor.experience ) * experienceWeight
         genderValue = bool_to_int( user.gender_preference == mentor.gender ) * genderWeight
+        cityValue = bool_to_int( user.city_preference.downcase == mentor.city.downcase ) * cityWeight
 
-        similarityValue = industryValue + roleValue + countryValue + languageValue + experienceValue + genderValue
+        similarityValue = roleValue + countryValue + languageValue + experienceValue + genderValue + cityValue
 
         result = (similarityValue * 100) / perfectValue
         minValue -= 1

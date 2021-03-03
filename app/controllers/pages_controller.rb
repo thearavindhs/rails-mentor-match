@@ -13,6 +13,10 @@
   end
 
   def success
+    @user = current_user
+    if @user.user_type == "mentee" && @user.mentor.nil?
+      @user.matchMe
+    end
   end
 
   def user_type
@@ -66,7 +70,7 @@
     @user.attributes = user_params
     if @user.save
       # match_me
-      redirect_to profile_url
+      redirect_to success_url
     else
       redirect_to preferences_url(error: :true)
     end
