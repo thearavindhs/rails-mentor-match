@@ -5,7 +5,7 @@
       <div class="step-1-top">
         <br>
             <%= image_tag "back-arrow.png", class: "small-icon" %>
-          </a> -->
+          </a>
         <a class="close" href="/">
           <%= image_tag "close.png", class: "small-icon" %>
         </a>
@@ -59,7 +59,7 @@
                 <div class="col-6">
                   <%= f.input :title,
                 # required: true,
-                placeholder: "Sr. Developer" %>
+                placeholder: "Student" %>
                 </div>
               </div>
             </div>
@@ -130,9 +130,13 @@
 
     <div class="container">
       <div class="row d-flex justify-content-center">
-      <%= image_tag "", width: 300, class: "hidden", id: "photo-preview" %>
-      <%= f.input :photo, input_html: { class: 'hidden', id: 'photo-input'}, label_html: { class: 'upload-photo'}, label: '📷 Upload a photo' %>
+      <%= f.input :photo, input_html: { class: 'hidden', id: 'photo-input'}, label_html: { class: 'social-signin-btn'}, label: 'UPLOAD A PHOTO' %>
     </div>
+    <div class="container">
+      <div class="row d-flex justify-content-center">
+    <%= image_tag "missing.png", class: "uploadphoto-img" %>
+    <%= image_tag "", width: 300, class: "hidden preview-photo ", id: "photo-preview" %>
+  </div>
 
 
 </div>
