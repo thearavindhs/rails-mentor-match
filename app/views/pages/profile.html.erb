@@ -139,25 +139,27 @@
           <%= image_tag "mentor-photo-container.png", class: "mentor-photo-container" %>
           <%= cl_image_tag current_user.mentees.first.photo.key, width: 400, height: 300, crop: :fill, class: "dynamic-photo-mentee" %>
         </div>
-        <div class="header-text">
-          <h3>
-            <%= "You Have a Match!" %>
-          </h3>
-          <h4>
-            <%= "Your mentee is" %>
-          </h4>
-          <h2>
-            <%= current_user.mentees.first.first_name %> <%= current_user.mentees.first.last_name%>
-          </h2>
-          <p>
-            Student at <%= current_user.mentees.first.university %>
-          </p>
+        <div class="container">
+          <div class="header-text">
+            <h3>
+              <%= "You Have a Match!" %>
+            </h3>
+            <h4>
+              <%= "Your mentee is" %>
+            </h4>
+            <h2>
+              <%= current_user.mentees.first.first_name %> <%= current_user.mentees.first.last_name%>
+            </h2>
+            <p>
+              Student at <%= current_user.mentees.first.university %>
+            </p>
+          </div>
+          <div class="small-text">
+            <%= "We've asked your mentee to contact you via email within 10 days. All you have to do is wait! " %>
+          </div>
+          <br>
+          <small><em>Still haven't heard back from your mentee? <u>Contact us</u></em></small>
         </div>
-        <div class="small-text">
-          <%= "We've asked your mentee to contact you via email within 10 days. All you have to do is wait! " %>
-        </div>
-        <br>
-        <small><em>Still haven't heard back from your mentee? <u>Contact us</u></em></small>
       </div>
       <br>
       <br>
