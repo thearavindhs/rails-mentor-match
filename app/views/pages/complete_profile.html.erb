@@ -1,138 +1,132 @@
 <div class="signup-banner">
   <%= simple_form_for(@user, url: user_registration_url, method: :patch) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="completeprofile-section">
-
-    <div class="container">
-
-      <div class="step-1-top">
-        <br>
-        <a href="/" class="small-icon">
-          <%= image_tag "back-arrow.png", class: "small-icon" %>
-        </a>
-        <a href="/" class="close">
-          <%= image_tag "close.png", class: "small-icon" %>
-        </a>
-        <div class="steps-logo">
-          <%= image_tag "logo-text-white.png", class: "logo" %>
-        </div>
-        <div class="header">
-          <h2> Complete Your Profile </h2>
-        </div>
-      </div> <!-- Step 1 top -->
-
-
-      <div class="row align-form">
-        <div class="col-6">
-
-          <div class="container">
-            <div class="row d-flex justify-content-space-between">
-              <div class="col-6">
-                <%= f.input :first_name, placeholder: "John" %>
-              </div>
-              <div class="col-6">
-                <%= f.input :last_name, placeholder: "Doe" %>
-              </div>
-            </div>
-          </div> <!-- Container  -->
-
-          <div class="container">
-            <div class="row d-flex justify-content-space-between">
-              <div class="col-6">
-                <%= f.input :city, placeholder: "New York" %>
-              </div>
-              <div class="col-6">
-                <%= f.input :country, label: "Country", as: :select, collection: @countries %>
-              </div>
-            </div>
-          </div> <!-- Container -->
-
-          <div class="container">
-            <div class="row d-flex justify-content-space-between">
-              <div class="col-6">
-                <%= f.input :gender, collection: @genders, selected: "Male" %>
-              </div>
-              <div class="col-6">
-                <%= f.input :title, placeholder: "Sr. Developer" %>
-              </div>
-            </div>
-          </div> <!-- Container -->
-
-          <% if @user.user_type == "mentee" %>
-
-            <div class="mentee-personal-form">
-              <div class="container">
-                <div class="row d-flex justify-content-space-between">
-                  <div class="col-12">
-                    <%= f.input :university, placeholder: "New York University" %>
-                  </div>
-                </div>
-              </div>
-            </div> <!-- Mentee personal form -->
-            <br>
-
-          <% else %>
-            <div class="mentor-personal-form">
-              <div class="container">
-                <div class="row d-flex justify-content-space-between">
-                  <div class="col-12">
-                    <%= f.input :experience, label: "Years of Experience", collection: @experience %>
-                    <%= f.input :company, placeholder: "Microsoft" %>
-                    <%= f.input :linkedin_url, label: "Linkedin url", placeholder: 'https://www.linkedin.com/in/johndoe' %>
-                  </div>
-                </div>
-              </div>
-            </div>
-          <% end %> <!-- If/else statement -->
-
-          <div class="align-btn">
-            <button class="continue-btn btn btn-primary">CONTINUE</button>
+    <%= f.error_notification %>
+    <div class="completeprofile-section">
+      <div class="container">
+        <div class="step-1-top">
+          <br>
+          <a href="/" class="small-icon">
+            <%= image_tag "back-arrow.png", class: "small-icon" %>
+          </a>
+          <a href="/" class="close">
+            <%= image_tag "close.png", class: "small-icon" %>
+          </a>
+          <div class="steps-logo">
+            <%= image_tag "logo-text-white.png", class: "logo" %>
           </div>
-
-        </div> <!-- col - 6 -->
-      </div> <!-- row align form -->
-
-
-
-    </div> <!-- Container -->
-
-  </div> <!-- CompleteProfileSection -->
-
-  <div class="picture-form">
-
-    <div class="container">
-      <div class="step-1-top">
-        <br>
-        <a href="/complete_profile" class="small-icon">
-          <%= image_tag "back-arrow.png", class: "small-icon" %>
-        </a>
-        <a href="/" class="close">
-          <%= image_tag "close.png", class: "small-icon" %>
-        </a>
-        <div class="steps-logo">
-          <%= image_tag "logo-text-white.png", class: "logo" %>
+          <div class="header">
+            <h2> Complete Your Profile </h2>
+          </div>
         </div>
-        <div class="header">
-          <h2>Don't Forget to Add a Photo!</h2>
+        <!-- Step 1 top -->
+        <div class="row align-form">
+          <div class="col-6">
+            <div class="container">
+              <div class="row d-flex justify-content-space-between">
+                <div class="col-6">
+                  <%= f.input :first_name, placeholder: "John" %>
+                </div>
+                <div class="col-6">
+                  <%= f.input :last_name, placeholder: "Doe" %>
+                </div>
+              </div>
+            </div>
+            <!-- Container  -->
+            <div class="container">
+              <div class="row d-flex justify-content-space-between">
+                <div class="col-6">
+                  <%= f.input :city, placeholder: "New York" %>
+                </div>
+                <div class="col-6">
+                  <%= f.input :country, label: "Country", as: :select, collection: @countries %>
+                </div>
+              </div>
+            </div>
+            <!-- Container -->
+            <div class="container">
+              <div class="row d-flex justify-content-space-between">
+                <div class="col-6">
+                  <%= f.input :gender, collection: @genders, selected: "Male" %>
+                </div>
+                <div class="col-6">
+                  <%= f.input :title, placeholder: "Sr. Developer" %>
+                </div>
+              </div>
+            </div>
+            <!-- Container -->
+            <% if @user.user_type == "mentee" %>
+              <div class="mentee-personal-form">
+                <div class="container">
+                  <div class="row d-flex justify-content-space-between">
+                    <div class="col-12">
+                      <%= f.input :university, placeholder: "New York University" %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Mentee personal form -->
+              <br>
+            <% else %>
+              <div class="mentor-personal-form">
+                <div class="container">
+                  <div class="row d-flex justify-content-space-between">
+                    <div class="col-12">
+                      <%= f.input :experience, label: "Years of Experience", collection: @experience %>
+                      <%= f.input :company, placeholder: "Microsoft" %>
+                      <%= f.input :linkedin_url, label: "Linkedin url", placeholder: 'https://www.linkedin.com/in/johndoe' %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <% end %> <!-- If/else statement -->
+            <div class="align-btn">
+              <button class="continue-btn btn btn-primary">CONTINUE</button>
+            </div>
+          </div>
+          <!-- col - 6 -->
         </div>
-      </div> <!-- Step 1 top -->
-    </div> <!-- Container -->
-
-    <div class="container">
-      <div class="row d-flex justify-content-center">
-        <%= f.input :photo, as: :file, input_html: {id: "mentor_user_photo"} %>
+        <!-- row align form -->
+      </div>
+      <!-- Container -->
+    </div>
+    <!-- CompleteProfileSection -->
+    <div class="picture-form">
+      <div class="container">
+        <div class="step-1-top">
+          <br>
+          <a href="/complete_profile" class="small-icon">
+            <%= image_tag "back-arrow.png", class: "small-icon" %>
+          </a>
+          <a href="/" class="close">
+            <%= image_tag "close.png", class: "small-icon" %>
+          </a>
+          <div class="steps-logo">
+            <%= image_tag "logo-text-white.png", class: "logo" %>
+          </div>
+          <div class="header">
+            <h2>Don't Forget to Add a Photo!</h2>
+          </div>
+        </div>
+        <!-- Step 1 top -->
+      </div>
+      <!-- Container -->
+      <div class="container">
+        <div class="row d-flex justify-content-center">
+          <%= f.input :photo, input_html: { class: 'hidden', id: 'photo-input'}, label_html: { class: 'social-signin-btn'}, label: 'UPLOAD A PHOTO' %>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row d-flex justify-content-center">
+          <%= image_tag "missing.png", class: "uploadphoto-img", id: "photo-details" %>
+          <%= image_tag "", width: 300, class: "hidden preview-photo", id: "photo-preview" %>
+        </div>
+      </div>
+      <div class="align-btn">
+        <button class="btn btn-primary">CONTINUE</button>
       </div>
     </div>
-
-    <div class="align-btn">
-      <button class="btn btn-primary">CONTINUE</button>
-    </div>
-
-  </div> <!-- Picture From -->
-
+    <!-- Picture From -->
   <% end %> <!-- End form -->
-
-</div> <!-- Signup Banner -->
-
+</div>
+<!-- Signup Banner -->
 <%= javascript_pack_tag 'complete_profile' %>
