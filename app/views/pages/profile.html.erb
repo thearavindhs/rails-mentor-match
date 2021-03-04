@@ -135,10 +135,6 @@
         </div>
       </div>
       <div class="mentor-profile-container">
-        <div class="photo-container">
-          <%= image_tag "mentor-photo-container.png", class: "mentor-photo-container" %>
-          <%= cl_image_tag current_user.mentees.first.photo.key, width: 400, height: 300, crop: :fill, class: "dynamic-photo-mentee" %>
-        </div>
         <div class="container">
           <div class="header-text">
             <h3>
@@ -159,6 +155,10 @@
           </div>
           <br>
           <small><em>Still haven't heard back from your mentee? <u>Contact us</u></em></small>
+        </div>
+        <div class="photo-container">
+          <%= image_tag "mentor-photo-container.png", class: "mentor-photo-container" %>
+          <%= cl_image_tag current_user.mentees.first.photo.key, width: 400, height: 300, crop: :fill, class: "dynamic-photo-mentee" %>
         </div>
       </div>
       <br>
