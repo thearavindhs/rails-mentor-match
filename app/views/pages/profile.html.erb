@@ -91,7 +91,7 @@
     <% end %>
   </div>
   <div class="main-container">
-    <% if current_user.user_type == "mentor" && !current_user.mentees.nil? %>
+    <% if current_user.user_type == "mentor" && current_user.mentees.empty? %>
       <div class="welcome-card">
         <div class="header-text">
           <h3>
@@ -119,7 +119,7 @@
     <% end %>
   </div>
   <div class="main-container">
-    <% if current_user.user_type == "mentor" && current_user.mentees.nil? %>
+    <% if current_user.user_type == "mentor" && !current_user.mentees.empty? %>
       <div class="welcome-card">
         <div class="header-text">
           <h3>
