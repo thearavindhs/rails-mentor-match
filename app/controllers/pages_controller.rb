@@ -10,6 +10,10 @@
   end
 
   def confirmation
+    @user = current_user
+    if !@user.mentor.nil? || !@user.mentees.empty?
+      redirect_to profile_url 
+    end
   end
 
   def success
