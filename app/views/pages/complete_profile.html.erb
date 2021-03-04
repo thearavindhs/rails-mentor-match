@@ -38,7 +38,7 @@
                   <%= f.input :city, placeholder: "New York" %>
                 </div>
                 <div class="col-6">
-                  <%= f.input :country, label: "Country", as: :select, collection: @countries %>
+                  <%= f.input :country, label: "Country", as: :select, collection: @countries, selected: "USA" %>
                 </div>
               </div>
             </div>
@@ -46,7 +46,7 @@
             <div class="container">
               <div class="row d-flex justify-content-space-between">
                 <div class="col-6">
-                  <%= f.input :gender, collection: @genders, selected: "Male" %>
+                  <%= f.input :gender, as: :select, collection: @genders, selected: "Female" %>
                 </div>
                 <div class="col-6">
                   <%= f.input :title, placeholder: "Sr. Developer" %>
@@ -71,7 +71,7 @@
                 <div class="container">
                   <div class="row d-flex justify-content-space-between">
                     <div class="col-12">
-                      <%= f.input :experience, label: "Years of Experience", collection: @experience %>
+                      <%= f.input :experience, label: "Years of Experience", collection: @experience, selected: "6-15 years" %>
                       <%= f.input :company, placeholder: "Microsoft" %>
                       <%= f.input :linkedin_url, label: "Linkedin url", placeholder: 'https://www.linkedin.com/in/johndoe' %>
                     </div>
