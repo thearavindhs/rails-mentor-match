@@ -27,7 +27,11 @@
     </div> <!-- Steps 2 top -->
     <%= simple_form_for(@user, url: update_roles_url, method: :patch) do |f| %>
     <%= f.error_notification %>
-      <%= f.input :role_preference, class: 'role_preference' %>
+      <% if current_user.user_type == "mentor" %>
+        <%= f.input :role, class: 'role' %>
+      <% else %>
+        <%= f.input :role_preference, class: 'role_preference' %>
+      <% end %>
       <div class="container">
         <div class="row d-flex justify-content-center">
 
