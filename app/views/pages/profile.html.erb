@@ -1,13 +1,13 @@
 <div class="profile-background">
   <div id="mySidenav" class="sidenav">
     <ul>
-      <li><a href="#">Matches</a></li>
+      <li><%= link_to "Matches", profile_path %></li>
       <br>
-      <li><a href="#">Account</a></li>
+      <li><%= link_to "Account", profile_path %></li>
       <br>
-      <li><a href="#">Resources</a></li>
+      <li><%= link_to "Resources", tips_path %></li>
       <br>
-      <li><a href="#">Help</a></li>
+      <li><%= link_to "Help", tips_path %></li>
       <br>
     </ul>
   </div>
@@ -19,8 +19,7 @@
             <%= "Welcome back," %>
             <%= current_user.first_name.capitalize %>
           </h3>
-          <h4> <%= current_user.city %> </h4>
-          <h4> <%= current_user.country %> </h4>
+          <h4> <%= current_user.city %>, <%= current_user.country %> </h4>
           <p>Making the most out of your connections takes work. Read our blog to become a better mentee </p>
           <%= link_to "GET TIPS", tips_url, class: "btn btn-primary border-radius font-weight-bold" %>
         </div>
@@ -32,10 +31,10 @@
         <div class="mentee-sub-container">
           <div class="header-text">
             <div class="header-image">
-              <%= image_tag "waiting.png", class: "welcome-img" %>
             </div>
             <h3>
-              <%= "We are working to find you a best match" %>
+              <h3><%= "Your Match is in Progress" %></h3>
+          <p>Hang tight! We are still working on finding you a best match. We'll let you know via email as soon as it's happened. </p>
             </h3>
           </div>
         </div>
@@ -98,8 +97,7 @@
             <%= "Welcome back," %>
             <%= current_user.first_name.capitalize %>
           </h3>
-          <h4> <%= current_user.city %> </h4>
-          <h4> <%= current_user.country %> </h4>
+          <h4> <%= current_user.city %>, <%= current_user.country %> </h4>
           <p>A great relationship with your mentee is beneficial to you too. You may want to hire them someday! Learn how to be a great mentor. </p>
           <%= link_to "GET TIPS", tips_url, class: "btn btn-primary border-radius font-weight-bold" %>
         </div>
@@ -109,9 +107,8 @@
       </div>
       <div class="mentor-profile-container">
         <div class="header-text">
-          <h3>
-            <%= "We are working to find you a best match" %>
-          </h3>
+          <h3><%= "Your Match is in Progress" %></h3>
+          <p>Hang tight! We are still working on finding you a best match. We'll let you know via email as soon as it's happened. </p>
         </div>
       </div>
       <br>

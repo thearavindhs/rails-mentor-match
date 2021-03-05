@@ -10,11 +10,11 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
   </head>
   <body>
-    <% if action_name == "home" || action_name == "profile" %>
+    <% if action_name == "home" || action_name == "profile" || action_name == "tips" %>
       <%= render partial: '/pages/navbar' %>
     <% end %>
     <%= yield %>
-    <% if action_name == "home" || action_name == "profile" %>
+    <% if action_name == "home" || action_name == "profile" || action_name == "tips" %>
       <%= render partial: '/pages/footer' %>
     <% end %>
   </body>
