@@ -25,6 +25,16 @@ class Users::RegistrationsController < Devise::RegistrationsController
     end
   end
 
+  def update
+    @user = current_user
+    @user.attributes = user_params
+    if @user.save
+      redirect_to roles_url
+    else
+      redirect_to complete_profile(user_type: @user.user_type)
+    end
+  end
+
   private
 
   def user_params
@@ -33,16 +43,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
                                  :maximum_mentee, :email, :password, :password_confirmation,
                                  :city_preference, :country_preference, :gender_preference,
                                  :language_preference, :role_preference, :experience_preference,
-                                 :industry_preference, :company, :linkedin_url, :university, :photo)
+                                 :industry_preference, :company, :linkedin_url, :university, :photo, :title)
   end
 
   # GET /resource/edit
   # def edit
-  #   super
-  # end
-
-  # PUT /resource
-  # def update
   #   super
   # end
 

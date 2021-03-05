@@ -1,25 +1,23 @@
 <div class="signup-banner">
   <div class="createaccount-section">
     <%= simple_form_for(@user, url: user_registration_url(@user, user_type: @user_type)) do |f| %>
-    <%= f.error_notification %>
-    <!-- Step 2 -->
-    <!-- Here, we will have email, password and password confirmation inputs. -->
-    <div class="step-1-top">
-      <a class="back-arrow" href="/sign_up">
-        <%= image_tag "back-arrow.png", class: "small-icon" %>
-      </a>
-      <a class="close" href="/">
-        <%= image_tag "close.png", class: "small-icon" %>
-      </a>
-      <div class="steps-logo">
-        <%= image_tag "logo-text-white.png", class: "logo" %>
+      <%= f.error_notification %>
+      <!-- Step 2 -->
+      <!-- Here, we will have email, password and password confirmation inputs. -->
+      <div class="step-1-top">
+        <a class="back-arrow" href="/sign_up">
+          <%= image_tag "back-arrow.png", class: "small-icon" %>
+        </a>
+        <a class="close" href="/">
+          <%= image_tag "close.png", class: "small-icon" %>
+        </a>
+        <div class="steps-logo">
+          <%= image_tag "logo-text-white.png", class: "logo" %>
+        </div>
+        <br>
       </div>
-      <div class="steps-bar">
-        <%= image_tag "2-step.png" %>
-      </div>
-    </div>
-    <div class="header">
-      <h2 class= <%= @user_type %> >Create a <%= @user_type.capitalize %> Account </h2>
+      <div class="header">
+        <h2 class= <%= @user_type %> >Create a <%= @user_type.capitalize %> Account </h2>
     </div>
     <div class="create-an-account-form form">
       <div class="container">
@@ -43,11 +41,34 @@
             <div class="existing-account">
               <p> Already have an account?  <%= render "devise/shared/links" %> </p>
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
+
+            <div class="container">
+              <div class="or-field">
+                <div class="row d-flex justify-content-center or-text">
+                  <h3>or</h3><br>
+                </div>
+              </div>
+            </div>
+
+
+
+            <div class="container">
+              <div class="row d-flex justify-content-center">
+                <div class="social-signin-btn">
+                <%= image_tag "linkedin.png", class: "linkedin-logo", id: "linkedin-show" %>
+                <%- if devise_mapping.omniauthable? %>
+                <%- resource_class.omniauth_providers.each do |provider| %>
+                <%= link_to "Sign up with #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider), class: "social-signin-text" %><br/>
+      <% end %>
     <% end %>
   </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<% end %>
+</div>
 </div>
 <%= javascript_pack_tag 'sign_up' %>

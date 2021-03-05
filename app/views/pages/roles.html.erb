@@ -1,82 +1,253 @@
-<div class="preferences-form">
-  <div class="step-2-top">
-    <a class="back-arrow" href= <%= "/users/sign_up?user_type=#{@user_type}" %> >
-      <%= image_tag "back-arrow.png", class: "small-icon" %>
-    </a>
-    <a class="close" href="/">
-      <%= image_tag "close.png", class: "small-icon" %>
-    </a>
-    <div class="steps-logo">
-      <%= image_tag "logo-text-white.png", class: "logo" %>
-    </div>
-    <div class="steps-bar">
-      <%= image_tag "3-step.png" %>
-    </div>
-    <div class="header-change">
-      <h2>Select Your Preferences </h2>
-      <% if @user_type == "mentor" %>
-      <h5>I want my mentee to be...</h5>
-      <% else %>
-      <h5>I want my mentor to be...</h5>
-      <% end %>
-    </div>
-    <%= simple_form_for(@user, url: registration_path(resource_name)) do |f| %>
+<div class="signup-banner">
+  <div class="preferences-form">
+
+    <div class="step-2-top">
+
+      <a class="back-arrow" href= <%= "/users/sign_up?user_type=#{@user.user_type}" %> >
+        <%= image_tag "back-arrow.png", class: "small-icon" %>
+      </a>
+      <a href="/" class="close">
+        <%= image_tag "close.png", class: "small-icon" %>
+      </a>
+      <div class="steps-logo">
+        <%= image_tag "logo-text-white.png", class: "logo" %>
+      </div>
+      <div class="header-change">
+        <div class="header">
+        <% if current_user.user_type == "mentor" %>
+          <h2>Complete Your Profile</h2>
+          <h5>I am in...</h5>
+        <% else %>
+          <h2>Select Your Preferences </h2>
+          <h5>I want my mentor to be in...</h5>
+        <% end %>
+        </div>
+      </div>
+
+    </div> <!-- Steps 2 top -->
+    <%= simple_form_for(@user, url: update_roles_url, method: :patch) do |f| %>
     <%= f.error_notification %>
-    <div class="container">
-      <div class="row d-flex justify-content-center">
-        <div class="col-6">
-          <%= f.input :city_preference,
-          label: "City",
-          required: true,
-          placeholder: 'New York'%>
-          <%= f.input :country_preference,
-          label: "Country",
-          required: true,
-          collection: @countries,
-          selected: "USA"%>
-          <%= f.input :language_preference,
-          label: "Language",
-          required: true,
-          collection: @languages,
-          selected: "English" %>
-          <!-- This div is for users creating a mentee account. -->
-          <div class="mentee-preferences">
-            <%= f.input :gender_preference,
-            label: "Gender",
-            collection: @genders,
-            selected: "Male"%>
-            <%= f.input :industry_preference,
-            required: true,
-            label: "Industry",
-            collection: @industries,
-            selected: 'Information Technology and Services' %>
-            <%= f.input :role_preference,
-            required: true,
-            label: "Title",
-            placeholder: 'Director of AI' %>
-            <%= f.input :experience_preference,
-            required: true,
-            label: "Years of Experience",
-                # hint: "Years of Experience",
-                collection: @experiences,
-                selected: "9-11" %>
-              </div>
-              <div class="container">
-                <div class="row d-flex justify-content-center">
-                  <div class="col-3">
-                    <div class="form-actions align-btn signup-btn btn btn-primary">
-                      <%= f.button :submit, "SIGN UP"%>
-                    </div>
-                    <% end %>
+      <%= f.input :role_preference, class: 'role_preference' %>
+      <div class="container">
+        <div class="row d-flex justify-content-center">
+
+          <% if current_user.user_type == "mentor" %>
+
+            <!-- **************   Mentor   ************** -->
+
+            <div class="cards-display">
+
+              <div class="role-card">
+                <div class="background-card-small blue-card">
+                  <h3 class="role-name-large font-active">ENGINEERING</h3>
+                  <%= link_to new_user_registration_url(user_type: "mentee"), class: "text-update" do %>
+                  <div class="white-box-small">
+                    <%= image_tag "blue-role-engineer.png", class: 'card-image-small'%>
                   </div>
                 </div>
+                <% end %>
               </div>
-            </div>
-          </div>
+
+              <div class="role-card">
+                <div class="background-card-small blue-card">
+                  <h3 class="role-name-large">PRODUCT</h3>
+                  <%= link_to new_user_registration_url(user_type: "mentee"), class: "text-update" do %>
+                  <div class="white-box-small">
+                    <div class="text-info-mentee text-info">
+                      <%= image_tag "blue-role-product.png", class: 'card-image-small'%>
+                    </div>
+                  </div>
+                </div>
+                <% end %>
+              </div>
+
+              <div class="role-card">
+                <div class="background-card-small blue-card">
+                  <h3 class="role-name-large">UI/UX DESIGN</h3>
+                  <%= link_to new_user_registration_url(user_type: "mentee"), class: "text-update" do %>
+                  <div class="white-box-small">
+                    <div class="text-info-mentee text-info">
+                      <%= image_tag "blue-role-ux.png", class: 'card-image-small'%>
+                    </div>
+                  </div>
+                </div>
+                <% end %>
+              </div>
+
+              <div class="role-card">
+                <div class="background-card-small blue-card">
+                  <h3 class="role-name-large">MARKETING</h3>
+                  <%= link_to new_user_registration_url(user_type: "mentee"), class: "text-update" do %>
+                  <div class="white-box-small">
+                    <div class="text-info-mentee text-info">
+                      <%= image_tag "blue-role-marketing.png", class: 'card-image-small'%>
+                    </div>
+                  </div>
+                </div>
+                <% end %>
+              </div>
+
+            </div> <!-- Cards Display -->
+
+            <div class="cards-display-2">
+
+              <div class="role-card">
+                <div class="background-card-small blue-card">
+                  <h3 class="role-name-small">BUSINESS DEVELOPMENT</h3>
+                  <%= link_to new_user_registration_url(user_type: "mentee"), class: "text-update" do %>
+                  <div class="white-box-small">
+                    <div class="text-info-mentee text-info">
+                      <%= image_tag "blue-role-businessdev.png", class: 'card-image-small'%>
+                    </div>
+                  </div>
+                </div>
+                <% end %>
+              </div>
+
+              <div class="role-card">
+                <div class="background-card-small blue-card">
+                  <h3 class="role-name-large">DATA</h3>
+                  <%= link_to new_user_registration_url(user_type: "mentee"), class: "text-update" do %>
+                  <div class="white-box-small">
+                    <div class="text-info-mentee text-info">
+                      <%= image_tag "blue-role-data.png", class: 'card-image-small'%>
+                    </div>
+                  </div>
+                </div>
+                <% end %>
+              </div>
+
+              <div class="role-card">
+                <div class="background-card-small blue-card">
+                  <h3 class="role-name-large">SALES</h3>
+                  <%= link_to new_user_registration_url(user_type: "mentee"), class: "text-update" do %>
+                  <div class="white-box-small">
+                    <div class="text-info-mentee text-info">
+                      <%= image_tag "blue-role-sales.png", class: 'card-image-small'%>
+                    </div>
+                  </div>
+                </div>
+                <% end %>
+              </div>
+
+            </div> <!-- Cards Display 2 -->
+
+          <% else %>
+
+            <!-- **************   Mentee   ************** -->
+
+            <div class="cards-display">
+
+              <div class="role-card">
+                <div class="background-card-small orange-card">
+                  <h3 class="role-name-large">ENGINEERING</h3>
+                  <%= link_to new_user_registration_url(user_type: "mentee"), class: "text-update" do %>
+                  <div class="white-box-small">
+                    <%= image_tag "orange-role-engineer.png", class: 'card-image-small'%>
+                  </div>
+                </div>
+                <% end %>
+              </div>
+
+              <div class="role-card">
+                <div class="background-card-small orange-card">
+                  <h3 class="role-name-large">PRODUCT</h3>
+                  <%= link_to new_user_registration_url(user_type: "mentee"), class: "text-update" do %>
+                  <div class="white-box-small">
+                    <div class="text-info-mentee text-info">
+                      <%= image_tag "orange-role-product.png", class: 'card-image-small'%>
+                    </div>
+                  </div>
+                </div>
+                <% end %>
+              </div>
+
+              <div class="role-card">
+                <div class="background-card-small orange-card">
+                  <h3 class="role-name-large">UI/UX DESIGN</h3>
+                  <%= link_to new_user_registration_url(user_type: "mentee"), class: "text-update" do %>
+                  <div class="white-box-small">
+                    <div class="text-info-mentee text-info">
+                      <%= image_tag "orange-role-ux.png", class: 'card-image-small'%>
+                    </div>
+                  </div>
+                </div>
+                <% end %>
+              </div>
+
+              <div class="role-card">
+                <div class="background-card-small orange-card">
+                  <h3 class="role-name-large">MARKETING</h3>
+                  <%= link_to new_user_registration_url(user_type: "mentee"), class: "text-update" do %>
+                  <div class="white-box-small">
+                    <div class="text-info-mentee text-info">
+                      <%= image_tag "orange-role-marketing.png", class: 'card-image-small'%>
+                    </div>
+                  </div>
+                </div>
+                <% end %>
+              </div>
+
+            </div> <!-- Display Cards -->
+
+            <div class="cards-display-2">
+
+                <div class="role-card">
+                  <div class="background-card-small orange-card">
+                    <h3 class="role-name-small">BUSINESS DEVELOPMENT</h3>
+                    <%= link_to new_user_registration_url(user_type: "mentee"), class: "text-update" do %>
+                    <div class="white-box-small">
+                      <div class="text-info-mentee text-info">
+                        <%= image_tag "orange-role-businessdev.png", class: 'card-image-small'%>
+                      </div>
+                    </div>
+                  </div>
+                  <% end %>
+                </div>
+
+                <div class="role-card">
+                  <div class="background-card-small orange-card">
+                    <h3 class="role-name-large">DATA</h3>
+                    <%= link_to new_user_registration_url(user_type: "mentee"), class: "text-update" do %>
+                    <div class="white-box-small">
+                      <div class="text-info-mentee text-info">
+                        <%= image_tag "orange-role-data.png", class: 'card-image-small'%>
+                      </div>
+                    </div>
+                  </div>
+                  <% end %>
+                </div>
+
+                <div class="role-card">
+                  <div class="background-card-small orange-card">
+                    <h3 class="role-name-large">SALES</h3>
+                    <%= link_to new_user_registration_url(user_type: "mentee"), class: "text-update" do %>
+                    <div class="white-box-small">
+                      <div class="text-info-mentee text-info">
+                        <%= image_tag "orange-role-sales.png", class: 'card-image-small'%>
+                      </div>
+                    </div>
+                  </div>
+                  <% end %>
+                </div>
+
+            </div> <!-- Display Cards 2 -->
+
+
+          <% end %> <!-- If/else statement -->
+
+        </div> <!-- row d-flex justify-content-center -->
+      </div> <!-- container  -->
+
+
+        <div class="align-btn">
+          <button class="continue-btn btn btn-primary">CONTINUE</button>
         </div>
-        <br>
-        <!--   <p> Already have an account? <%= render "devise/shared/links" %> </p>
-        -->
-      </div>
-      <br>
-    </div>
+
+    <% end %>
+
+  </div> <!-- Preferences form -->
+</div> <!-- Signup Banner -->
+
+<%= javascript_pack_tag 'role_preference' %>
+

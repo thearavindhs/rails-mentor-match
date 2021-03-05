@@ -1,0 +1,144 @@
+<div class="signup-banner">
+  <div class="step-1-top">
+    <a class="back-arrow" href="/roles">
+      <%= image_tag "back-arrow.png", class: "small-icon" %>
+    </a>
+    <a class="close" href="/">
+      <%= image_tag "close.png", class: "small-icon" %>
+    </a>
+    <div class="steps-logo">
+      <%= image_tag "logo-text-white.png", class: "logo" %>
+    </div>
+  </div>
+  <div class="header">
+    <h2>Now, Select Your Preferences</h2>
+  </div>
+  <%= simple_form_for(@user, url: update_preferences_url, method: :patch) do |f| %>
+    <%= f.error_notification %>
+    <!-- These are hidden. Dont worry about them : ) -->
+    <% if @user.user_type == "mentor" %>
+      <%= f.input :maximum_mentee, class: 'maximum_mentee' %>
+    <% else %>
+      <%= f.input :experience_preference, class: 'experience_preference' %>
+    <% end %>
+    <div class="header-change">
+      <% if @user.user_type == "mentor" %>
+        <h5>I have enough time for _ mentees at once</h5>
+      </div>
+      <div class="container">
+        <div class="cards-display-2">
+          <div class="role-card">
+            <div class="background-card-small blue-card">
+              <h3 class="role-name-large">1 MENTEE</h3>
+              <%= link_to new_user_registration_url(user_type: "mentee"), class: "text-update" do %>
+                <div class="white-box-small">
+                  <div class="text-info-mentee text-info">
+                    <%= image_tag "1-mentee.png", class: 'card-image-small-2'%>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          </div>
+          <div class="role-card">
+            <div class="background-card-small blue-card">
+              <h3 class="role-name-large">2 MENTEES</h3>
+              <%= link_to new_user_registration_url(user_type: "mentee"), class: "text-update" do %>
+                <div class="white-box-small">
+                  <div class="text-info-mentee text-info">
+                    <%= image_tag "2-mentee.png", class: 'card-image-small-2'%>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          </div>
+          <div class="role-card">
+            <div class="background-card-small blue-card">
+              <h3 class="role-name-large">3 MENTEES</h3>
+              <%= link_to new_user_registration_url(user_type: "mentee"), class: "text-update" do %>
+                <div class="white-box-small">
+                  <div class="text-info-mentee text-info">
+                    <%= image_tag "3-mentee.png", class: 'card-image-small-2'%>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      <div class="secondary-text">
+        <h3>Also, I want them to be...</h3>
+      </div>
+      <div class="container">
+        <div class="row d-flex justify-content-center">
+          <div class="col-6">
+            <%= f.input :city_preference, label: "City" %>
+            <%= f.input :country_preference, label: "Country", as: :select, collection: @countries, selected: "USA" %>
+            <%= f.input :language_preference, label: "Language", as: :select, collection: @languages, selected: "English" %>
+          </div>
+        </div>
+      </div>
+    <% else %>
+      <div class="secondary-text">
+        <h3>I want a mentor with _ years of experience</h3>
+      </div>
+      <!-- The three cards for selecting years of exp should be here -->
+      <div class="container">
+        <div class="cards-display-2">
+          <div class="role-card">
+            <div class="background-card-small orange-card">
+              <h3 class="role-name-large">0-5 YEARS</h3>
+              <%= link_to new_user_registration_url(user_type: "mentee"), class: "text-update" do %>
+                <div class="white-box-small">
+                  <div class="text-info-mentee text-info">
+                    <%= image_tag "young.png", class: 'card-image-small'%>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          </div>
+          <div class="role-card">
+            <div class="background-card-small orange-card">
+              <h3 class="role-name-large">6-15 YEARS</h3>
+              <%= link_to new_user_registration_url(user_type: "mentee"), class: "text-update" do %>
+                <div class="white-box-small">
+                  <div class="text-info-mentee text-info">
+                    <%= image_tag "mid.png", class: 'card-image-small-2'%>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          </div>
+          <div class="role-card">
+            <div class="background-card-small orange-card">
+              <h3 class="role-name-large">16+ YEARS</h3>
+              <%= link_to new_user_registration_url(user_type: "mentee"), class: "text-update" do %>
+                <div class="white-box-small">
+                  <div class="text-info-mentee text-info">
+                    <%= image_tag "seasoned.png", class: 'card-image-small'%>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      <div class="secondary-text">
+        <h3>Also, I want him/her to be...</h3>
+      </div>
+      <div class="container">
+        <div class="row d-flex justify-content-center">
+          <div class="col-6">
+            <%= f.input :city_preference, label: "City", placeholder: "New York" %>
+            <%= f.input :country_preference, label: "Country", as: :select, collection: @countries, selected: "USA" %>
+            <%= f.input :language_preference, label: "Language", as: :select, collection: @languages, selected: "English" %>
+            <%= f.input :gender_preference, label: "Gender", as: :select, collection: @genders, selected: "Female" %>
+          </div>
+        </div>
+      </div>
+    <% end %> <!-- Closing tag for if/else -->
+    <div class="align-btn">
+      <%= f.submit "MATCH ME", class:"continue-btn btn btn-primary"  %>
+    </div>
+  <% end %> <!-- Closing tag for form -->
+</div>
+<%= javascript_pack_tag 'preferences' %>
