@@ -19,9 +19,7 @@
   def success
     @user = current_user
     if @user.user_type == "mentee" && @user.mentor.nil?
-      if @user.matchMe == 0
-        redirect_to profile_url(error: true)
-      end
+      @user.matchMe
     end
   end
 

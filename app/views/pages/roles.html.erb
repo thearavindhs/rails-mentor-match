@@ -3,7 +3,7 @@
 
     <div class="step-2-top">
 
-      <a class="back-arrow" href= "/complete_profile" >
+      <a class="back-arrow" href= <%= "/users/sign_up?user_type=#{@user.user_type}" %> >
         <%= image_tag "back-arrow.png", class: "small-icon" %>
       </a>
       <a href="/" class="close">
@@ -27,11 +27,7 @@
     </div> <!-- Steps 2 top -->
     <%= simple_form_for(@user, url: update_roles_url, method: :patch) do |f| %>
     <%= f.error_notification %>
-      <% if current_user.user_type == "mentor" %>
-        <%= f.input :role, class: 'role' %>
-      <% else %>
-        <%= f.input :role_preference, class: 'role_preference' %>
-      <% end %>
+      <%= f.input :role_preference, class: 'role_preference' %>
       <div class="container">
         <div class="row d-flex justify-content-center">
 
