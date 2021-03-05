@@ -1,3 +1,4 @@
+<div id="overlay"></div>
 <div class="profile-background">
   <div id="mySidenav" class="sidenav">
     <ul>
@@ -83,7 +84,7 @@
               <br>
               <br>
             </div>
-            <%= link_to "CONNECT WITH MY MENTOR", sign_up_url, class: "btn btn-primary border-radius font-weight-bold" %>
+            <%= link_to "CONNECT WITH MY MENTOR", sign_up_url, class: "open-modal-btn btn btn-primary border-radius font-weight-bold" %>
           </div>
         </div>
       </div>
@@ -162,4 +163,21 @@
       <br>
     <% end %>
   </div>
+
 </div>
+<div class="my-modal" id="modal">
+  <div class="modal-header">
+    <h2 class="modal-title">Connect with your mentor!</h2>
+    <button class="close-modal-btn">&times;</button>
+  </div>
+  <div class="modal-body">
+
+    <h4>This is your mentor</h4>
+    <p> <%= @user.mentor.first_name %> <%= @user.mentor.last_name %> </p>
+    <p> <%= @user.mentor.email %> </p>
+  </div>
+</div>
+
+
+
+<%= javascript_pack_tag 'profile' %>
