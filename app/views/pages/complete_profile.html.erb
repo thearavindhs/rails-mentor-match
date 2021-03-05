@@ -49,7 +49,7 @@
                   <%= f.input :gender, as: :select, collection: @genders, selected: "Female" %>
                 </div>
                 <div class="col-6">
-                  <%= f.input :title, placeholder: "Sr. Developer" %>
+                  <%= f.input :title, placeholder: "Sr. Developer, Student, etc. " %>
                 </div>
               </div>
             </div>
@@ -120,6 +120,7 @@
           <%= image_tag "missing.png", class: "uploadphoto-img", id: "photo-details" %>
           <%= image_tag "", width: 300, class: "hidden preview-photo", id: "photo-preview" %>
         </div>
+        <br>
       </div>
       <div class="align-btn">
         <button class="btn btn-primary">CONTINUE</button>

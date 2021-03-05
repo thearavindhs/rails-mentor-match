@@ -14,6 +14,7 @@ if (inputMaxMentee === null) {
 
   cards.forEach((card) => {
     card.addEventListener("click", (event) => {
+      card.childNodes[1].childNodes[1].classList.replace("role-name-large", "role-name-large-active");
       event.preventDefault();
       inputExperience.value = card.childNodes[1].innerText;
     });
@@ -31,7 +32,7 @@ if (inputMaxMentee === null) {
   cards.forEach((card) => {
     card.addEventListener("click", (event) => {
       event.preventDefault();
-
+      card.childNodes[1].childNodes[1].classList.replace("role-name-large", "role-name-large-active");
       let text = card.childNodes[1].innerText;
       if (text == "1 MENTEE") {
         inputMaxMentee.value = 1;
