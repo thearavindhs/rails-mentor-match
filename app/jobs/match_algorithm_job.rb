@@ -59,9 +59,9 @@ class MatchAlgorithmJob < ApplicationJob
   end
 
   def complete?(mentor)
-    necessary_attributes = ["role", "country", "language", "experience", "gender", "city"]
-    mentor.attributes.values do |attribute|
-      if !(necessary_attributes.contains?(attribute) && !attribute.nil?) # if it doesnt have the attr or something is nil
+    necessary_attributes = ["role", "country", "language", "experience", "gender", "city", "maximum_mentee", "first_name", "last_name", ]
+    mentor.attributes.each do |key, value|
+      if value.nil? && necessary_attributes.include?(key)
         return false
       end
     end
