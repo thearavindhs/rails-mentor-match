@@ -134,6 +134,7 @@
   text-decoration: none;
 }
 
+
 .background-card-small{
   box-shadow: 0px 0px 34.6497px 8.66242px rgba(0, 0, 0, 0.05);
   display: flex;
@@ -156,6 +157,7 @@
   padding-top: 25px;
 }
 
+
 .card-image-small {
   width: 200px;
   height: auto;
@@ -171,8 +173,24 @@
   text-align: center;
 }
 
+.role-name-large-active{
+  color: white;
+  font-weight: bold;
+  font-size: 1.4rem;
+  padding: 1rem;
+  text-align: center;
+}
+
 .role-name-small{
   color: black;
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding: 1rem;
+  text-align: center;
+}
+
+.role-name-small-active{
+  color: white;
   font-weight: bold;
   font-size: 1.2rem;
   padding: 1rem;

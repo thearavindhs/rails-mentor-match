@@ -91,7 +91,7 @@
     <% end %>
   </div>
   <div class="main-container">
-    <% if current_user.user_type == "mentor" && !current_user.mentees.nil? %>
+    <% if current_user.user_type == "mentor" && current_user.mentees.empty? %>
       <div class="welcome-card">
         <div class="header-text">
           <h3>
@@ -119,7 +119,7 @@
     <% end %>
   </div>
   <div class="main-container">
-    <% if current_user.user_type == "mentor" && current_user.mentees.nil? %>
+    <% if current_user.user_type == "mentor" && !current_user.mentees.empty? %>
       <div class="welcome-card">
         <div class="header-text">
           <h3>
@@ -135,29 +135,31 @@
         </div>
       </div>
       <div class="mentor-profile-container">
+        <div class="container">
+          <div class="header-text">
+            <h3>
+              <%= "You Have a Match!" %>
+            </h3>
+            <h4>
+              <%= "Your mentee is" %>
+            </h4>
+            <h2>
+              <%= current_user.mentees.first.first_name %> <%= current_user.mentees.first.last_name%>
+            </h2>
+            <p>
+              Student at <%= current_user.mentees.first.university %>
+            </p>
+          </div>
+          <div class="small-text">
+            <%= "We've asked your mentee to contact you via email within 10 days. All you have to do is wait! " %>
+          </div>
+          <br>
+          <small><em>Still haven't heard back from your mentee? <u>Contact us</u></em></small>
+        </div>
         <div class="photo-container">
           <%= image_tag "mentor-photo-container.png", class: "mentor-photo-container" %>
           <%= cl_image_tag current_user.mentees.first.photo.key, width: 400, height: 300, crop: :fill, class: "dynamic-photo-mentee" %>
         </div>
-        <div class="header-text">
-          <h3>
-            <%= "You Have a Match!" %>
-          </h3>
-          <h4>
-            <%= "Your mentee is" %>
-          </h4>
-          <h2>
-            <%= current_user.mentees.first.first_name %> <%= current_user.mentees.first.last_name%>
-          </h2>
-          <p>
-            Student at <%= current_user.mentees.first.university %>
-          </p>
-        </div>
-        <div class="small-text">
-          <%= "We've asked your mentee to contact you via email within 10 days. All you have to do is wait! " %>
-        </div>
-        <br>
-        <small><em>Still haven't heard back from your mentee? <u>Contact us</u></em></small>
       </div>
       <br>
       <br>
