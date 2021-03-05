@@ -3,16 +3,16 @@ class MatchAlgorithmJob < ApplicationJob
 
   def perform(user)
 
-    # User must be in the DB saved in order for this to work.
-    # Experience preference is a string mb. Use .to_i pls
-
     mentors = []
     m = User.where("user_type = 'mentor'")
     m.each do |mentor|
-      mentors << mentor if mentor.mentees.count + 1 <= mentor.maximum_mentee
+      if complete?(mentor) # Check if each mentor has every attribute needed.
+        mentors << mentor if mentor.mentees.count + 1 <= mentor.maximum_mentee
+      end
     end
 
     return 0 if mentors.count == 0
+
     # Weights
     roleWeight = 10
     cityWeight = 1
@@ -22,7 +22,7 @@ class MatchAlgorithmJob < ApplicationJob
     genderWeight = 2
 
     perfectValue = roleWeight + cityWeight + countryWeight + languageWeight + experienceWeight + genderWeight
-    minValue = 75
+    minValue = 75 # Minimum value for a match. It is 75/100
     result = 0
     selected_mentor = ""
 
@@ -40,6 +40,7 @@ class MatchAlgorithmJob < ApplicationJob
 
         result = (similarityValue * 100) / perfectValue
         minValue -= 1
+        # If it doesn't find a mentor with minimum characteristics, it will lower its expectations
       end
     end
     user.mentor = selected_mentor
@@ -50,13 +51,21 @@ class MatchAlgorithmJob < ApplicationJob
   private
 
   def bool_to_int(boolean)
-
     if boolean
       return 1
     else
       return 0
     end
+  end
 
+  def complete?(mentor)
+    necessary_attributes = ["role", "country", "language", "experience", "gender", "city", "maximum_mentee", "first_name", "last_name", ]
+    mentor.attributes.each do |key, value|
+      if value.nil? && necessary_attributes.include?(key)
+        return false
+      end
+    end
+    return true
   end
 
 end
