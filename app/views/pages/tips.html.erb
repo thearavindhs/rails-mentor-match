@@ -1,7 +1,7 @@
 
 
 
- 
+
 <body>
 <div class="profile-background">
 <div id="mySidenav" class="sidenav">
@@ -18,42 +18,43 @@
   </div>
 
 
-    
-      <div class="container">
-      <%= image_tag "coffee-banner", class: "tips-background" %>
-        <h1>Tips and Recomendations</h1>
-      
-    
+ <% if current_user.user_type == "mentee" %>
+ <div class="container tips-text">
+ <h1>How To Be A Good Mentee</h1><br>
 
-    
+      <%= image_tag "tips-banner", class: "tips-banner" %>
+
+      <br><br>
       <h2>What are you looking to gain from the first conversation?</h2>
       <a>
-        When you’re trying to land your first job or looking to make a big leap, it’s helpful to 
-        talk to someone who can provide guidance and answer your questions. 
+        When you’re trying to land your first job or looking to make a big leap, it’s helpful to
+        talk to someone who can provide guidance and answer your questions.
         That sort of relationship can accelerate your efforts, but only if you proceed thoughtfully.
-        <br><br>When  you’re looking for a formal mentoring relationship treat the process as you 
-        would any major project. Take the time to prepare, and set a specific goal for what you’d like to learn and 
+        <br><br>When  you’re looking for a formal mentoring relationship treat the process as you
+        would any major project. Take the time to prepare, and set a specific goal for what you’d like to learn and
         achieve.
-        <br><br>The most effective people come prepared with answers to common questions along with 
-        the questions they wish to ask. Here is how MentorMatch approach for someone willing to mentor 
+        <br><br>The most effective people come prepared with answers to common questions along with
+        the questions they wish to ask. Here is how MentorMatch approach for someone willing to mentor
         or when someone is looking for being mentored.
-        <br><br>A quick aside: A lot of us love the opportunity to help others grow, and will jump 
-        at the chance if we have the time and energy. So don’t be afraid to reach out to someone you 
+        <br><br>A quick aside: A lot of us love the opportunity to help others grow, and will jump
+        at the chance if we have the time and energy. So don’t be afraid to reach out to someone you
         think might be able to help you.<br>
       <br><br>
       </a>
 
       <h2>What are you looking to gain during the conversation?</h2>
-      
+      <%= image_tag "tip1-1", class: "tip-img" %>
+
+
       <a>
-        Are you looking to build a personal network, or are there specific questions you hope can 
-        answered? Both are perfectly valid, and it isn’t necessarily binary, but it’s good to be clear 
-        about what you’re after early on. 
-        <br><br>These goals are both good, but the purpose and results are very different. In our 
+        Are you looking to build a personal network, or are there specific questions you hope can
+        answered? Both are perfectly valid, and it isn’t necessarily binary, but it’s good to be clear
+        about what you’re after early on.
+        <br><br>These goals are both good, but the purpose and results are very different. In our
         experience, the best long term network is built on early conversations that are genuine and
          candid. (No different from any other valuable relationships in our lives.)
          <br>
-         <%= image_tag "tip1", class: "world img" %>
+
       <br><br>
       </a>
 
@@ -62,7 +63,7 @@
         Here are some questions people have asked us that prompted great conversations:
         <ul>
         <li>Do I need to specialize as a designer or should I be a generalist?</li>
-        <li>I’m worried about joining a startup as the only designer for my first job; should I join 
+        <li>I’m worried about joining a startup as the only designer for my first job; should I join
         a bigger company instead?</li>
         <li>Do I really need to network to find a job?</li>
         <li>I eventually want to do _____. What steps should I follow to get there?</li>
@@ -72,23 +73,23 @@
 
       <h2>What mentors will often ask</h2>
       <a>
-        We don’t have a script for these conversations, but there are some foundational topics that 
+        We don’t have a script for these conversations, but there are some foundational topics that
         always come up. For example:
         <ul>
-        <li>How you think I can help. Seriously, why me? Is my career path similar to what you’re 
-        interested in? Do you feel I can shed light on areas that you aren’t familiar with in the 
-        hiring process? Maybe you feel that I can connect you with someone who can help you move 
+        <li>How you think I can help. Seriously, why me? Is my career path similar to what you’re
+        interested in? Do you feel I can shed light on areas that you aren’t familiar with in the
+        hiring process? Maybe you feel that I can connect you with someone who can help you move
         forward. All are 100% valid and worth talking through.</li>
-        <li>If you’re looking for a new role, I want to know what you’re looking for and why. Now, you 
-        may not know exactly what role to go for. That’s okay, we can dig into that, but it does 
-        require that you have some general thoughts in mind. For example, if you’re a designer, are 
-        you interested in landing your first design job, or are you perhaps trying to understand a 
+        <li>If you’re looking for a new role, I want to know what you’re looking for and why. Now, you
+        may not know exactly what role to go for. That’s okay, we can dig into that, but it does
+        require that you have some general thoughts in mind. For example, if you’re a designer, are
+        you interested in landing your first design job, or are you perhaps trying to understand a
         different, related role that might be more interesting?</li>
-        <li>Your goals, both long term and short term. If you’re just starting out, you may be focused 
-        on finding your first job, which is a different conversation from someone who wants to talk 
+        <li>Your goals, both long term and short term. If you’re just starting out, you may be focused
+        on finding your first job, which is a different conversation from someone who wants to talk
         through whether they want to become a manager or switch to a different field.</li>
-        <li>Why you’ve chosen the field you’re in. It’s possible that we’ll discover you aren’t as 
-        excited about it as you thought you would be. In those cases, we may switch gears to talk 
+        <li>Why you’ve chosen the field you’re in. It’s possible that we’ll discover you aren’t as
+        excited about it as you thought you would be. In those cases, we may switch gears to talk
         through a different, and hopefully better, career path.</li>
         </ul>
       <br>
@@ -96,67 +97,213 @@
 
       <h2>How would you like to talk</h2>
       <a>
-        This may sound odd, but the clearer you are regarding how you’d like to meet, the easier it 
+        <%= image_tag "tip2", class: "tip-img" %>
+        This may sound odd, but the clearer you are regarding how you’d like to meet, the easier it
         will be to get things set up. Some key things to think about:
         <ul>
-        <li>Meeting in person has huge benefits for communication and building a connection, but 
-        scheduling can be hard. It may also be uncomfortable for some people to meet a total stranger. 
+        <li>Meeting in person has huge benefits for communication and building a connection, but
+        scheduling can be hard. It may also be uncomfortable for some people to meet a total stranger.
         Be open to a phone or video call initially. You can even use Slack and have a great conversation.</li>
-        <li>Decide how much time you think you’ll need. A good target is 30–45 minutes, not counting 
-        travel time. If you have a good conversation, you can always extend or set up another time 
+        <li>Decide how much time you think you’ll need. A good target is 30–45 minutes, not counting
+        travel time. If you have a good conversation, you can always extend or set up another time
         to meet.</li>
-        <li>Make it convenient if you’re meeting in person. As the mentor is investing their time to 
-        help you, do your best to make it as easy as possible for them. Ask which times would work 
+        <li>Make it convenient if you’re meeting in person. As the mentor is investing their time to
+        help you, do your best to make it as easy as possible for them. Ask which times would work
         best and the area of town they would prefer.</li>
-        <li>Think about the location. Provide a couple of options that are public, like a library or 
-        coffee shop, and avoid bars. You may eventually be comfortable to meet over a beer, but now 
+        <li>Think about the location. Provide a couple of options that are public, like a library or
+        coffee shop, and avoid bars. You may eventually be comfortable to meet over a beer, but now
         isn’t the time to add alcohol to the dynamic.</li>
-        <li>Be flexible. Calendars can get overbooked and on occasion, a high-priority conflict will 
+        <li>Be flexible. Calendars can get overbooked and on occasion, a high-priority conflict will
         come up at the last minute, so you may have to reschedule.</li>
         </ul>
         <br>
-        <%= image_tag "tip2", class: "world img" %>
+
       <br>
       </a>
 
       <h2>What to avoid</h2>
       <a>
         <ul>
-        <li>Hopefully, this is clear by now, but do not come unprepared, expecting the other person 
+        <li>Hopefully, this is clear by now, but do not come unprepared, expecting the other person
         to have a list of things to teach you.</li>
-        <li>Don’t be slow to reply. If you get a response from someone willing to help you, jump on 
+        <li>Don’t be slow to reply. If you get a response from someone willing to help you, jump on
         the opportunity quickly.</li>
-        <li>On the other side, be flexible on their response times. Don’t badger them if you don’t 
+        <li>On the other side, be flexible on their response times. Don’t badger them if you don’t
         receive an immediate response. If you don’t hear back within a week, send a polite follow-up.</li>
-        <li>Don’t view this as a transaction. Even if someone isn’t able to give you their time now, 
+        <li>Don’t view this as a transaction. Even if someone isn’t able to give you their time now,
         set a foundation for the future, when they may have more flexibility.</li>
-        <li>Do not view this as a dating opportunity. Seriously. I’ve had friends and colleagues (all 
-        women) who were put in an awkward situation where men requesting mentorship thought it was 
+        <li>Do not view this as a dating opportunity. Seriously. I’ve had friends and colleagues (all
+        women) who were put in an awkward situation where men requesting mentorship thought it was
         more than that.</li>
         </ul><br>
       </a>
 
       <h2>Updates are good</h2>
       <a>
-        Mentors love to hear how things are progressing. Personally, it surprises me when people 
-        I’ve met don’t follow up to ask additional questions or let me know how things are going. 
-        If you’ve met with someone who is interested in helping you with your career, they’ve chosen 
+        Mentors love to hear how things are progressing. Personally, it surprises me when people
+        I’ve met don’t follow up to ask additional questions or let me know how things are going.
+        If you’ve met with someone who is interested in helping you with your career, they’ve chosen
         to invest in you, so take advantage of the opportunity to cement the relationship.<br><br>
       </a>
 
       <h2>Mentorship is symbiotic</h2>
       <a>
-        Building a strong relationship with a mentor can 
-        pay huge dividends in the long run, as your mentors can play a key role in your network, 
-        connecting you to others and possibly even providing you opportunities directly. Who knows, 
+        Building a strong relationship with a mentor can
+        pay huge dividends in the long run, as your mentors can play a key role in your network,
+        connecting you to others and possibly even providing you opportunities directly. Who knows,
         down the road, you may be able to return the favor!
-        For the mentor, the investment of time and energy is often exciting, and for many of us, 
-        helping awesome people like you take their next step is a way that we give back to the 
+        For the mentor, the investment of time and energy is often exciting, and for many of us,
+        helping awesome people like you take their next step is a way that we give back to the
         community and acknowledge those who’ve helped us with our careers.<br><br>
       </a>
-      <%= image_tag "tip3", class: "world img" %>
+     <!--  <%= image_tag "tip3", class: "world img" %> -->
 
     </div>
 </div>
-</body>
+<% end %>
+
+
+<% if current_user.user_type == "mentor" %>
+ <div class="container tips-text">
+ <h1>How To Be A Good Mentor</h1><br>
+
+      <%= image_tag "tips-banner", class: "tips-banner" %>
+
+      <br><br>
+      <h2>What are you looking to gain from the first conversation?</h2>
+      <a>
+        When you’re trying to land your first job or looking to make a big leap, it’s helpful to
+        talk to someone who can provide guidance and answer your questions.
+        That sort of relationship can accelerate your efforts, but only if you proceed thoughtfully.
+        <br><br>When  you’re looking for a formal mentoring relationship treat the process as you
+        would any major project. Take the time to prepare, and set a specific goal for what you’d like to learn and
+        achieve.
+        <br><br>The most effective people come prepared with answers to common questions along with
+        the questions they wish to ask. Here is how MentorMatch approach for someone willing to mentor
+        or when someone is looking for being mentored.
+        <br><br>A quick aside: A lot of us love the opportunity to help others grow, and will jump
+        at the chance if we have the time and energy. So don’t be afraid to reach out to someone you
+        think might be able to help you.<br>
+      <br><br>
+      </a>
+
+      <h2>What are you looking to gain during the conversation?</h2>
+      <%= image_tag "tip1-1", class: "tip-img" %>
+
+
+      <a>
+        Are you looking to build a personal network, or are there specific questions you hope can
+        answered? Both are perfectly valid, and it isn’t necessarily binary, but it’s good to be clear
+        about what you’re after early on.
+        <br><br>These goals are both good, but the purpose and results are very different. In our
+        experience, the best long term network is built on early conversations that are genuine and
+         candid. (No different from any other valuable relationships in our lives.)
+         <br>
+
+      <br><br>
+      </a>
+
+      <h2>Looking to learn?</h2>
+      <a>
+        Here are some questions people have asked us that prompted great conversations:
+        <ul>
+        <li>Do I need to specialize as a designer or should I be a generalist?</li>
+        <li>I’m worried about joining a startup as the only designer for my first job; should I join
+        a bigger company instead?</li>
+        <li>Do I really need to network to find a job?</li>
+        <li>I eventually want to do _____. What steps should I follow to get there?</li>
+        </ul>
+      <br>
+      </a>
+
+      <h2>What mentees will often ask</h2>
+      <a>
+        We don’t have a script for these conversations, but there are some foundational topics that
+        always come up. For example:
+        <ul>
+        <li>How you think I can help. Seriously, why me? Is my career path similar to what you’re
+        interested in? Do you feel I can shed light on areas that you aren’t familiar with in the
+        hiring process? Maybe you feel that I can connect you with someone who can help you move
+        forward. All are 100% valid and worth talking through.</li>
+        <li>If you’re looking for a new role, I want to know what you’re looking for and why. Now, you
+        may not know exactly what role to go for. That’s okay, we can dig into that, but it does
+        require that you have some general thoughts in mind. For example, if you’re a designer, are
+        you interested in landing your first design job, or are you perhaps trying to understand a
+        different, related role that might be more interesting?</li>
+        <li>Your goals, both long term and short term. If you’re just starting out, you may be focused
+        on finding your first job, which is a different conversation from someone who wants to talk
+        through whether they want to become a manager or switch to a different field.</li>
+        <li>Why you’ve chosen the field you’re in. It’s possible that we’ll discover you aren’t as
+        excited about it as you thought you would be. In those cases, we may switch gears to talk
+        through a different, and hopefully better, career path.</li>
+        </ul>
+      <br>
+      </a>
+
+      <h2>How would you like to talk</h2>
+      <a>
+        <%= image_tag "tip2", class: "tip-img" %>
+        This may sound odd, but the clearer you are regarding how you’d like to meet, the easier it
+        will be to get things set up. Some key things to think about:
+        <ul>
+        <li>Meeting in person has huge benefits for communication and building a connection, but
+        scheduling can be hard. It may also be uncomfortable for some people to meet a total stranger.
+        Be open to a phone or video call initially. You can even use Slack and have a great conversation.</li>
+        <li>Decide how much time you think you’ll need. A good target is 30–45 minutes, not counting
+        travel time. If you have a good conversation, you can always extend or set up another time
+        to meet.</li>
+        <li>Make it convenient if you’re meeting in person. As the mentor is investing their time to
+        help you, do your best to make it as easy as possible for them. Ask which times would work
+        best and the area of town they would prefer.</li>
+        <li>Think about the location. Provide a couple of options that are public, like a library or
+        coffee shop, and avoid bars. You may eventually be comfortable to meet over a beer, but now
+        isn’t the time to add alcohol to the dynamic.</li>
+        <li>Be flexible. Calendars can get overbooked and on occasion, a high-priority conflict will
+        come up at the last minute, so you may have to reschedule.</li>
+        </ul>
+        <br>
+
+      <br>
+      </a>
+
+      <h2>What to avoid</h2>
+      <a>
+        <ul>
+        <li>Hopefully, this is clear by now, but do not come unprepared, expecting the other person
+        to have a list of things to teach you.</li>
+        <li>Don’t be slow to reply. If you get a response from someone willing to help you, jump on
+        the opportunity quickly.</li>
+        <li>On the other side, be flexible on their response times. Don’t badger them if you don’t
+        receive an immediate response. If you don’t hear back within a week, send a polite follow-up.</li>
+        <li>Don’t view this as a transaction. Even if someone isn’t able to give you their time now,
+        set a foundation for the future, when they may have more flexibility.</li>
+        <li>Do not view this as a dating opportunity. Seriously. I’ve had friends and colleagues (all
+        women) who were put in an awkward situation where men requesting mentorship thought it was
+        more than that.</li>
+        </ul><br>
+      </a>
+
+      <h2>Updates are good</h2>
+      <a>
+        Mentors love to hear how things are progressing. Personally, it surprises me when people
+        I’ve met don’t follow up to ask additional questions or let me know how things are going.
+        If you’ve met with someone who is interested in helping you with your career, they’ve chosen
+        to invest in you, so take advantage of the opportunity to cement the relationship.<br><br>
+      </a>
+
+      <h2>Mentorship is symbiotic</h2>
+      <a>
+        Building a strong relationship with a mentor can
+        pay huge dividends in the long run, as your mentors can play a key role in your network,
+        connecting you to others and possibly even providing you opportunities directly. Who knows,
+        down the road, you may be able to return the favor!
+        For the mentor, the investment of time and energy is often exciting, and for many of us,
+        helping awesome people like you take their next step is a way that we give back to the
+        community and acknowledge those who’ve helped us with our careers.<br><br>
+      </a>
+     <!--  <%= image_tag "tip3", class: "world img" %> -->
+
+    </div>
+</div>
+<% end %>
 </div>
