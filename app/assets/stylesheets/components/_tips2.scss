@@ -1,14 +1,26 @@
-.tips-background {
-    background: linear-gradient(182.57deg, #6F7ED8 11.52%, rgba(115, 183, 255, 0.81) 76.4%, #A3FFFF 106.81%);
-    width: 140%;
+.tips-banner {
+    width: 100%;
+    height: 300px;
+     border-radius: 25px;
   }
 
   .tipscontainer {
-      padding: 50px; 
+      padding: 50px;
   }
 
-  .img {
-    border-radius: 8px;
-    width: 300px;
+  .tips-text {
+    color: white;
   }
-  
+
+  .tips-text h2 {
+    font-size: 26px;
+    color: $orange-yellow;
+  }
+
+  .tip-img {
+    border-radius: 25px;
+    width: 450px;
+    height: 300px;
+    padding: 10px;
+    margin-right: 400px;
+  }
