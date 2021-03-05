@@ -1,4 +1,4 @@
-  class PagesController < ApplicationController
+class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :home, :user_type ]
 
   # --------------- Static Pages: ---------------
@@ -12,14 +12,16 @@
   def confirmation
     @user = current_user
     if !@user.mentor.nil? || !@user.mentees.empty?
-      redirect_to profile_url 
+      redirect_to profile_url
     end
   end
 
   def success
     @user = current_user
     if @user.user_type == "mentee" && @user.mentor.nil?
-      @user.matchMe
+      if @user.matchMe == 0
+        redirect_to profile_url(error: true)
+      end
     end
   end
 
@@ -110,7 +112,3 @@
   end
 
 end
-
-
-
-

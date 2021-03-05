@@ -46,10 +46,18 @@
             <div class="container">
               <div class="row d-flex justify-content-space-between">
                 <div class="col-6">
-                  <%= f.input :gender, as: :select, collection: @genders, selected: "Female" %>
+                  <%= f.input :gender, as: :select, collection: @genders, selected: "Non Binary" %>
                 </div>
                 <div class="col-6">
                   <%= f.input :title, placeholder: "Sr. Developer, Student, etc. " %>
+                </div>
+              </div>
+            </div>
+            <!-- Container -->
+            <div class="container">
+              <div class="row d-flex justify-content-space-between">
+                <div class="col-12">
+                  <%= f.input :language, as: :select, collection: @languages, selected: 'Spanish' %>
                 </div>
               </div>
             </div>
