@@ -16,7 +16,7 @@
 .modal-header {
   display: flex;
   justify-content: space-between;
-  padding: 15px 15px;
+  // padding: 15px 15px;
   align-items: center;
 }
 #close-modal-btn {
@@ -26,15 +26,59 @@
 }
 .modal-title {
   padding-right: 50px;
+  color: $dark-blue;
+  font-size: 30px;
 }
 
 .modal-body{
-  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  padding-left: 40px;
+  padding-right: 20px;
+}
+
+.modal-body h3 {
+  color: black;
+  font-size: 15px;
+  padding-top: 7px;
+}
+
+.modal-body strong {
+  color: $dark-blue;
+  font-size: 25px;
 }
 .modal-body p {
-  color: black;
-  padding-top: 16px;
+  color: gray;
+  font-size: 13px;
 }
+
+.copy-container {
+  border-color: $gray;
+  padding: 5px;
+  width: 300px;
+  height: auto;
+  text-align: center;
+  border: 1px solid $gray;
+  box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.05);
+  border-radius: 5px;
+}
+
+.copy-cta {
+  margin-top: 20px;
+}
+
+.modal-image {
+  height: auto;
+  width: 300px;
+  padding-right: 20px;
+}
+
+.modal-body h2 {
+  color: $dark-blue;
+  font-size: 13px;
+}
+
+
 #overlay {
   z-index: 5;
   position: fixed;
@@ -50,4 +94,9 @@
 #overlay.active {
   opacity: 1;
   pointer-events: all;
+}
+
+.small-icon-popup {
+  height: 30px;
+  width: auto;
 }
