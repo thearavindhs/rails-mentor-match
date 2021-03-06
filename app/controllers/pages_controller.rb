@@ -21,9 +21,11 @@ class PagesController < ApplicationController
     if @user.user_type == "mentee" && @user.mentor.nil?
       if @user.matchMe == 0
         redirect_to profile_url(error: true)
+      else
+        UserMailer.with(user: @user).matching_email.deliver_now
+        UserMailer.with(user: @user.mentor).matching_email.deliver_now
       end
-      UserMailer.with(user: @user).matching_email.deliver_now
-      UserMailer.with(user: @user.mentor).matching_email.deliver_now
+
     end
   end
 
