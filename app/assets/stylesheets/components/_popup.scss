@@ -53,12 +53,20 @@
 }
 
 .copy-container {
-  border-color: $gray;
   padding: 5px;
   width: 300px;
   height: auto;
   text-align: center;
   border: 1px solid $gray;
+  box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.05);
+  border-radius: 5px;
+}
+.copy-container-active {
+  border: 1px solid #73D83C;
+  padding: 5px;
+  width: 300px;
+  height: auto;
+  text-align: center;
   box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.05);
   border-radius: 5px;
 }

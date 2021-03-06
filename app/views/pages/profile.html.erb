@@ -190,15 +190,15 @@
     <div class="modal-text">
       <div class="container">
         <div class="row justify-content-center">
-    <p> Then write them and introduce yourself. Don't know how to formulate your email? Read our tips section. </p>
-    <h2><%= @user.mentor.first_name %>'s email is:</h2>
-    <div class="copy-container">
-    <h3><%= @user.mentor.email %></h3>
+          <p> Then write them and introduce yourself. Don't know how to formulate your email? Read our tips section. </p>
+          <h2><%= @user.mentor.first_name %>'s email is:</h2>
+          <div class="copy-container">
+            <h3 id="mentor-email"><%= @user.mentor.email %></h3>
+          </div>
+          <button class="btn btn-primary border-radius font-weight-bold copy-cta" data-clipboard-target="#mentor-email">COPY EMAIL</button>
+        </div>
+      </div>
     </div>
-    <%= link_to "COPY EMAIL",tips_url, class: "btn btn-primary border-radius font-weight-bold copy-cta" %>
-  </div>
-  </div>
-  </div>
   </div>
 </div>
 <% end %>
@@ -206,3 +206,4 @@
 
 
 <%= javascript_pack_tag 'profile' %>
+
