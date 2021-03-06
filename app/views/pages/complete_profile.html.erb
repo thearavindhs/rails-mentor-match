@@ -46,7 +46,7 @@
             <div class="container">
               <div class="row d-flex justify-content-space-between">
                 <div class="col-6">
-                  <%= f.input :gender, as: :select, collection: @genders, selected: "Non Binary" %>
+                  <%= f.input :gender, as: :select, collection: @genders, selected: "Male" %>
                 </div>
                 <div class="col-6">
                   <%= f.input :title, placeholder: "Sr. Developer, Student, etc. " %>
@@ -57,7 +57,7 @@
             <div class="container">
               <div class="row d-flex justify-content-space-between">
                 <div class="col-12">
-                  <%= f.input :language, as: :select, collection: @languages, selected: 'Spanish' %>
+                  <%= f.input :language, as: :select, collection: @languages, selected: 'English' %>
                 </div>
               </div>
             </div>
@@ -118,21 +118,38 @@
         <!-- Step 1 top -->
       </div>
       <!-- Container -->
-      <div class="container">
-        <div class="row d-flex justify-content-center">
-          <%= f.input :photo, input_html: { class: 'hidden', id: 'photo-input'}, label_html: { class: 'social-signin-btn'}, label: 'UPLOAD A PHOTO' %>
+      <% if !@user.picture_url.nil? %>
+        <div class="container">
+          <div class="row d-flex justify-content-center">
+            <%= f.input :photo, input_html: { class: 'hidden', id: 'photo-input'}, label_html: { class: 'social-signin-btn'}, label: 'UPLOAD A PHOTO' %>
+          </div>
         </div>
-      </div>
-      <div class="container">
-        <div class="row d-flex justify-content-center">
-          <%= image_tag "missing.png", class: "uploadphoto-img", id: "photo-details" %>
-          <%= image_tag "", width: 300, class: "hidden preview-photo", id: "photo-preview" %>
+        <div class="container">
+          <div class="row d-flex justify-content-center">
+            <%= image_tag @user.picture_url, width: 300, class: "preview-photo", id: "photo-preview" %>
+          </div>
+          <br>
         </div>
-        <br>
-      </div>
-      <div class="align-btn">
-        <button class="btn btn-primary">CONTINUE</button>
-      </div>
+        <div class="align-btn">
+          <button class="btn btn-primary">CONTINUE</button>
+        </div>
+      <% else %>
+        <div class="container">
+          <div class="row d-flex justify-content-center">
+            <%= f.input :photo, input_html: { class: 'hidden', id: 'photo-input'}, label_html: { class: 'social-signin-btn'}, label: 'UPLOAD A PHOTO' %>
+          </div>
+        </div>
+        <div class="container">
+          <div class="row d-flex justify-content-center">
+            <%= image_tag "missing.png", class: "uploadphoto-img", id: "photo-details" %>
+            <%= image_tag "", width: 300, class: "hidden preview-photo", id: "photo-preview" %>
+          </div>
+          <br>
+        </div>
+        <div class="align-btn">
+          <button class="btn btn-primary">CONTINUE</button>
+        </div>
+      <% end %>
     </div>
     <!-- Picture From -->
   <% end %> <!-- End form -->

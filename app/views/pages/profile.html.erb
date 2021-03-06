@@ -34,7 +34,7 @@
             </div>
             <h3>
               <h3><%= "Your Match is in Progress" %></h3>
-          <p>Hang tight! We are still working on finding you a best match. We'll let you know via email as soon as it's happened. </p>
+              <p>Hang tight! We are still working on finding you a best match. We'll let you know via email as soon as it's happened. </p>
             </h3>
           </div>
         </div>
@@ -59,10 +59,17 @@
         </div>
       </div>
       <div class="mentee-profile-container">
-        <div class="photo-container">
-          <%= image_tag "mentee-photo-container.png", class: "mentee-photo-container"%>
-          <%= cl_image_tag current_user.mentor.photo.key, width: 400, height: 300, crop: :fill, class: "dynamic-photo-mentor" %>
-        </div>
+        <% if current_user.mentor.photo.attached? %>
+          <div class="photo-container">
+            <%= image_tag "mentee-photo-container.png", class: "mentee-photo-container"%>
+            <%= cl_image_tag current_user.mentor.photo.key, width: 400, height: 300, crop: :fill, class: "dynamic-photo-mentor" %>
+          </div>
+        <% else %>
+          <div class="photo-container">
+            <%= image_tag "mentee-photo-container.png", class: "mentee-photo-container"%>
+            <%= image_tag current_user.mentor.picture_url, width: 400, height: 300, crop: :fill, class: "dynamic-photo-mentor" %>
+          </div>
+        <% end %>
         <div class="mentee-sub-container">
           <div class="header-text">
             <h3>
@@ -76,7 +83,7 @@
               <%= current_user.mentor.first_name%> <%= current_user.mentor.last_name%>
             </h2>
             <p>
-              <%= current_user.mentor.role %> at <%= current_user.mentor.company %>
+              <%= current_user.mentor.title %> at <%= current_user.mentor.company %>
             </p>
             <div class="small-text">
               <%= "Reach out and introduce yourself! They're expecting you to do so within 10 days." %>
