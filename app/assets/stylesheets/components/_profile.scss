@@ -27,7 +27,8 @@
 }
 
 .header-text {
-  padding: 30px;
+  padding-top: 20px;
+  padding-left: 30px;
 }
 
 .small-text {
@@ -65,6 +66,12 @@
   justify-content: space-around;
 }
 
+.mentee-sub-container {
+  display: flex;
+  position: relative;
+  right: 50px;
+}
+
 .mentee-profile-container p {
   font-size: 16px;
   color: black;
@@ -82,7 +89,7 @@
   width: auto;
 }
 
-// Menetor
+// Mentor
 
 .mentor-profile-container {
   background: white;
@@ -118,4 +125,10 @@
 .in-progress-img {
   width: auto;
   height: 120px;
+}
+
+// Mentor Pop Up
+
+.modal-title {
+  padding-left: 30px;
 }

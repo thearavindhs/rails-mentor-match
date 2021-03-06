@@ -55,7 +55,7 @@
           <%= link_to "GET TIPS", sign_up_url, class: "btn btn-primary border-radius font-weight-bold" %>
           <!-- link will need to be updated -->
         </div>
-        <div class="header-image">
+        <div class="header-image-1">
           <%= image_tag "welcome.png", class: "welcome-img" %>
         </div>
       </div>
@@ -77,7 +77,7 @@
               <%= current_user.mentor.first_name%> <%= current_user.mentor.last_name%>
             </h2>
             <p>
-              <%= current_user.mentor.role %> at <%= current_user.mentor.company %>
+              <%= current_user.mentor.title %> at <%= current_user.mentor.company %>
             </p>
             <div class="small-text">
               <%= "Reach out and introduce yourself! They're expecting you to do so within 10 days." %>
@@ -164,17 +164,30 @@
     <% end %>
   </div>
 
+<!-- Pop Up Mentor -->
 </div>
-<% if @user.user_type == "mentee" && !@user_type.mentor.nil? %>
+<% if @user.user_type == "mentee" && !@user.mentor.nil? %>
 <div class="my-modal" id="modal">
   <div class="modal-header">
-    <h2 class="modal-title">Connect with your mentor!</h2>
-    <button class="close-modal-btn">&times;</button>
+    <h2 class="modal-title">Ready to Meet Your Mentor?</h2>
+    <a href="/" class="close">
+    <%= image_tag "close.png", class: "close-modal-btn small-icon-popup" %>
+    </a>
   </div>
   <div class="modal-body">
-    <h4>This is your mentor</h4>
-    <p> <%= @user.mentor.first_name %> <%= @user.mentor.last_name %> </p>
-    <p> <%= @user.mentor.email %> </p>
+    <%= image_tag "email.png", class: "modal-image" %>
+    <div class="modal-text">
+      <div class="container">
+        <div class="row justify-content-center">
+    <p> Then write them and introduce yourself. Don't know how to formulate your email? Read our tips section. </p>
+    <h2><%= @user.mentor.first_name %>'s email is:</h2>
+    <div class="copy-container">
+    <h3><%= @user.mentor.email %></h3>
+    </div>
+    <%= link_to "COPY EMAIL",tips_url, class: "btn btn-primary border-radius font-weight-bold copy-cta" %>
+  </div>
+  </div>
+  </div>
   </div>
 </div>
 <% end %>
