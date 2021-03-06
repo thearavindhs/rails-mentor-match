@@ -134,10 +134,12 @@
       </div>
       <div class="mentor-profile-container">
         <div class="container">
+          <div class="mentor-sub-container">
           <div class="header-text">
             <h3>
               <%= "You Have a Match!" %>
             </h3>
+            <br>
             <h4>
               <%= "Your mentee is" %>
             </h4>
@@ -147,13 +149,15 @@
             <p>
               Student at <%= current_user.mentees.first.university %>
             </p>
-          </div>
+
           <div class="small-text">
-            <%= "We've asked your mentee to contact you via email within 10 days. All you have to do is wait! " %>
+            <p> We've asked your mentee to contact you via email within 10 days. All you have to do is wait! Still haven't heard back from your mentee? <u>Contact us</u> </p>
           </div>
-          <br>
-          <small><em>Still haven't heard back from your mentee? <u>Contact us</u></em></small>
+          <!-- <br>
+          <small><em>We've asked your mentee to contact you via email within 10 days. All you have to do is wait! Still haven't heard back from your mentee? <u>Contact us</u></em></small> -->
         </div>
+        </div>
+      </div>
         <div class="photo-container">
           <%= image_tag "mentor-photo-container.png", class: "mentor-photo-container" %>
           <%= cl_image_tag current_user.mentees.first.photo.key, width: 400, height: 300, crop: :fill, class: "dynamic-photo-mentee" %>
