@@ -18,7 +18,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     @user.user_type = @user_type
     if @user.save
       sign_in @user
-      UserMailer.with(user: @user).matching_email.deliver_now
+      UserMailer.with(user: @user).welcome_email.deliver_now
       redirect_to confirmation_url
     else
       redirect_to sign_up_url(error: true)

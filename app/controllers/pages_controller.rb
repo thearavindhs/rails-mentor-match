@@ -22,6 +22,8 @@ class PagesController < ApplicationController
       if @user.matchMe == 0
         redirect_to profile_url(error: true)
       end
+      UserMailer.with(user: @user).matching_email.deliver_now
+      UserMailer.with(user: @user.mentor).matching_email.deliver_now
     end
   end
 
