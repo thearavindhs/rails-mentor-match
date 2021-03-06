@@ -3,6 +3,21 @@ const inputMaxMentee = document.querySelector("#user_maximum_mentee");
 const inputExperience = document.querySelector("#user_experience_preference");
 
 
+function selectOneCard(selectedCard){
+  // Only select one card. Remove active from all the other cards.
+  cards.forEach((card) => {
+    if (card === selectedCard) {
+      card.childNodes[1].childNodes[1].classList.replace("role-name-large", "role-name-large-active");
+      card.childNodes[1].childNodes[1].classList.replace("role-name-small", "role-name-small-active");
+    } else {
+      if(card.childNodes[1].childNodes[1].classList.contains("role-name-large-active") || card.childNodes[1].childNodes[1].classList.contains("role-name-small-active")){
+        card.childNodes[1].childNodes[1].classList.replace("role-name-large-active", "role-name-large");
+        card.childNodes[1].childNodes[1].classList.replace("role-name-small-active", "role-name-small");
+      }
+    }
+  });
+}
+
 if (inputMaxMentee === null) {
   // Not maximum mentee input.
 
@@ -14,7 +29,7 @@ if (inputMaxMentee === null) {
 
   cards.forEach((card) => {
     card.addEventListener("click", (event) => {
-      card.childNodes[1].childNodes[1].classList.replace("role-name-large", "role-name-large-active");
+      selectOneCard(card);
       event.preventDefault();
       inputExperience.value = card.childNodes[1].innerText;
     });
@@ -32,7 +47,7 @@ if (inputMaxMentee === null) {
   cards.forEach((card) => {
     card.addEventListener("click", (event) => {
       event.preventDefault();
-      card.childNodes[1].childNodes[1].classList.replace("role-name-large", "role-name-large-active");
+      selectOneCard(card);
       let text = card.childNodes[1].innerText;
       if (text == "1 MENTEE") {
         inputMaxMentee.value = 1;
