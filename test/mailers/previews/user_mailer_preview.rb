@@ -5,4 +5,8 @@ class UserMailerPreview < ActionMailer::Preview
     user = User.new(email: "myTest@gmail.com", password: "password", first_name: "Alberto")
     UserMailer.with(user: user).matching_email
   end
+  def new_welcome_email
+    user = User.new(email: "myTest@gmail.com", password: "password", first_name: "Alberto")
+    UserMailer.with(user: user).welcome_email
+  end
 end
