@@ -165,7 +165,7 @@
   </div>
 
 </div>
-<% if @user.user_type == "mentee" %>
+<% if @user.user_type == "mentee" && !@user_type.mentor.nil? %>
 <div class="my-modal" id="modal">
   <div class="modal-header">
     <h2 class="modal-title">Connect with your mentor!</h2>
