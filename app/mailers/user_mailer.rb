@@ -3,6 +3,7 @@ class UserMailer < ApplicationMailer
 
   def matching_email
     @user = params[:user]
+    @profile_url = "http://thementormatch.club/profile"
     @url = "http://thementormatch.club/"
     mail(to: @user.email, subject: "You've been matched")
   end
