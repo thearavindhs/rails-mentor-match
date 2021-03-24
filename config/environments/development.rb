@@ -1,7 +1,7 @@
 Rails.application.configure do
 
   config.action_mailer.delivery_method = :smtp
-  host = 'https://match-my-mentor.herokuapp.com'
+  host = 'http://thementormatch.club'
   config.action_mailer.default_url_options = { host: host }
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
@@ -27,7 +27,7 @@ Rails.application.configure do
   config.eager_load = false
 
   # Show full error reports.
-  config.consider_all_requests_local = true
+  config.consider_all_requests_local = false
 
   # Enable/disable caching. By default caching is disabled.
   # Run rails dev:cache to toggle caching.

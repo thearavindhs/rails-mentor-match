@@ -3,13 +3,14 @@ class UserMailer < ApplicationMailer
 
   def matching_email
     @user = params[:user]
-    @url = "https://match-my-mentor.herokuapp.com"
+    @profile_url = "http://www.thementormatch.club/profile"
+    @url = "http://www.thementormatch.club/"
     mail(to: @user.email, subject: "You've been matched")
   end
 
   def welcome_email
     @user = params[:user]
-    @url = "https://match-my-mentor.herokuapp.com"
+    @url = "http://www.thementormatch.club/"
     mail(to: @user.email, subject: "Welcome to Mentor Match")
   end
 end
